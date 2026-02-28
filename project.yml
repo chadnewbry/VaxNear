@@ -1,0 +1,32 @@
+name: VaxNear
+options:
+  bundleIdPrefix: com.chadnewbry
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+
+targets:
+  VaxNear:
+    type: application
+    platform: iOS
+    sources:
+      - VaxNear
+    settings:
+      base:
+        INFOPLIST_FILE: VaxNear/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.chadnewbry.vaxnear
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        SWIFT_VERSION: "5.9"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    entitlements:
+      path: VaxNear/VaxNear.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+        com.apple.developer.icloud-container-identifiers:
+          - iCloud.com.chadnewbry.vaxnear
+        com.apple.developer.icloud-services:
+          - CloudKit
+        aps-environment: development
