@@ -18,10 +18,9 @@ final class HealthKitManager: ObservableObject {
         guard isAvailable else { return }
 
         let readTypes: Set<HKObjectType> = [immunizationType]
-        let writeTypes: Set<HKSampleType> = [immunizationType]
 
         do {
-            try await store.requestAuthorization(toShare: writeTypes, read: readTypes)
+            try await store.requestAuthorization(toShare: [], read: readTypes)
             isAuthorized = true
         } catch {
             print("HealthKit authorization failed: \(error.localizedDescription)")
@@ -31,7 +30,6 @@ final class HealthKitManager: ObservableObject {
 
     // MARK: - Read Immunization Records
 
-    /// Reads immunization records from HealthKit and returns lightweight value objects.
     func readImmunizationRecords() async -> [HealthKitVaccineRecord] {
         guard isAuthorized else { return [] }
 
@@ -61,78 +59,23 @@ final class HealthKitManager: ObservableObject {
         }
     }
 
-    // MARK: - Write Immunization Record
+    // MARK: - Sync (Read-Only for v1)
 
-    func writeImmunizationRecord(from record: VaccinationRecord) async throws {
-        guard isAuthorized else {
-            throw HealthKitError.notAuthorized
-        }
-
-        let fhirData = buildFHIRImmunization(from: record)
-
-        let clinicalRecord = try HKClinicalRecord(
-            type: immunizationType,
-            startDate: record.dateAdministered,
-            endDate: record.dateAdministered,
-            fhirResource: fhirData
-        )
-
-        try await store.save(clinicalRecord)
-    }
-
-    /// Syncs a record to HealthKit if authorized; fails silently.
+    /// HealthKit clinical records are read-only. This is a no-op placeholder
+    /// for future server-signed FHIR write support.
     func syncIfAuthorized(record: VaccinationRecord) async {
-        guard isAuthorized else { return }
-        do {
-            try await writeImmunizationRecord(from: record)
-        } catch {
-            print("HealthKit sync failed: \(error.localizedDescription)")
-        }
-    }
-
-    // MARK: - FHIR Builder
-
-    private func buildFHIRImmunization(from record: VaccinationRecord) -> HKFHIRResource {
-        let formatter = ISO8601DateFormatter()
-        let dateString = formatter.string(from: record.dateAdministered)
-
-        var json: [String: Any] = [
-            "resourceType": "Immunization",
-            "status": "completed",
-            "vaccineCode": ["text": record.vaccineName],
-            "occurrenceDateTime": dateString,
-            "lotNumber": record.lotNumber ?? ""
-        ]
-
-        if let manufacturer = record.manufacturer {
-            json["manufacturer"] = ["display": manufacturer]
-        }
-        if let provider = record.administeringProvider {
-            json["performer"] = [["actor": ["display": provider]]]
-        }
-        if let site = record.injectionSite {
-            json["site"] = ["text": site]
-        }
-
-        let data = try! JSONSerialization.data(withJSONObject: json)
-
-        return try! HKFHIRResource(
-            type: .immunization,
-            identifier: record.id.uuidString,
-            data: data
-        )
+        // Clinical records cannot be written directly via HealthKit.
+        // A future version could use a SMART on FHIR server to push records.
     }
 
     // MARK: - Errors
 
     enum HealthKitError: LocalizedError {
         case notAuthorized
-        case writeFailed
 
         var errorDescription: String? {
             switch self {
             case .notAuthorized: return "HealthKit access not authorized."
-            case .writeFailed: return "Failed to write record to HealthKit."
             }
         }
     }

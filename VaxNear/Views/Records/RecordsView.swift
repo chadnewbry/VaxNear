@@ -2,18 +2,30 @@ import SwiftData
 import SwiftUI
 
 struct RecordsView: View {
+    @Query(sort: \FamilyProfile.createdAt) private var profiles: [FamilyProfile]
     @Query(sort: \VaccinationRecord.dateAdministered, order: .reverse)
-    private var records: [VaccinationRecord]
+    private var allRecords: [VaccinationRecord]
 
     @Environment(\.modelContext) private var modelContext
     @StateObject private var healthKit = HealthKitManager.shared
     @StateObject private var wallet = WalletPassManager.shared
     @State private var showingAddRecord = false
+    @State private var selectedProfileID: UUID?
+    @State private var showingFamilyManagement = false
+
+    private var filteredRecords: [VaccinationRecord] {
+        guard let id = selectedProfileID else { return allRecords }
+        return allRecords.filter { $0.profile?.id == id }
+    }
+
+    private var selectedProfile: FamilyProfile? {
+        profiles.first { $0.id == selectedProfileID }
+    }
 
     var body: some View {
         NavigationStack {
             Group {
-                if records.isEmpty {
+                if filteredRecords.isEmpty {
                     ContentUnavailableView {
                         Label("No Records", systemImage: "list.clipboard")
                     } description: {
@@ -30,7 +42,7 @@ struct RecordsView: View {
                     }
                 } else {
                     List {
-                        ForEach(records) { record in
+                        ForEach(filteredRecords) { record in
                             RecordRow(record: record)
                         }
                         .onDelete(perform: deleteRecords)
@@ -39,6 +51,58 @@ struct RecordsView: View {
             }
             .navigationTitle("Records")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Button {
+                            selectedProfileID = nil
+                        } label: {
+                            HStack {
+                                Text("All Profiles")
+                                if selectedProfileID == nil {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+
+                        ForEach(profiles) { profile in
+                            Button {
+                                selectedProfileID = profile.id
+                            } label: {
+                                HStack {
+                                    Text(profile.name)
+                                    if selectedProfileID == profile.id {
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
+                        }
+
+                        Divider()
+
+                        Button {
+                            showingFamilyManagement = true
+                        } label: {
+                            Label("Manage Family", systemImage: "person.3")
+                        }
+                    } label: {
+                        HStack(spacing: 4) {
+                            if let profile = selectedProfile {
+                                Circle()
+                                    .fill(Color(hex: profile.colorTag))
+                                    .frame(width: 8, height: 8)
+                                Text(profile.name)
+                                    .font(.subheadline)
+                            } else {
+                                Image(systemName: "person.2")
+                                Text("All")
+                                    .font(.subheadline)
+                            }
+                            Image(systemName: "chevron.down")
+                                .font(.caption2)
+                        }
+                    }
+                }
+
                 ToolbarItem(placement: .primaryAction) {
                     Button { showingAddRecord = true } label: {
                         Image(systemName: "plus")
@@ -56,12 +120,23 @@ struct RecordsView: View {
                 }
             }
             .sheet(isPresented: $showingAddRecord) {
-                AddRecordView()
+                AddRecordView(assignToProfile: selectedProfile)
+            }
+            .sheet(isPresented: $showingFamilyManagement) {
+                NavigationStack {
+                    FamilyProfilesView()
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Done") { showingFamilyManagement = false }
+                            }
+                        }
+                }
             }
         }
     }
 
     private func deleteRecords(at offsets: IndexSet) {
+        let records = filteredRecords
         for index in offsets {
             modelContext.delete(records[index])
         }
@@ -69,7 +144,7 @@ struct RecordsView: View {
 
     private func importFromHealthKit() async {
         let hkRecords = await healthKit.readImmunizationRecords()
-        let existingNames = Set(records.map { "\($0.vaccineName)-\($0.dateAdministered)" })
+        let existingNames = Set(allRecords.map { "\($0.vaccineName)-\($0.dateAdministered)" })
 
         for hkRecord in hkRecords {
             let key = "\(hkRecord.vaccineName)-\(hkRecord.dateAdministered)"
@@ -93,6 +168,11 @@ struct RecordRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
+                if let profile = record.profile {
+                    Circle()
+                        .fill(Color(hex: profile.colorTag))
+                        .frame(width: 8, height: 8)
+                }
                 Text(record.vaccineName)
                     .font(.headline)
                 Spacer()
@@ -131,8 +211,6 @@ struct RecordRow: View {
     private func addToWallet() {
         do {
             let bundleURL = try wallet.generatePassBundle(for: record)
-            // In production, the bundle would be signed server-side
-            // and the signed .pkpass data passed to addToWallet(passData:)
             print("Pass bundle generated at: \(bundleURL.path)")
         } catch {
             wallet.lastError = error.localizedDescription

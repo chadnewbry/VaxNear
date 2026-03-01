@@ -11,6 +11,14 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Family") {
+                    NavigationLink {
+                        FamilyProfilesView()
+                    } label: {
+                        Label("Manage Family", systemImage: "person.3")
+                    }
+                }
+
                 Section("Security") {
                     Toggle("Require Face ID", systemImage: "faceid", isOn: $isBiometricLockEnabled)
                 }

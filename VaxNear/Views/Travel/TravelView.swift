@@ -6,7 +6,7 @@ struct TravelView: View {
             VStack(spacing: 20) {
                 Image(systemName: "airplane")
                     .font(.system(size: 64))
-                    .foregroundStyle(.accent)
+                    .foregroundColor(.accentColor)
 
                 Text("Travel Vaccine Planner")
                     .font(.title2.bold())
