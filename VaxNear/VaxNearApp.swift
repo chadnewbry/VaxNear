@@ -4,6 +4,7 @@ import SwiftUI
 @main
 struct VaxNearApp: App {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @State private var isUnlocked = false
     @StateObject private var notificationManager = NotificationManager()
     @StateObject private var syncManager = SyncManager()
@@ -33,7 +34,9 @@ struct VaxNearApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if isBiometricLockEnabled && !isUnlocked {
+                if !hasCompletedOnboarding {
+                    OnboardingView()
+                } else if isBiometricLockEnabled && !isUnlocked {
                     LockScreenView(isUnlocked: $isUnlocked)
                 } else {
                     MainTabView()
@@ -41,9 +44,11 @@ struct VaxNearApp: App {
             }
             .onAppear {
                 notificationManager.configure(modelContext: sharedModelContainer.mainContext)
-                Task {
-                    await notificationManager.requestPermission()
-                    notificationManager.scheduleSeasonalAlerts()
+                if hasCompletedOnboarding {
+                    Task {
+                        await notificationManager.requestPermission()
+                        notificationManager.scheduleSeasonalAlerts()
+                    }
                 }
             }
         }
