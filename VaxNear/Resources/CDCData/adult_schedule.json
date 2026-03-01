@@ -1,0 +1,80 @@
+[
+  {
+    "vaccineName": "Influenza (IIV/LAIV)",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": [] }],
+    "boosterIntervalMonths": 12,
+    "notes": "Annual vaccination for all adults."
+  },
+  {
+    "vaccineName": "COVID-19",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": [] }],
+    "boosterIntervalMonths": 12,
+    "notes": "Updated COVID-19 vaccine recommended annually."
+  },
+  {
+    "vaccineName": "Tdap/Td",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": [] }],
+    "boosterIntervalMonths": 120,
+    "notes": "1 dose Tdap, then Td or Tdap booster every 10 years. Tdap during each pregnancy (27-36 weeks)."
+  },
+  {
+    "vaccineName": "MMR",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": ["born after 1957 without evidence of immunity"] }],
+    "boosterIntervalMonths": null,
+    "notes": "1 or 2 doses depending on indication. No booster needed if immunity documented."
+  },
+  {
+    "vaccineName": "Varicella (VAR)",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": ["no evidence of immunity"] }],
+    "boosterIntervalMonths": null,
+    "notes": "2-dose series 4-8 weeks apart if no evidence of immunity."
+  },
+  {
+    "vaccineName": "Zoster Recombinant (RZV/Shingrix)",
+    "recommendedFor": [{ "minAge": 50, "maxAge": null, "conditions": [] }],
+    "boosterIntervalMonths": null,
+    "notes": "2-dose series (0, 2-6 months). Recommended for adults 50+ regardless of prior shingles or Zostavax."
+  },
+  {
+    "vaccineName": "HPV",
+    "recommendedFor": [{ "minAge": 19, "maxAge": 26, "conditions": [] }, { "minAge": 27, "maxAge": 45, "conditions": ["shared clinical decision"] }],
+    "boosterIntervalMonths": null,
+    "notes": "2 or 3 dose series depending on age at start. Catch-up through age 26."
+  },
+  {
+    "vaccineName": "Pneumococcal (PCV20 or PCV15+PPSV23)",
+    "recommendedFor": [{ "minAge": 65, "maxAge": null, "conditions": [] }, { "minAge": 19, "maxAge": 64, "conditions": ["chronic heart/lung/liver disease", "diabetes", "immunocompromised", "CSF leak", "cochlear implant"] }],
+    "boosterIntervalMonths": null,
+    "notes": "1 dose PCV20, or PCV15 followed by PPSV23 at least 1 year later."
+  },
+  {
+    "vaccineName": "Hepatitis A (HepA)",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": ["travel to endemic areas", "chronic liver disease", "MSM", "substance use disorder", "homelessness"] }],
+    "boosterIntervalMonths": null,
+    "notes": "2-dose series (HepA) or 3-dose series (HepA-HepB combo) at 0, 1, 6 months."
+  },
+  {
+    "vaccineName": "Hepatitis B (HepB)",
+    "recommendedFor": [{ "minAge": 19, "maxAge": 59, "conditions": [] }, { "minAge": 60, "maxAge": null, "conditions": ["risk factors present"] }],
+    "boosterIntervalMonths": null,
+    "notes": "2 or 3 dose series. Universal vaccination for adults 19-59. Risk-based for 60+."
+  },
+  {
+    "vaccineName": "Meningococcal ACWY (MenACWY)",
+    "recommendedFor": [{ "minAge": 19, "maxAge": null, "conditions": ["asplenia", "complement deficiency", "HIV", "travel to meningitis belt"] }],
+    "boosterIntervalMonths": 60,
+    "notes": "2-dose primary series for asplenia/complement deficiency. Booster every 5 years if risk persists."
+  },
+  {
+    "vaccineName": "Meningococcal B (MenB)",
+    "recommendedFor": [{ "minAge": 16, "maxAge": 23, "conditions": ["shared clinical decision"] }, { "minAge": 19, "maxAge": null, "conditions": ["asplenia", "complement deficiency", "outbreak"] }],
+    "boosterIntervalMonths": null,
+    "notes": "2 or 3 dose series depending on product. Bexsero: 2 doses. Trumenba: 2-3 doses."
+  },
+  {
+    "vaccineName": "RSV (Respiratory Syncytial Virus)",
+    "recommendedFor": [{ "minAge": 60, "maxAge": null, "conditions": [] }, { "minAge": 32, "maxAge": 36, "conditions": ["pregnancy, seasonal"] }],
+    "boosterIntervalMonths": null,
+    "notes": "Single dose for adults 60+ (shared clinical decision). Maternal RSV vaccine during pregnancy (32-36 weeks, seasonal)."
+  }
+]
