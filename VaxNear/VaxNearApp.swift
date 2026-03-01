@@ -5,6 +5,7 @@ import SwiftUI
 struct VaxNearApp: App {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
     @State private var isUnlocked = false
+    @StateObject private var notificationManager = NotificationManager()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -13,7 +14,8 @@ struct VaxNearApp: App {
             SideEffectLog.self,
             SavedLocation.self,
             TravelPlan.self,
-            AppSettings.self
+            AppSettings.self,
+            ScheduledReminder.self
         ])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
@@ -32,5 +34,13 @@ struct VaxNearApp: App {
             }
         }
         .modelContainer(sharedModelContainer)
+        .environmentObject(notificationManager)
+        .onAppear {
+            notificationManager.configure(modelContext: sharedModelContainer.mainContext)
+            Task {
+                await notificationManager.requestPermission()
+                notificationManager.scheduleSeasonalAlerts()
+            }
+        }
     }
 }
