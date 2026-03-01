@@ -33,6 +33,8 @@
 		BB1111111111111111111111 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111111 /* SiteDetailView.swift */; };
 		BB2222222222222222222222 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222222 /* FavoritesView.swift */; };
 		BB3333333333333333333333 /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3333333333333333333333 /* FinderViewModel.swift */; };
+		AA2222222222222222222222 /* ScheduledReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111111 /* ScheduledReminder.swift */; };
+		AA4444444444444444444444 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3333333333333333333333 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		AA1111111111111111111111 /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
 		AA2222222222222222222222 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		AA3333333333333333333333 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
+		AA1111111111111111111111 /* ScheduledReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledReminder.swift; sourceTree = "<group>"; };
+		AA3333333333333333333333 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -125,7 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				9742C5D69847D4D4053DC5AF /* CDCData */,
-			);
+							AA1111111111111111111111 /* ScheduledReminder.swift */,
+				AA3333333333333333333333 /* NotificationManager.swift */,
+);
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -327,6 +333,10 @@
 				857280AE225215C71B248125 /* VaccineSite.swift in Sources */,
 				54488F75A081B7A81B100A67 /* VaccineSiteFinderService.swift in Sources */,
 				4CE0006C13039CF931F4BD63 /* VaxNearApp.swift in Sources */,
+				AA4444444444444444444444 /* NotificationManager.swift in Sources */,
+
+				AA2222222222222222222222 /* ScheduledReminder.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
