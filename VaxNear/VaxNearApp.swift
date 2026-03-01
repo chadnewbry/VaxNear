@@ -27,20 +27,22 @@ struct VaxNearApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if isBiometricLockEnabled && !isUnlocked {
-                LockScreenView(isUnlocked: $isUnlocked)
-            } else {
-                MainTabView()
+            Group {
+                if isBiometricLockEnabled && !isUnlocked {
+                    LockScreenView(isUnlocked: $isUnlocked)
+                } else {
+                    MainTabView()
+                }
+            }
+            .onAppear {
+                notificationManager.configure(modelContext: sharedModelContainer.mainContext)
+                Task {
+                    await notificationManager.requestPermission()
+                    notificationManager.scheduleSeasonalAlerts()
+                }
             }
         }
         .modelContainer(sharedModelContainer)
         .environmentObject(notificationManager)
-        .onAppear {
-            notificationManager.configure(modelContext: sharedModelContainer.mainContext)
-            Task {
-                await notificationManager.requestPermission()
-                notificationManager.scheduleSeasonalAlerts()
-            }
-        }
     }
 }

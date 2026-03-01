@@ -8,7 +8,7 @@ struct LockScreenView: View {
         VStack(spacing: 24) {
             Image(systemName: "faceid")
                 .font(.system(size: 64))
-                .foregroundStyle(.accent)
+                .foregroundColor(.accentColor)
 
             Text("VaxNear is Locked")
                 .font(.title2.bold())
