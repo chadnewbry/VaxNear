@@ -52,6 +52,7 @@ enum VaccineTypeFilter: String, CaseIterable, Identifiable {
     case covid = "COVID-19"
     case flu = "Flu"
     case travel = "Travel"
+    case childhood = "Childhood"
 
     var id: String { rawValue }
 
@@ -66,6 +67,8 @@ enum VaccineTypeFilter: String, CaseIterable, Identifiable {
             return ["pharmacy", "flu shot", "health clinic"]
         case .travel:
             return ["travel clinic", "pharmacy", "hospital", "health department"]
+        case .childhood:
+            return ["pediatrician", "health clinic", "pharmacy", "health department"]
         }
     }
 }
