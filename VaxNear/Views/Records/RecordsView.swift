@@ -8,10 +8,15 @@ struct RecordsView: View {
 
     @Environment(\.modelContext) private var modelContext
     @StateObject private var healthKit = HealthKitManager.shared
-    @StateObject private var wallet = WalletPassManager.shared
     @State private var showingAddRecord = false
     @State private var selectedProfileID: UUID?
     @State private var showingFamilyManagement = false
+    @State private var showingExportSheet = false
+    @State private var exportedPDFURL: URL?
+
+    private var appSettings: AppSettings {
+        AppSettings.shared(in: modelContext)
+    }
 
     private var filteredRecords: [VaccinationRecord] {
         guard let id = selectedProfileID else { return allRecords }
@@ -22,91 +27,39 @@ struct RecordsView: View {
         profiles.first { $0.id == selectedProfileID }
     }
 
+    private var recordsByYear: [(year: Int, records: [VaccinationRecord])] {
+        let calendar = Calendar.current
+        let grouped = Dictionary(grouping: filteredRecords) { record in
+            calendar.component(.year, from: record.dateAdministered)
+        }
+        return grouped.sorted { $0.key > $1.key }.map { (year: $0.key, records: $0.value) }
+    }
+
     var body: some View {
         NavigationStack {
-            Group {
-                if filteredRecords.isEmpty {
-                    ContentUnavailableView {
-                        Label("No Records", systemImage: "list.clipboard")
-                    } description: {
-                        Text("Add vaccination records manually or import from HealthKit.")
-                    } actions: {
-                        Button("Add Record") { showingAddRecord = true }
-                            .buttonStyle(.borderedProminent)
+            VStack(spacing: 0) {
+                freeUsesHeader
+                profileSwitcher
 
-                        if healthKit.isAvailable && healthKit.isAuthorized {
-                            Button("Import from Health") {
-                                Task { await importFromHealthKit() }
-                            }
-                        }
-                    }
+                if filteredRecords.isEmpty {
+                    emptyState
                 } else {
-                    List {
-                        ForEach(filteredRecords) { record in
-                            RecordRow(record: record)
-                        }
-                        .onDelete(perform: deleteRecords)
-                    }
+                    timelineList
                 }
             }
             .navigationTitle("Records")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Menu {
-                        Button {
-                            selectedProfileID = nil
-                        } label: {
-                            HStack {
-                                Text("All Profiles")
-                                if selectedProfileID == nil {
-                                    Image(systemName: "checkmark")
-                                }
-                            }
-                        }
-
-                        ForEach(profiles) { profile in
-                            Button {
-                                selectedProfileID = profile.id
-                            } label: {
-                                HStack {
-                                    Text(profile.name)
-                                    if selectedProfileID == profile.id {
-                                        Image(systemName: "checkmark")
-                                    }
-                                }
-                            }
-                        }
-
-                        Divider()
-
-                        Button {
-                            showingFamilyManagement = true
-                        } label: {
-                            Label("Manage Family", systemImage: "person.3")
-                        }
-                    } label: {
-                        HStack(spacing: 4) {
-                            if let profile = selectedProfile {
-                                Circle()
-                                    .fill(Color(hex: profile.colorTag))
-                                    .frame(width: 8, height: 8)
-                                Text(profile.name)
-                                    .font(.subheadline)
-                            } else {
-                                Image(systemName: "person.2")
-                                Text("All")
-                                    .font(.subheadline)
-                            }
-                            Image(systemName: "chevron.down")
-                                .font(.caption2)
-                        }
+                ToolbarItem(placement: .primaryAction) {
+                    Button { handleAddRecord() } label: {
+                        Image(systemName: "plus")
                     }
                 }
 
-                ToolbarItem(placement: .primaryAction) {
-                    Button { showingAddRecord = true } label: {
-                        Image(systemName: "plus")
+                ToolbarItem(placement: .secondaryAction) {
+                    Button { exportPDF() } label: {
+                        Label("Export Records", systemImage: "square.and.arrow.up")
                     }
+                    .disabled(filteredRecords.isEmpty)
                 }
 
                 if healthKit.isAvailable && healthKit.isAuthorized {
@@ -132,30 +85,178 @@ struct RecordsView: View {
                         }
                 }
             }
+            .sheet(isPresented: $showingExportSheet) {
+                if let url = exportedPDFURL {
+                    ShareSheet(items: [url])
+                }
+            }
         }
     }
 
-    private func deleteRecords(at offsets: IndexSet) {
-        let records = filteredRecords
-        for index in offsets {
-            modelContext.delete(records[index])
+    // MARK: - Free Uses Header
+
+    @ViewBuilder
+    private var freeUsesHeader: some View {
+        let settings = appSettings
+        HStack {
+            if settings.hasPurchasedFullVersion {
+                Label("Full Version", systemImage: "checkmark.seal.fill")
+                    .font(.caption)
+                    .foregroundStyle(.green)
+            } else {
+                Text("\(settings.freeUsesRemaining) free records remaining")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Button("Upgrade") {
+                    // Navigate to paywall
+                }
+                .font(.caption.bold())
+                .buttonStyle(.bordered)
+                .tint(.accentColor)
+            }
+            Spacer()
         }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+    }
+
+    // MARK: - Profile Switcher
+
+    private var profileSwitcher: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                ProfilePill(name: "All", colorHex: nil, isSelected: selectedProfileID == nil) {
+                    withAnimation { selectedProfileID = nil }
+                }
+
+                ForEach(profiles) { profile in
+                    ProfilePill(name: profile.name, colorHex: profile.colorTag, isSelected: selectedProfileID == profile.id) {
+                        withAnimation { selectedProfileID = profile.id }
+                    }
+                }
+
+                Button { showingFamilyManagement = true } label: {
+                    Image(systemName: "plus")
+                        .font(.caption.bold())
+                        .foregroundStyle(.accentColor)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Capsule().strokeBorder(.accentColor, lineWidth: 1.5))
+                }
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 10)
+        }
+    }
+
+    // MARK: - Empty State
+
+    private var emptyState: some View {
+        ContentUnavailableView {
+            Label("No Records", systemImage: "list.clipboard")
+        } description: {
+            Text("Add your first vaccination record")
+        } actions: {
+            VStack(spacing: 12) {
+                Button { handleAddRecord() } label: {
+                    Label("Add Record", systemImage: "plus")
+                }
+                .buttonStyle(.borderedProminent)
+
+                Button { handleAddRecord() } label: {
+                    Label("Scan QR Code", systemImage: "qrcode.viewfinder")
+                }
+                .buttonStyle(.bordered)
+            }
+        }
+    }
+
+    // MARK: - Timeline List
+
+    private var timelineList: some View {
+        List {
+            ForEach(recordsByYear, id: \.year) { group in
+                Section {
+                    ForEach(group.records) { record in
+                        NavigationLink(destination: RecordDetailView(record: record)) {
+                            RecordRow(record: record)
+                        }
+                    }
+                    .onDelete { offsets in
+                        for index in offsets { modelContext.delete(group.records[index]) }
+                    }
+                } header: {
+                    Text(String(group.year))
+                        .font(.title3.bold())
+                        .foregroundStyle(.primary)
+                        .textCase(nil)
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+    }
+
+    // MARK: - Actions
+
+    private func handleAddRecord() {
+        let settings = appSettings
+        if !settings.hasPurchasedFullVersion && settings.freeUsesRemaining <= 0 {
+            return // Show paywall
+        }
+        showingAddRecord = true
     }
 
     private func importFromHealthKit() async {
         let hkRecords = await healthKit.readImmunizationRecords()
-        let existingNames = Set(allRecords.map { "\($0.vaccineName)-\($0.dateAdministered)" })
-
+        let existingKeys = Set(allRecords.map { "\($0.vaccineName)-\($0.dateAdministered)" })
         for hkRecord in hkRecords {
             let key = "\(hkRecord.vaccineName)-\(hkRecord.dateAdministered)"
-            if !existingNames.contains(key) {
-                let record = VaccinationRecord(
-                    vaccineName: hkRecord.vaccineName,
-                    dateAdministered: hkRecord.dateAdministered
-                )
-                modelContext.insert(record)
-            }
+            guard !existingKeys.contains(key) else { continue }
+            let record = VaccinationRecord(vaccineName: hkRecord.vaccineName, dateAdministered: hkRecord.dateAdministered)
+            record.profile = selectedProfile
+            modelContext.insert(record)
         }
+    }
+
+    private func exportPDF() {
+        guard let profile = selectedProfile ?? profiles.first else { return }
+        let pdfData = DataExportService(context: modelContext).exportAsPDF(profile: profile)
+        let tempURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent("\(profile.name)_Vaccination_Records.pdf")
+        try? pdfData.write(to: tempURL)
+        exportedPDFURL = tempURL
+        showingExportSheet = true
+    }
+}
+
+// MARK: - Profile Pill
+
+struct ProfilePill: View {
+    let name: String
+    let colorHex: String?
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                if let hex = colorHex {
+                    Circle().fill(Color(hex: hex)).frame(width: 10, height: 10)
+                } else {
+                    Image(systemName: "person.2").font(.caption2)
+                }
+                Text(name)
+                    .font(.subheadline)
+                    .fontWeight(isSelected ? .semibold : .regular)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(Capsule().fill(isSelected ? Color.accentColor.opacity(0.15) : Color(.systemGray6)))
+            .overlay(Capsule().strokeBorder(isSelected ? Color.accentColor : .clear, lineWidth: 1.5))
+        }
+        .buttonStyle(.plain)
     }
 }
 
@@ -163,18 +264,14 @@ struct RecordsView: View {
 
 struct RecordRow: View {
     let record: VaccinationRecord
-    @StateObject private var wallet = WalletPassManager.shared
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 if let profile = record.profile {
-                    Circle()
-                        .fill(Color(hex: profile.colorTag))
-                        .frame(width: 8, height: 8)
+                    Circle().fill(Color(hex: profile.colorTag)).frame(width: 8, height: 8)
                 }
-                Text(record.vaccineName)
-                    .font(.headline)
+                Text(record.vaccineName).font(.headline)
                 Spacer()
                 Text(record.dateAdministered, style: .date)
                     .font(.caption)
@@ -182,40 +279,32 @@ struct RecordRow: View {
             }
 
             if let manufacturer = record.manufacturer, !manufacturer.isEmpty {
-                Text(manufacturer)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                Text(manufacturer).font(.subheadline).foregroundStyle(.secondary)
             }
 
             if let provider = record.administeringProvider, !provider.isEmpty {
-                Text(provider)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                Label(provider, systemImage: "building.2")
+                    .font(.caption).foregroundStyle(.secondary)
             }
 
-            if wallet.isWalletAvailable {
-                Button {
-                    addToWallet()
-                } label: {
-                    Label("Add to Wallet", systemImage: "wallet.pass")
-                        .font(.caption.bold())
-                }
-                .buttonStyle(.bordered)
-                .tint(.blue)
-                .padding(.top, 4)
+            if !record.sideEffects.isEmpty {
+                Label("\(record.sideEffects.count) side effect\(record.sideEffects.count == 1 ? "" : "s")",
+                      systemImage: "exclamationmark.triangle")
+                    .font(.caption).foregroundStyle(.orange)
             }
         }
         .padding(.vertical, 4)
     }
+}
 
-    private func addToWallet() {
-        do {
-            let bundleURL = try wallet.generatePassBundle(for: record)
-            print("Pass bundle generated at: \(bundleURL.path)")
-        } catch {
-            wallet.lastError = error.localizedDescription
-        }
+// MARK: - Share Sheet
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
     }
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
 #Preview {
