@@ -30,6 +30,9 @@
 		DE9ADC2BB937055D2A53265A /* SideEffectLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */; };
 		E56C0CD419219103805FBDB3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */; };
 		F364B42D5E30139586938774 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65443BEA4D82E4CAC77A1144 /* DataExportService.swift */; };
+		BB1111111111111111111111 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111111 /* SiteDetailView.swift */; };
+		BB2222222222222222222222 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222222 /* FavoritesView.swift */; };
+		BB3333333333333333333333 /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3333333333333333333333 /* FinderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfile.swift; sourceTree = "<group>"; };
 		FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectLog.swift; sourceTree = "<group>"; };
 		FEDB5E63EA298BBD192469DA /* vaccine_database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vaccine_database.json; sourceTree = "<group>"; };
+		AA1111111111111111111111 /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
+		AA2222222222222222222222 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		AA3333333333333333333333 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -108,6 +114,7 @@
 				9EEC9FC4B0ED4F748CD213F6 /* Models */,
 				88C17A4645C6C05298C0433A /* Resources */,
 				8D81CA63BDC8C530185B4FDE /* Services */,
+				CC1111111111111111111111 /* ViewModels */,
 				75F691C31CD6BE12FB0A099F /* Utilities */,
 				DAD98CC0273C66F2F7C46647 /* Views */,
 			);
@@ -216,8 +223,18 @@
 			isa = PBXGroup;
 			children = (
 				C1A77EB650C19A605C93E291 /* FinderView.swift */,
+				AA1111111111111111111111 /* SiteDetailView.swift */,
+				AA2222222222222222222222 /* FavoritesView.swift */,
 			);
 			path = Finder;
+			sourceTree = "<group>";
+		};
+		CC1111111111111111111111 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AA3333333333333333333333 /* FinderViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +311,9 @@
 				F364B42D5E30139586938774 /* DataExportService.swift in Sources */,
 				D922EB96922F5A31D73B6510 /* FamilyProfile.swift in Sources */,
 				799D2C2B7F7102222D6BE3F2 /* FinderView.swift in Sources */,
+				BB1111111111111111111111 /* SiteDetailView.swift in Sources */,
+				BB2222222222222222222222 /* FavoritesView.swift in Sources */,
+				BB3333333333333333333333 /* FinderViewModel.swift in Sources */,
 				3126A3459946BCD62A14B85F /* LocationManager.swift in Sources */,
 				28B9A0445ADE8A06556E5DFF /* LockScreenView.swift in Sources */,
 				02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */,
