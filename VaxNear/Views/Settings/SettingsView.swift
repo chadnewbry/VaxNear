@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
+    @StateObject private var healthKit = HealthKitManager.shared
 
     private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
     private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
@@ -17,7 +18,41 @@ struct SettingsView: View {
                 Section("Data") {
                     Label("iCloud Sync", systemImage: "icloud")
                     Label("Export Records", systemImage: "square.and.arrow.up")
-                    Label("HealthKit", systemImage: "heart.text.square")
+
+                    if healthKit.isAvailable {
+                        HStack {
+                            Label("HealthKit Sync", systemImage: "heart.text.square")
+                            Spacer()
+                            if healthKit.isAuthorized {
+                                Text("On")
+                                    .foregroundStyle(.green)
+                            } else {
+                                Button("Enable") {
+                                    Task { await healthKit.requestAuthorization() }
+                                }
+                                .buttonStyle(.bordered)
+                                .controlSize(.small)
+                            }
+                        }
+                    } else {
+                        HStack {
+                            Label("HealthKit", systemImage: "heart.text.square")
+                            Spacer()
+                            Text("Unavailable")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+
+                if !healthKit.isAuthorized && healthKit.isAvailable {
+                    Section {
+                        Label(
+                            "HealthKit sync is off. Enable it to automatically save vaccination records to Apple Health.",
+                            systemImage: "info.circle"
+                        )
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    }
                 }
 
                 Section("About") {
