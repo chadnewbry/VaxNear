@@ -23,6 +23,7 @@
 		D154B89E7DF92B77C87AF461 /* CDCDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */; };
 		CBE89DBB02743107AF90A6F4 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B88534B2E59865383910D9 /* DataExportService.swift */; };
 		F3FFAFD12E7E091D5D353D52 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */; };
+		A1B2C3D4E5F60002 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001 /* SyncManager.swift */; };
 		06F39D947BEF816879D76FF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645143130B47088F64071F /* LocationManager.swift */; };
 		A5A2EC77983617AA949D2D9E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930711783BB9C5A268D99AE5 /* NotificationManager.swift */; };
 		5B8469F397E921D3C2AC2A70 /* VaccineSiteFinderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */; };
@@ -67,6 +68,7 @@
 		72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCDataManager.swift; sourceTree = "<group>"; };
 		98B88534B2E59865383910D9 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
 		0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		21645143130B47088F64071F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		930711783BB9C5A268D99AE5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSiteFinderService.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */,
 				98B88534B2E59865383910D9 /* DataExportService.swift */,
 				0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */,
+				A1B2C3D4E5F60001 /* SyncManager.swift */,
 				21645143130B47088F64071F /* LocationManager.swift */,
 				930711783BB9C5A268D99AE5 /* NotificationManager.swift */,
 				5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */,
@@ -347,6 +350,7 @@
 				D154B89E7DF92B77C87AF461 /* CDCDataManager.swift in Sources */,
 				CBE89DBB02743107AF90A6F4 /* DataExportService.swift in Sources */,
 				F3FFAFD12E7E091D5D353D52 /* HealthKitManager.swift in Sources */,
+				A1B2C3D4E5F60002 /* SyncManager.swift in Sources */,
 				06F39D947BEF816879D76FF5 /* LocationManager.swift in Sources */,
 				A5A2EC77983617AA949D2D9E /* NotificationManager.swift in Sources */,
 				5B8469F397E921D3C2AC2A70 /* VaccineSiteFinderService.swift in Sources */,

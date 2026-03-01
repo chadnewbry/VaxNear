@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
     @StateObject private var healthKit = HealthKitManager.shared
+    @EnvironmentObject private var syncManager: SyncManager
 
     private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
     private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
@@ -24,7 +25,7 @@ struct SettingsView: View {
                 }
 
                 Section("Data") {
-                    Label("iCloud Sync", systemImage: "icloud")
+                    iCloudSyncRow
                     Label("Export Records", systemImage: "square.and.arrow.up")
 
                     if healthKit.isAvailable {
@@ -84,8 +85,48 @@ struct SettingsView: View {
             .navigationTitle("Settings")
         }
     }
+
+    @ViewBuilder
+    private var iCloudSyncRow: some View {
+        HStack {
+            Label {
+                Text("iCloud Sync")
+            } icon: {
+                Image(systemName: syncManager.isCloudAvailable ? "icloud.fill" : "icloud.slash")
+                    .foregroundStyle(syncManager.isCloudAvailable ? .blue : .secondary)
+            }
+            Spacer()
+            if syncManager.isSyncing {
+                ProgressView()
+                    .controlSize(.small)
+            } else if syncManager.isCloudAvailable {
+                if let lastSynced = syncManager.lastSyncedDate {
+                    Text(lastSynced, format: .relative(presentation: .named))
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                } else {
+                    Text("On")
+                        .foregroundStyle(.green)
+                }
+            } else {
+                Text("Unavailable")
+                    .foregroundStyle(.secondary)
+            }
+        }
+        if !syncManager.isCloudAvailable {
+            Text("Sign in to iCloud in Settings to sync across devices.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        if let error = syncManager.syncError {
+            Text(error)
+                .font(.caption2)
+                .foregroundStyle(.red)
+        }
+    }
 }
 
 #Preview {
     SettingsView()
+        .environmentObject(SyncManager())
 }
