@@ -6,6 +6,7 @@ struct VaxNearApp: App {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
     @State private var isUnlocked = false
     @StateObject private var notificationManager = NotificationManager()
+    @StateObject private var syncManager = SyncManager()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -17,7 +18,11 @@ struct VaxNearApp: App {
             AppSettings.self,
             ScheduledReminder.self
         ])
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let config = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            cloudKitDatabase: .automatic
+        )
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
@@ -44,5 +49,6 @@ struct VaxNearApp: App {
         }
         .modelContainer(sharedModelContainer)
         .environmentObject(notificationManager)
+        .environmentObject(syncManager)
     }
 }
