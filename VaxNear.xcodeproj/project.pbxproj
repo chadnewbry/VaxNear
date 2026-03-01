@@ -40,6 +40,15 @@
 		14990F68B1361F0B7FCCE84F /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE00D21849952809217BBC /* FinderView.swift */; };
 		41E3E6B5C7CE0F1E652F6362 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE8AFED46DB67A83C03861 /* SiteDetailView.swift */; };
 		185AFEB2F9C5E883E4173255 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4625768FF995C7776C3BB2 /* AddRecordView.swift */; };
+				A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */,
+				A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */,
+				A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */,
+				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
+				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
+				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
+		A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */; };
+		A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */; };
+		A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345605 /* QRScannerView.swift */; };
 		F3E5570E23248C1A1E39DC86 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F060CD3A311B0E8C25094C8 /* RecordsView.swift */; };
 		BBA4AA96F1D30A490BA703F5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5066505EF683798B0A4951F5 /* SettingsView.swift */; };
 		D0F2002B63F04B12D95E1BE4 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7F7A040B3588A24E75CDC /* LockScreenView.swift */; };
@@ -85,6 +94,12 @@
 		85EE00D21849952809217BBC /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
 		35FE8AFED46DB67A83C03861 /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
 		AF4625768FF995C7776C3BB2 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
+				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
+				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
+				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
+		A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSideEffectView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6789012345605 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		0F060CD3A311B0E8C25094C8 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		5066505EF683798B0A4951F5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		72F7F7A040B3588A24E75CDC /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
@@ -232,6 +247,9 @@
 			isa = PBXGroup;
 			children = (
 				AF4625768FF995C7776C3BB2 /* AddRecordView.swift */,
+				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
+				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
+				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
 				0F060CD3A311B0E8C25094C8 /* RecordsView.swift */,
 			);
 			path = Records;
@@ -367,6 +385,12 @@
 				14990F68B1361F0B7FCCE84F /* FinderView.swift in Sources */,
 				41E3E6B5C7CE0F1E652F6362 /* SiteDetailView.swift in Sources */,
 				185AFEB2F9C5E883E4173255 /* AddRecordView.swift in Sources */,
+				A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */,
+				A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */,
+				A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */,
+		A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */; };
+		A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */; };
+		A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345605 /* QRScannerView.swift */; };
 				F3E5570E23248C1A1E39DC86 /* RecordsView.swift in Sources */,
 				BBA4AA96F1D30A490BA703F5 /* SettingsView.swift in Sources */,
 				D0F2002B63F04B12D95E1BE4 /* LockScreenView.swift in Sources */,
