@@ -3,6 +3,10 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
 
+    private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
+    private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
+    private let supportURL = URL(string: "https://chadnewbry.github.io/VaxNear/support.html")!
+
     var body: some View {
         NavigationStack {
             List {
@@ -17,8 +21,15 @@ struct SettingsView: View {
                 }
 
                 Section("About") {
-                    Label("Privacy Policy", systemImage: "hand.raised")
-                    Label("Terms of Service", systemImage: "doc.text")
+                    Link(destination: privacyPolicyURL) {
+                        Label("Privacy Policy", systemImage: "hand.raised")
+                    }
+                    Link(destination: termsOfServiceURL) {
+                        Label("Terms of Service", systemImage: "doc.text")
+                    }
+                    Link(destination: supportURL) {
+                        Label("Support", systemImage: "questionmark.circle")
+                    }
                     HStack {
                         Label("Version", systemImage: "info.circle")
                         Spacer()
