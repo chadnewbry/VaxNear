@@ -1,0 +1,122 @@
+[
+  {
+    "vaccineName": "Hepatitis B (HepB)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 0, "max": 1 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 1, "max": 2 }, "catchUpAgeMonths": 4 },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 18 }, "catchUpAgeMonths": 18 }
+    ],
+    "notes": "Birth dose within 24 hours. Monovalent HepB only for birth dose."
+  },
+  {
+    "vaccineName": "Rotavirus (RV)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 2, "max": 2 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 4, "max": 4 }, "catchUpAgeMonths": null },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 6 }, "catchUpAgeMonths": null }
+    ],
+    "notes": "RV5 (RotaTeq) is 3-dose series. RV1 (Rotarix) is 2-dose series. Max age for final dose is 8 months 0 days."
+  },
+  {
+    "vaccineName": "DTaP (Diphtheria, Tetanus, Pertussis)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 2, "max": 2 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 4, "max": 4 }, "catchUpAgeMonths": null },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 6 }, "catchUpAgeMonths": null },
+      { "doseNumber": 4, "ageRangeMonths": { "min": 15, "max": 18 }, "catchUpAgeMonths": 48 },
+      { "doseNumber": 5, "ageRangeMonths": { "min": 48, "max": 72 }, "catchUpAgeMonths": 84 }
+    ],
+    "notes": "5-dose series. Tdap booster recommended at age 11-12."
+  },
+  {
+    "vaccineName": "Haemophilus influenzae type b (Hib)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 2, "max": 2 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 4, "max": 4 }, "catchUpAgeMonths": null },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 6 }, "catchUpAgeMonths": null },
+      { "doseNumber": 4, "ageRangeMonths": { "min": 12, "max": 15 }, "catchUpAgeMonths": 60 }
+    ],
+    "notes": "PRP-OMP (PedvaxHIB) requires only 2 primary doses."
+  },
+  {
+    "vaccineName": "Pneumococcal (PCV15/PCV20)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 2, "max": 2 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 4, "max": 4 }, "catchUpAgeMonths": null },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 6 }, "catchUpAgeMonths": null },
+      { "doseNumber": 4, "ageRangeMonths": { "min": 12, "max": 15 }, "catchUpAgeMonths": 60 }
+    ],
+    "notes": "PCV15 or PCV20. If PCV15, supplemental PPSV23 dose may be needed for high-risk children."
+  },
+  {
+    "vaccineName": "Inactivated Poliovirus (IPV)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 2, "max": 2 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 4, "max": 4 }, "catchUpAgeMonths": null },
+      { "doseNumber": 3, "ageRangeMonths": { "min": 6, "max": 18 }, "catchUpAgeMonths": null },
+      { "doseNumber": 4, "ageRangeMonths": { "min": 48, "max": 72 }, "catchUpAgeMonths": 216 }
+    ],
+    "notes": "4-dose series. Final dose on or after 4th birthday and at least 6 months after previous dose."
+  },
+  {
+    "vaccineName": "Influenza (IIV/LAIV)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 6, "max": 216 }, "catchUpAgeMonths": null }
+    ],
+    "notes": "Annual vaccination. 2 doses at least 4 weeks apart for first-time vaccinees 6 months through 8 years."
+  },
+  {
+    "vaccineName": "MMR (Measles, Mumps, Rubella)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 12, "max": 15 }, "catchUpAgeMonths": 156 },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 48, "max": 72 }, "catchUpAgeMonths": 216 }
+    ],
+    "notes": "2-dose series. Minimum interval between doses is 4 weeks."
+  },
+  {
+    "vaccineName": "Varicella (VAR)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 12, "max": 15 }, "catchUpAgeMonths": 156 },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 48, "max": 72 }, "catchUpAgeMonths": 216 }
+    ],
+    "notes": "2-dose series. Do not administer if documented history of varicella disease."
+  },
+  {
+    "vaccineName": "Hepatitis A (HepA)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 12, "max": 23 }, "catchUpAgeMonths": null },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 18, "max": 36 }, "catchUpAgeMonths": null }
+    ],
+    "notes": "2-dose series at least 6 months apart."
+  },
+  {
+    "vaccineName": "Meningococcal ACWY (MenACWY)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 132, "max": 144 }, "catchUpAgeMonths": 192 },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 192, "max": 192 }, "catchUpAgeMonths": 216 }
+    ],
+    "notes": "First dose at 11-12 years, booster at 16 years."
+  },
+  {
+    "vaccineName": "HPV (Human Papillomavirus)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 108, "max": 144 }, "catchUpAgeMonths": 312 },
+      { "doseNumber": 2, "ageRangeMonths": { "min": 114, "max": 156 }, "catchUpAgeMonths": 312 }
+    ],
+    "notes": "2-dose series if started before 15th birthday (6-12 months apart). 3-dose series if started at 15+ (0, 1-2, 6 months)."
+  },
+  {
+    "vaccineName": "Tdap (Tetanus, Diphtheria, Pertussis)",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 132, "max": 144 }, "catchUpAgeMonths": 216 }
+    ],
+    "notes": "Single dose at 11-12 years. Can be given regardless of interval since last Td-containing vaccine."
+  },
+  {
+    "vaccineName": "COVID-19",
+    "doses": [
+      { "doseNumber": 1, "ageRangeMonths": { "min": 6, "max": 216 }, "catchUpAgeMonths": null }
+    ],
+    "notes": "Updated COVID-19 vaccine recommended annually. Dosing varies by age, vaccine product, and prior vaccination history."
+  }
+]
