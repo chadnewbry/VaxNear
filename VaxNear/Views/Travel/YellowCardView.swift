@@ -8,8 +8,7 @@ struct YellowCardView: View {
     @Query(sort: \FamilyProfile.createdAt) private var profiles: [FamilyProfile]
     @Query(sort: \VaccinationRecord.dateAdministered) private var records: [VaccinationRecord]
     @State private var selectedProfileID: UUID?
-    @State private var showingShareSheet = false
-    @State private var pdfURL: URL?
+    @State private var showingExportView = false
 
     private var selectedProfile: FamilyProfile? {
         if let id = selectedProfileID { return profiles.first(where: { $0.id == id }) }
@@ -136,16 +135,16 @@ struct YellowCardView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        exportPDF()
+                        showingExportView = true
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
-                    .accessibilityLabel("Export Yellow Card as PDF")
+                    .accessibilityLabel("Export records")
                 }
             }
-            .sheet(isPresented: $showingShareSheet) {
-                if let url = pdfURL {
-                    ShareSheet(items: [url])
+            .sheet(isPresented: $showingExportView) {
+                if let profile = selectedProfile {
+                    ExportView(profile: profile)
                 }
             }
             .onAppear {
@@ -167,61 +166,6 @@ struct YellowCardView: View {
         return UIImage(cgImage: cgImage)
     }
 
-    // MARK: - PDF Export
-
-    private func exportPDF() {
-        guard let profile = selectedProfile else { return }
-        let exportService = DataExportService(context: modelContext)
-
-        let renderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792))
-        let data = renderer.pdfData { ctx in
-            ctx.beginPage()
-            let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 14)]
-            let titleAttrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 16)]
-            let bodyAttrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 10)]
-
-            var y: CGFloat = 40
-
-            let title = "INTERNATIONAL CERTIFICATE OF VACCINATION OR PROPHYLAXIS"
-            title.draw(at: CGPoint(x: 40, y: y), withAttributes: titleAttrs)
-            y += 30
-
-            "Name: \(profile.name)".draw(at: CGPoint(x: 40, y: y), withAttributes: attrs)
-            y += 20
-
-            let dobStr = profile.dateOfBirth.formatted(.dateTime.month(.wide).day().year())
-            "Date of Birth: \(dobStr)".draw(at: CGPoint(x: 40, y: y), withAttributes: attrs)
-            y += 30
-
-            // Table header
-            let headers = ["Vaccine", "Date", "Provider", "Lot #"]
-            let colX: [CGFloat] = [40, 200, 340, 480]
-            for (i, header) in headers.enumerated() {
-                header.draw(at: CGPoint(x: colX[i], y: y), withAttributes: attrs)
-            }
-            y += 20
-
-            // Records
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            for record in profileRecords {
-                record.vaccineName.draw(at: CGPoint(x: colX[0], y: y), withAttributes: bodyAttrs)
-                dateFormatter.string(from: record.dateAdministered).draw(at: CGPoint(x: colX[1], y: y), withAttributes: bodyAttrs)
-                (record.administeringProvider ?? "—").draw(at: CGPoint(x: colX[2], y: y), withAttributes: bodyAttrs)
-                (record.lotNumber ?? "—").draw(at: CGPoint(x: colX[3], y: y), withAttributes: bodyAttrs)
-                y += 16
-                if y > 740 {
-                    ctx.beginPage()
-                    y = 40
-                }
-            }
-        }
-
-        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("YellowCard_\(profile.name).pdf")
-        try? data.write(to: tempURL)
-        pdfURL = tempURL
-        showingShareSheet = true
-    }
 }
 
 #Preview {
