@@ -111,6 +111,12 @@ struct TravelView: View {
                     Text("Enter your destination to see what vaccines you need.")
                 }
             }
+
+            Section {
+                UpgradeBannerView(style: .prominent)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+            }
         }
     }
 
