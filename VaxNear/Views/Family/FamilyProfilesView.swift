@@ -40,6 +40,7 @@ struct FamilyProfilesView: View {
                 Button { showingAddProfile = true } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("Add family profile")
             }
         }
         .sheet(isPresented: $showingAddProfile) {
@@ -93,6 +94,8 @@ struct ProfileRow: View {
             }
         }
         .padding(.vertical, 2)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(profile.name), \(profile.relationship.displayName), \(profile.vaccinationRecords.count) record\(profile.vaccinationRecords.count == 1 ? "" : "s")")
     }
 }
 

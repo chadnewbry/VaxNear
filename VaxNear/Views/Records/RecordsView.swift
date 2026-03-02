@@ -56,6 +56,7 @@ struct RecordsView: View {
                     Button { handleAddRecord() } label: {
                         Image(systemName: "plus")
                     }
+                    .accessibilityLabel("Add vaccination record")
                 }
 
                 ToolbarItem(placement: .secondaryAction) {
@@ -63,6 +64,7 @@ struct RecordsView: View {
                         Label("Export Records", systemImage: "square.and.arrow.up")
                     }
                     .disabled(filteredRecords.isEmpty)
+                    .accessibilityHint("Export records as PDF")
                 }
 
                 if healthKit.isAvailable && healthKit.isAuthorized {
@@ -127,6 +129,7 @@ struct RecordsView: View {
                 .font(.caption.bold())
                 .buttonStyle(.bordered)
                 .tint(.accentColor)
+                .accessibilityHint("View upgrade options")
             }
             Spacer()
         }
@@ -158,6 +161,7 @@ struct RecordsView: View {
                         .padding(.vertical, 8)
                         .background(Capsule().strokeBorder(Color.accentColor, lineWidth: 1.5))
                 }
+                .accessibilityLabel("Add family profile")
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -271,6 +275,8 @@ struct ProfilePill: View {
             .overlay(Capsule().strokeBorder(isSelected ? Color.accentColor : .clear, lineWidth: 1.5))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(name) profile filter")
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 
@@ -308,6 +314,19 @@ struct RecordRow: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(recordAccessibilityLabel)
+    }
+
+    private var recordAccessibilityLabel: String {
+        var parts = [record.vaccineName]
+        parts.append(record.dateAdministered.formatted(date: .long, time: .omitted))
+        if let profile = record.profile { parts.append("for \(profile.name)") }
+        if let mfr = record.manufacturer, !mfr.isEmpty { parts.append(mfr) }
+        if !record.sideEffects.isEmpty {
+            parts.append("\(record.sideEffects.count) side effect\(record.sideEffects.count == 1 ? "" : "s")")
+        }
+        return parts.joined(separator: ", ")
     }
 }
 

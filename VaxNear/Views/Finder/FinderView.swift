@@ -32,6 +32,7 @@ struct FinderView: View {
                     } label: {
                         Image(systemName: "bookmark")
                     }
+                    .accessibilityLabel("Favorites")
                 }
             }
             .sheet(isPresented: $showFavorites) {
@@ -63,6 +64,7 @@ struct FinderView: View {
                                 .clipShape(Circle())
                         }
                     }
+                    .accessibilityLabel("\(site.name) vaccination site")
                 }
             }
         }
@@ -89,6 +91,7 @@ struct FinderView: View {
                 .padding(.vertical, 8)
                 .background(.ultraThinMaterial, in: Capsule())
         }
+        .accessibilityLabel("Search this area for vaccination sites")
         .padding(.top, 60)
     }
 
@@ -130,6 +133,8 @@ struct FinderView: View {
                             .clipShape(Capsule())
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel("\(filter.rawValue) filter")
+                    .accessibilityAddTraits(vm.selectedFilter == filter ? .isSelected : [])
                 }
             }
             .padding(.horizontal)
@@ -193,6 +198,8 @@ struct FinderView: View {
             }
         }
         .padding(.vertical, 2)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(site.name), \(site.address), \(vm.distanceText(for: site))\(site.isWalkIn ? ", walk-in available" : "")")
     }
 
     // MARK: - Empty / Error States
@@ -209,6 +216,7 @@ struct FinderView: View {
                 }
             }
             .buttonStyle(.borderedProminent)
+            .accessibilityHint("Opens device settings to enable location access")
         }
     }
 

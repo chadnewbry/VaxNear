@@ -11,6 +11,7 @@ struct LockScreenView: View {
             Image(systemName: biometricIconName)
                 .font(.system(size: 64))
                 .foregroundColor(.accentColor)
+                .accessibilityHidden(true)
 
             Text("VaxNear is Locked")
                 .font(.title2.bold())
@@ -33,6 +34,7 @@ struct LockScreenView: View {
                 authenticateWithBiometrics()
             }
             .buttonStyle(.borderedProminent)
+            .accessibilityHint("Authenticate to access your vaccination records")
 
             if showPasscodeOption {
                 Button("Use Device Passcode") {

@@ -11,6 +11,7 @@ struct ShareProfileSheet: View {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 48))
                     .foregroundColor(.accentColor)
+                    .accessibilityHidden(true)
 
                 Text("Share \(profile.name)'s Records")
                     .font(.title3.bold())

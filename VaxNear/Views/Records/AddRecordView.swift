@@ -62,14 +62,20 @@ struct AddRecordView: View {
                                 .foregroundStyle(vaccineName.isEmpty ? .tertiary : .secondary)
                         }
                     }
+                    .accessibilityLabel("Vaccine")
+                    .accessibilityValue(vaccineName.isEmpty ? "Not selected" : vaccineName)
+                    .accessibilityHint("Double tap to select a vaccine")
 
                     TextField("Manufacturer (optional)", text: $manufacturer)
+                        .accessibilityLabel("Manufacturer")
                     TextField("Lot Number (optional)", text: $lotNumber)
+                        .accessibilityLabel("Lot number")
                 }
 
                 Section("Administration") {
                     DatePicker("Date", selection: $dateAdministered, displayedComponents: .date)
                     TextField("Provider / Clinic (optional)", text: $provider)
+                        .accessibilityLabel("Provider or clinic")
                     Picker("Injection Site", selection: $injectionSite) {
                         ForEach(siteOptions, id: \.self) { Text($0) }
                     }
@@ -77,6 +83,7 @@ struct AddRecordView: View {
 
                 Section("Notes") {
                     TextField("Optional notes", text: $notes, axis: .vertical)
+                        .accessibilityLabel("Notes")
                         .lineLimit(3...6)
                 }
 
@@ -86,6 +93,7 @@ struct AddRecordView: View {
                     } label: {
                         Label("Scan QR Code", systemImage: "qrcode.viewfinder")
                     }
+                    .accessibilityHint("Open camera to scan a SMART Health Card QR code")
                 }
             }
             .navigationTitle(isEditing ? "Edit Record" : "Add Record")
@@ -97,6 +105,7 @@ struct AddRecordView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { saveRecord() }
                         .disabled(vaccineName.isEmpty)
+                        .accessibilityHint(vaccineName.isEmpty ? "Select a vaccine first" : "Save this vaccination record")
                 }
             }
             .onAppear {

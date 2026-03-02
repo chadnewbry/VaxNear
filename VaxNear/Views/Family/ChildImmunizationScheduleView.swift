@@ -53,12 +53,15 @@ struct ChildImmunizationScheduleView: View {
                                 if isRecorded {
                                     Image(systemName: "checkmark.circle.fill")
                                         .foregroundStyle(.green)
+                                        .accessibilityLabel("Completed")
                                 } else if isOverdue {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .foregroundStyle(.orange)
+                                        .accessibilityLabel("Overdue")
                                 } else {
                                     Image(systemName: "circle")
                                         .foregroundStyle(.secondary)
+                                        .accessibilityLabel("Not yet due")
                                 }
                             }
                         }
