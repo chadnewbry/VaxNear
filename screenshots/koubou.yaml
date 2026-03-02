@@ -1,0 +1,111 @@
+# Koubou screenshot config for VaxNear
+# App Store screenshot compositions for vaccination finder / nearby pharmacies
+
+screenshots:
+  - name: nearby-pharmacies
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#1565C0", "#42A5F5"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/01-nearby-pharmacies.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Find Vaccines Nearby"
+      subtitle: "Locate pharmacies and clinics in seconds"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
+
+  - name: vaccine-details
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#00695C", "#26A69A"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/02-vaccine-details.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Check Availability"
+      subtitle: "Real-time vaccine stock and scheduling"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
+
+  - name: appointment-booking
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#4527A0", "#7E57C2"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/03-appointment-booking.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Book Your Shot"
+      subtitle: "Schedule appointments with one tap"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
+
+  - name: vaccination-record
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#AD1457", "#EC407A"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/04-vaccination-record.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Track Your Records"
+      subtitle: "Complete vaccination history at a glance"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
+
+  - name: map-view
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#E65100", "#FF9800"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/05-map-view.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Explore the Map"
+      subtitle: "See every pharmacy and clinic nearby"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
+
+  - name: settings
+    output_size: "iPhone6_9"
+    background:
+      gradient:
+        colors: ["#37474F", "#78909C"]
+        direction: "top_to_bottom"
+    device:
+      type: "iPhone 15 Pro Portrait"
+      screenshot: "raw/06-settings.png"
+      position: "bottom-center"
+      offset_y: 180
+    text:
+      headline: "Your Preferences"
+      subtitle: "Notifications, radius, and more"
+      color: "#FFFFFF"
+      position: "top-center"
+      offset_y: 120
