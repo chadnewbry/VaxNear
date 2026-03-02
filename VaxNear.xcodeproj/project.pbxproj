@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -72,14 +72,14 @@
 
 /* Begin PBXFileReference section */
 		00081A045B18030AA80043FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0BB187473ED8E8AF1380A2C0 /* VaxNear.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VaxNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BB187473ED8E8AF1380A2C0 /* VaxNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaxNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCDD56BCCFB0CFF1771A84C /* ShareProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProfileSheet.swift; sourceTree = "<group>"; };
 		0E59E770F554287F9B165E6A /* CDCDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCDataManager.swift; sourceTree = "<group>"; };
 		17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledReminder.swift; sourceTree = "<group>"; };
 		184B1297882F9AA366FCCCFF /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
 		1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
 		1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPassManager.swift; sourceTree = "<group>"; };
-		1F27E0EBCE61D55216B31FA2 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		1F27E0EBCE61D55216B31FA2 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		29D48E0571F4DE0DBAD5595B /* childhood_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = childhood_schedule.json; sourceTree = "<group>"; };
 		316C4048BDF88311F9DA62F1 /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
@@ -91,15 +91,15 @@
 		4E78074CF644F0F6EEBD498D /* ProfileColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColors.swift; sourceTree = "<group>"; };
 		4E94E0A94113E7147C11176A /* travel_vaccines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = travel_vaccines.json; sourceTree = "<group>"; };
 		53CBC87FC9DEE2A1135DC04C /* VaxNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxNearApp.swift; sourceTree = "<group>"; };
-		5CA15E86E7586D2A1CA7CA00 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		5CA15E86E7586D2A1CA7CA00 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		622F76F5D91B0FC1C6C3FBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		65443BEA4D82E4CAC77A1144 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
 		673582925B750CFF357BAFA5 /* VaccineSiteFinderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSiteFinderService.swift; sourceTree = "<group>"; };
-		6B66ACCB6745F99CDEF32E56 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		6B66ACCB6745F99CDEF32E56 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		6B804259825249A2026D3771 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		6F009B32B07AFB876D7B6A6A /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		759A4D94CBA64179849E954E /* VaxNear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VaxNear.entitlements; sourceTree = "<group>"; };
-		79B13364A6FC7E3AB29F2967 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		79B13364A6FC7E3AB29F2967 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		7DE303E62FF29BF1074F6CE9 /* TravelPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlan.swift; sourceTree = "<group>"; };
 		7E318DE6B18146A0B25E5C1A /* ChildImmunizationScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildImmunizationScheduleView.swift; sourceTree = "<group>"; };
 		7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
@@ -108,9 +108,9 @@
 		8A728F1875895046E8EBA7FE /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
 		9943F11C58AF8B6C15F35DFD /* FamilyProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfilesView.swift; sourceTree = "<group>"; };
-		A20C2643DF2970F34F1C6B30 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		A20C2643DF2970F34F1C6B30 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
-		A9C184D1217FD16A2FE52085 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		A9C184D1217FD16A2FE52085 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationRecord.swift; sourceTree = "<group>"; };
 		B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		B999C375E2D890C176AC961C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -376,7 +376,6 @@
 			);
 			mainGroup = CCB204E64F582A13E468BDE7;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -456,6 +455,7 @@
 				CODE_SIGN_ENTITLEMENTS = VaxNear/VaxNear.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62R87RHN6R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\".\"",
@@ -481,6 +481,7 @@
 				CODE_SIGN_ENTITLEMENTS = VaxNear/VaxNear.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62R87RHN6R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\".\"",
