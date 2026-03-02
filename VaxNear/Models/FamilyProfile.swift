@@ -36,10 +36,20 @@ final class FamilyProfile {
     }
 
     @Relationship(deleteRule: .cascade, inverse: \VaccinationRecord.profile)
-    var vaccinationRecords: [VaccinationRecord] = []
+    var _vaccinationRecords: [VaccinationRecord]?
 
     @Relationship(deleteRule: .cascade, inverse: \TravelPlan.profile)
-    var travelPlans: [TravelPlan] = []
+    var _travelPlans: [TravelPlan]?
+
+    @Transient var vaccinationRecords: [VaccinationRecord] {
+        get { _vaccinationRecords ?? [] }
+        set { _vaccinationRecords = newValue }
+    }
+
+    @Transient var travelPlans: [TravelPlan] {
+        get { _travelPlans ?? [] }
+        set { _travelPlans = newValue }
+    }
 
     init(
         id: UUID = UUID(),

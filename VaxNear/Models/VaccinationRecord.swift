@@ -16,7 +16,12 @@ final class VaccinationRecord {
     var createdAt: Date = Date()
 
     @Relationship(deleteRule: .cascade, inverse: \SideEffectLog.record)
-    var sideEffects: [SideEffectLog] = []
+    var _sideEffects: [SideEffectLog]?
+
+    @Transient var sideEffects: [SideEffectLog] {
+        get { _sideEffects ?? [] }
+        set { _sideEffects = newValue }
+    }
 
     init(
         id: UUID = UUID(),
