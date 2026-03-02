@@ -16,7 +16,7 @@ struct PaywallView: View {
                     VStack(spacing: 12) {
                         Image(systemName: "syringe.fill")
                             .font(.system(size: 56))
-                            .foregroundStyle(.accent)
+                            .foregroundStyle(Color.accentColor)
 
                         Text("Unlock VaxNear")
                             .font(.largeTitle.bold())
@@ -143,7 +143,7 @@ private struct FeatureRow: View {
         HStack(spacing: 14) {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
                 .frame(width: 32)
 
             VStack(alignment: .leading, spacing: 2) {
