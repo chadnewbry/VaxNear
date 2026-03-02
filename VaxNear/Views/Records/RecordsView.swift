@@ -13,10 +13,9 @@ struct RecordsView: View {
     @StateObject private var navigationState = NavigationState.shared
     @State private var selectedProfileID: UUID?
     @State private var showingFamilyManagement = false
-    @State private var showingExportSheet = false
+    @State private var showingExportView = false
     @State private var pendingProfileFilter: UUID?
     @State private var showingPaywall = false
-    @State private var exportedPDFURL: URL?
 
     private var appSettings: AppSettings {
         AppSettings.shared(in: modelContext)
@@ -74,11 +73,11 @@ struct RecordsView: View {
                 }
 
                 ToolbarItem(placement: .secondaryAction) {
-                    Button { exportPDF() } label: {
+                    Button { showingExportView = true } label: {
                         Label("Export Records", systemImage: "square.and.arrow.up")
                     }
-                    .disabled(filteredRecords.isEmpty)
-                    .accessibilityHint("Export records as PDF")
+                    .disabled(selectedProfile == nil && profiles.isEmpty)
+                    .accessibilityHint("Open export options")
                 }
 
                 if healthKit.isAvailable && healthKit.isAuthorized {
@@ -104,9 +103,9 @@ struct RecordsView: View {
                         }
                 }
             }
-            .sheet(isPresented: $showingExportSheet) {
-                if let url = exportedPDFURL {
-                    ShareSheet(items: [url])
+            .sheet(isPresented: $showingExportView) {
+                if let profile = selectedProfile ?? profiles.first {
+                    ExportView(profile: profile)
                 }
             }
             .sheet(isPresented: $showingPaywall) {
@@ -259,15 +258,7 @@ struct RecordsView: View {
         }
     }
 
-    private func exportPDF() {
-        guard let profile = selectedProfile ?? profiles.first else { return }
-        let pdfData = DataExportService(context: modelContext).exportAsPDF(profile: profile)
-        let tempURL = FileManager.default.temporaryDirectory
-            .appendingPathComponent("\(profile.name)_Vaccination_Records.pdf")
-        try? pdfData.write(to: tempURL)
-        exportedPDFURL = tempURL
-        showingExportSheet = true
-    }
+
 }
 
 // MARK: - Profile Pill

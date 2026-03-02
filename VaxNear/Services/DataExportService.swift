@@ -150,3 +150,57 @@ final class DataExportService {
         try context.save()
     }
 }
+
+// MARK: - Yellow Card PDF Export
+
+extension DataExportService {
+    func exportYellowCardPDF(profile: FamilyProfile) -> Data {
+        let records = profile.vaccinationRecords.sorted { $0.dateAdministered < $1.dateAdministered }
+        let renderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792))
+        return renderer.pdfData { ctx in
+            ctx.beginPage()
+            let titleAttrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 16)]
+            let headerAttrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 14)]
+            let bodyAttrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 10)]
+
+            var y: CGFloat = 40
+
+            let title = "INTERNATIONAL CERTIFICATE OF VACCINATION OR PROPHYLAXIS"
+            title.draw(at: CGPoint(x: 40, y: y), withAttributes: titleAttrs)
+            y += 30
+
+            "Name: \(profile.name)".draw(at: CGPoint(x: 40, y: y), withAttributes: headerAttrs)
+            y += 20
+
+            let dobStr = profile.dateOfBirth.formatted(.dateTime.month(.wide).day().year())
+            "Date of Birth: \(dobStr)".draw(at: CGPoint(x: 40, y: y), withAttributes: headerAttrs)
+            y += 30
+
+            let headers = ["Vaccine", "Date", "Provider", "Lot #"]
+            let colX: [CGFloat] = [40, 200, 340, 480]
+            for (i, header) in headers.enumerated() {
+                header.draw(at: CGPoint(x: colX[i], y: y), withAttributes: headerAttrs)
+            }
+            y += 20
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            for record in records {
+                record.vaccineName.draw(at: CGPoint(x: colX[0], y: y), withAttributes: bodyAttrs)
+                dateFormatter.string(from: record.dateAdministered).draw(at: CGPoint(x: colX[1], y: y), withAttributes: bodyAttrs)
+                (record.administeringProvider ?? "—").draw(at: CGPoint(x: colX[2], y: y), withAttributes: bodyAttrs)
+                (record.lotNumber ?? "—").draw(at: CGPoint(x: colX[3], y: y), withAttributes: bodyAttrs)
+                y += 16
+                if y > 740 {
+                    ctx.beginPage()
+                    y = 40
+                }
+            }
+
+            let dateFmt = DateFormatter()
+            dateFmt.dateStyle = .long
+            y += 20
+            "Generated: \(dateFmt.string(from: Date()))".draw(at: CGPoint(x: 40, y: y), withAttributes: bodyAttrs)
+        }
+    }
+}
