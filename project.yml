@@ -29,8 +29,6 @@ targets:
           - iCloud.com.chadnewbry.vaxnear
         com.apple.developer.icloud-services:
           - CloudKit
-        com.apple.developer.pass-type-identifiers:
-          - pass.com.chadnewbry.vaxnear
         aps-environment: development
     dependencies:
       - framework: HealthKit.framework

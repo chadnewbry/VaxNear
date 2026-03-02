@@ -46,7 +46,7 @@ struct VaxNearApp: App {
                 notificationManager.configure(modelContext: sharedModelContainer.mainContext)
                 if hasCompletedOnboarding {
                     Task {
-                        await notificationManager.requestPermission()
+                        _ = await notificationManager.requestPermission()
                         notificationManager.scheduleSeasonalAlerts()
                     }
                 }

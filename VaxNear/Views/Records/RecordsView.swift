@@ -140,10 +140,10 @@ struct RecordsView: View {
                 Button { showingFamilyManagement = true } label: {
                     Image(systemName: "plus")
                         .font(.caption.bold())
-                        .foregroundStyle(.accentColor)
+                        .foregroundStyle(Color.accentColor)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
-                        .background(Capsule().strokeBorder(.accentColor, lineWidth: 1.5))
+                        .background(Capsule().strokeBorder(Color.accentColor, lineWidth: 1.5))
                 }
             }
             .padding(.horizontal)

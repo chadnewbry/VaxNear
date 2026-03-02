@@ -33,7 +33,7 @@ struct RecordDetailView: View {
                             Spacer()
                             Image(systemName: "syringe")
                                 .font(.title)
-                                .foregroundStyle(.accentColor)
+                                .foregroundStyle(Color.accentColor)
                         }
 
                         Divider()
