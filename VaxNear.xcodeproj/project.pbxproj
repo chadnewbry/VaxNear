@@ -7,114 +7,259 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021B314CBC24DCCD0442A590 /* childhood_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 29D48E0571F4DE0DBAD5595B /* childhood_schedule.json */; };
+		02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB38C74F42CE6263F507A2 /* MainTabView.swift */; };
 		06A57BA81EE9D1246666B8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00081A045B18030AA80043FB /* Assets.xcassets */; };
-		BC13483CD7092FD43759E702 /* adult_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C4E193B5175E0B8259CDA6A /* adult_schedule.json */; };
-		B733366798A647A8D37B906D /* childhood_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 43A6AA2D5E09399D02F3A15D /* childhood_schedule.json */; };
-		27B5057149CA2A5D53C6F3FA /* travel_vaccines.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F86B455693A12BDD2F99AD /* travel_vaccines.json */; };
-		40FF9EA4349F641324EBF3A1 /* vaccine_database.json in Resources */ = {isa = PBXBuildFile; fileRef = AC251CD71D10AB58C95EFB5C /* vaccine_database.json */; };
-		55B39C71917032A03813FE38 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5706072CEC19F80A9D981 /* AppSettings.swift */; };
-		359E6E6061B28C56406E7574 /* FamilyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C12DBF0450B53587FDD0E7 /* FamilyProfile.swift */; };
-		E1F220B4F9ECE2C09F3C06B5 /* SavedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3706FCEFCE38F65B16F6A9E8 /* SavedLocation.swift */; };
-		C81606FB5087F7D62997B3DD /* ScheduledReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F142F0FCE498EAAB586C8 /* ScheduledReminder.swift */; };
-		93E1476B3CE919D0A4F7FA86 /* SideEffectLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131F287F5800F757DDF9AD /* SideEffectLog.swift */; };
-		FF1704FBBF66572CF41ABE17 /* TravelPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0C50C8F0C3A46A55D58ED /* TravelPlan.swift */; };
-		7CE3FA5858ADD78C66CD0AA2 /* VaccinationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E3C76BF415F5A51898C45 /* VaccinationRecord.swift */; };
-		08899050CE9B09C34791222D /* VaccineSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE332FD6A0C433D214DB9E6 /* VaccineSite.swift */; };
-		D154B89E7DF92B77C87AF461 /* CDCDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */; };
-		CBE89DBB02743107AF90A6F4 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B88534B2E59865383910D9 /* DataExportService.swift */; };
-		F3FFAFD12E7E091D5D353D52 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */; };
-		A1B2C3D4E5F60002 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001 /* SyncManager.swift */; };
-		06F39D947BEF816879D76FF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645143130B47088F64071F /* LocationManager.swift */; };
-		A5A2EC77983617AA949D2D9E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930711783BB9C5A268D99AE5 /* NotificationManager.swift */; };
-		5B8469F397E921D3C2AC2A70 /* VaccineSiteFinderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */; };
-		D12E4102FE2ED9B71D0CAE80 /* WalletPassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3063922AA181F6AB286C496 /* WalletPassManager.swift */; };
-		54C3477A81EA78008E6CFCD8 /* ProfileColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7A17AFAD7ADBA3E7E4B9 /* ProfileColors.swift */; };
-		E127AA6C9D0A5B8D7D875612 /* VaxNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0E687566BCC96E82D09265 /* VaxNearApp.swift */; };
-		4F4DA44F847BCF6026B09B3A /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35167D99D26B71BB9EDFD4 /* FinderViewModel.swift */; };
-		BC4393A98E02572F1F82F756 /* AddEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A00C1B16CC55DF144A2C1 /* AddEditProfileView.swift */; };
-		D4930253311EA4B43A57A842 /* ChildImmunizationScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B40AB27F5569CA82327A9D /* ChildImmunizationScheduleView.swift */; };
-		EF3D2420DEB4AD9B2C4971F9 /* FamilyProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443EEC6BDBF50CC56C8B9ADD /* FamilyProfilesView.swift */; };
-		D30A8C5580A24053CEDFB384 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C758570A3545B4E269E97 /* ProfileDetailView.swift */; };
-		C0D248F23F642BBA46E7C647 /* ShareProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599B4043D02D3CFFD41171F /* ShareProfileSheet.swift */; };
-		71AF269444B6FA9B316636F8 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167AA6BF5AB6B0FFC3E7E22D /* FavoritesView.swift */; };
-		14990F68B1361F0B7FCCE84F /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE00D21849952809217BBC /* FinderView.swift */; };
-		41E3E6B5C7CE0F1E652F6362 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE8AFED46DB67A83C03861 /* SiteDetailView.swift */; };
-		185AFEB2F9C5E883E4173255 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4625768FF995C7776C3BB2 /* AddRecordView.swift */; };
-				A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */,
-				A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */,
-				A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */,
-				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
-				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
-				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
-		A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */; };
-		A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */; };
-		A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345605 /* QRScannerView.swift */; };
-		F3E5570E23248C1A1E39DC86 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F060CD3A311B0E8C25094C8 /* RecordsView.swift */; };
-		BBA4AA96F1D30A490BA703F5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5066505EF683798B0A4951F5 /* SettingsView.swift */; };
-		D0F2002B63F04B12D95E1BE4 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7F7A040B3588A24E75CDC /* LockScreenView.swift */; };
-		CF743982BB00FD8CAB23E51C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3ACE88D7E3C26F4DDB8ECB /* MainTabView.swift */; };
-		6010BA52BDE0349BE3630701 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A759B350CB835CC047FCC /* TravelView.swift */; };
+		0CAD95D0BC3FC4161760661D /* ScheduledReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */; };
+		114CFA4BB63D9378506E7BEF /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E1300A2326848993842A5 /* PassKit.framework */; };
+		15ABEA823B2FBF887244DC0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F009B32B07AFB876D7B6A6A /* AppSettings.swift */; };
+		1F80FEF19AFA7F7E0959A8F8 /* travel_vaccines.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E94E0A94113E7147C11176A /* travel_vaccines.json */; };
+		28B9A0445ADE8A06556E5DFF /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C4048BDF88311F9DA62F1 /* LockScreenView.swift */; };
+		2E7D7D9F5081D87922CCBFC1 /* FamilyProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943F11C58AF8B6C15F35DFD /* FamilyProfilesView.swift */; };
+		3126A3459946BCD62A14B85F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999C375E2D890C176AC961C /* LocationManager.swift */; };
+		324D8E16ECDB7D93D435AB8E /* AddEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */; };
+		35775EE82121A335E2C6A67D /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB946EA3516980891E4BB4 /* FavoritesView.swift */; };
+		37AE1B16A7B3F2E92F98AE86 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */; };
+		3D905CC94409FA087D48CD31 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DF985570F162BCEFDB453 /* AddSideEffectView.swift */; };
+		433290C382BA195483E843F1 /* WalletPassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */; };
+		4867F14E44938FBC241BA030 /* CDCDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59E770F554287F9B165E6A /* CDCDataManager.swift */; };
+		49E740287C947FA79ABA354E /* ShareProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDD56BCCFB0CFF1771A84C /* ShareProfileSheet.swift */; };
+		4CE0006C13039CF931F4BD63 /* VaxNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBC87FC9DEE2A1135DC04C /* VaxNearApp.swift */; };
+		54488F75A081B7A81B100A67 /* VaccineSiteFinderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673582925B750CFF357BAFA5 /* VaccineSiteFinderService.swift */; };
+		55A5606A76C2581E304000C6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798328375761F797B500C5E /* NotificationManager.swift */; };
+		586C755B0C9122D28E66D60C /* vaccine_database.json in Resources */ = {isa = PBXBuildFile; fileRef = FEDB5E63EA298BBD192469DA /* vaccine_database.json */; };
+		5993563A200D551D38AE9212 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC6FB74C4613DB8C6192DD /* OnboardingView.swift */; };
+		615EF012B5D434FFA538DA3B /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A728F1875895046E8EBA7FE /* QRScannerView.swift */; };
+		6A9645E371C2F654AD9BBE67 /* adult_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = D2131428B735879646517532 /* adult_schedule.json */; };
+		724572265A56031C3F7F3EBB /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */; };
+		7263A64C51C3BDB9EF55E4A3 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B804259825249A2026D3771 /* SyncManager.swift */; };
+		74A6CB288FED010A86A8A06E /* VaccinationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */; };
+		799D2C2B7F7102222D6BE3F2 /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A77EB650C19A605C93E291 /* FinderView.swift */; };
+		7E108471652F5EF8C5D0E11B /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */; };
+		804C884631B1E33FBBFD005E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8F95A48707C948FB033D1E /* HealthKit.framework */; };
+		83AD3FA032A117E7B1A5284C /* TravelPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE303E62FF29BF1074F6CE9 /* TravelPlan.swift */; };
+		857280AE225215C71B248125 /* VaccineSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF929813A0D3F038E19CD6 /* VaccineSite.swift */; };
+		8E75E5BB49697F1845805C04 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */; };
+		990B4D083D95335E53E22D0B /* HealthKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF8F95A48707C948FB033D1E /* HealthKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A72F838F3B677D8189CEAAAD /* ChildImmunizationScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E318DE6B18146A0B25E5C1A /* ChildImmunizationScheduleView.swift */; };
+		BDF62D66E3D1E094B76EA4DE /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C03BB91E68CC522DA4DA7F /* ProfileDetailView.swift */; };
+		C6B69938EB3D9202EA22D078 /* PassKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 445E1300A2326848993842A5 /* PassKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBE66DF3C9B544F7851EBDE9 /* SavedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B1297882F9AA366FCCCFF /* SavedLocation.swift */; };
+		D4F8600FF07528CD5ED75239 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF11CBF8AF93C028E8B6A81 /* SettingsView.swift */; };
+		D52B34042AE5D394B720032F /* ProfileColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E78074CF644F0F6EEBD498D /* ProfileColors.swift */; };
+		D922EB96922F5A31D73B6510 /* FamilyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */; };
+		DE9ADC2BB937055D2A53265A /* SideEffectLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */; };
+		DF664C3C29525B922ED2C324 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD93768F1024A85703E1A25 /* AddRecordView.swift */; };
+		E28BEB89A34FA8E55115E308 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */; };
+		E56C0CD419219103805FBDB3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */; };
+		F364B42D5E30139586938774 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65443BEA4D82E4CAC77A1144 /* DataExportService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		41C385A433BAC4EC73B5E5CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				990B4D083D95335E53E22D0B /* HealthKit.framework in Embed Frameworks */,
+				C6B69938EB3D9202EA22D078 /* PassKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00081A045B18030AA80043FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB187473ED8E8AF1380A2C0 /* VaxNear.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VaxNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		622F76F5D91B0FC1C6C3FBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		759A4D94CBA64179849E954E /* VaxNear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VaxNear.entitlements; sourceTree = "<group>"; };
+		0CCDD56BCCFB0CFF1771A84C /* ShareProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProfileSheet.swift; sourceTree = "<group>"; };
+		0E59E770F554287F9B165E6A /* CDCDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCDataManager.swift; sourceTree = "<group>"; };
+		17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledReminder.swift; sourceTree = "<group>"; };
+		184B1297882F9AA366FCCCFF /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
+		1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
+		1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPassManager.swift; sourceTree = "<group>"; };
+		1F27E0EBCE61D55216B31FA2 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		29D48E0571F4DE0DBAD5595B /* childhood_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = childhood_schedule.json; sourceTree = "<group>"; };
+		316C4048BDF88311F9DA62F1 /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		387DF985570F162BCEFDB453 /* AddSideEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSideEffectView.swift; sourceTree = "<group>"; };
+		42AB38C74F42CE6263F507A2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		445E1300A2326848993842A5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PassKit.framework; sourceTree = "<group>"; };
+		46FF929813A0D3F038E19CD6 /* VaccineSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSite.swift; sourceTree = "<group>"; };
+		4BFB946EA3516980891E4BB4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		4E78074CF644F0F6EEBD498D /* ProfileColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColors.swift; sourceTree = "<group>"; };
+		4E94E0A94113E7147C11176A /* travel_vaccines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = travel_vaccines.json; sourceTree = "<group>"; };
+		53CBC87FC9DEE2A1135DC04C /* VaxNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxNearApp.swift; sourceTree = "<group>"; };
 		5CA15E86E7586D2A1CA7CA00 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
-		4C4E193B5175E0B8259CDA6A /* adult_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = adult_schedule.json; sourceTree = "<group>"; };
-		43A6AA2D5E09399D02F3A15D /* childhood_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = childhood_schedule.json; sourceTree = "<group>"; };
-		C9F86B455693A12BDD2F99AD /* travel_vaccines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = travel_vaccines.json; sourceTree = "<group>"; };
-		AC251CD71D10AB58C95EFB5C /* vaccine_database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vaccine_database.json; sourceTree = "<group>"; };
-		9DD5706072CEC19F80A9D981 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		47C12DBF0450B53587FDD0E7 /* FamilyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfile.swift; sourceTree = "<group>"; };
-		3706FCEFCE38F65B16F6A9E8 /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
-		A08F142F0FCE498EAAB586C8 /* ScheduledReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledReminder.swift; sourceTree = "<group>"; };
-		EB131F287F5800F757DDF9AD /* SideEffectLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectLog.swift; sourceTree = "<group>"; };
-		1BE0C50C8F0C3A46A55D58ED /* TravelPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlan.swift; sourceTree = "<group>"; };
-		DB8E3C76BF415F5A51898C45 /* VaccinationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationRecord.swift; sourceTree = "<group>"; };
-		EFE332FD6A0C433D214DB9E6 /* VaccineSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSite.swift; sourceTree = "<group>"; };
-		72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCDataManager.swift; sourceTree = "<group>"; };
-		98B88534B2E59865383910D9 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
-		0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
-		21645143130B47088F64071F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		930711783BB9C5A268D99AE5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSiteFinderService.swift; sourceTree = "<group>"; };
-		E3063922AA181F6AB286C496 /* WalletPassManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPassManager.swift; sourceTree = "<group>"; };
-		D88D7A17AFAD7ADBA3E7E4B9 /* ProfileColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColors.swift; sourceTree = "<group>"; };
-		8B0E687566BCC96E82D09265 /* VaxNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxNearApp.swift; sourceTree = "<group>"; };
-		BB35167D99D26B71BB9EDFD4 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
-		2D5A00C1B16CC55DF144A2C1 /* AddEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProfileView.swift; sourceTree = "<group>"; };
-		F9B40AB27F5569CA82327A9D /* ChildImmunizationScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildImmunizationScheduleView.swift; sourceTree = "<group>"; };
-		443EEC6BDBF50CC56C8B9ADD /* FamilyProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfilesView.swift; sourceTree = "<group>"; };
-		3D6C758570A3545B4E269E97 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
-		0599B4043D02D3CFFD41171F /* ShareProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProfileSheet.swift; sourceTree = "<group>"; };
-		167AA6BF5AB6B0FFC3E7E22D /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		85EE00D21849952809217BBC /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
-		35FE8AFED46DB67A83C03861 /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
-		AF4625768FF995C7776C3BB2 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
-				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
-				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
-				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
-		A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSideEffectView.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F6789012345605 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
-		0F060CD3A311B0E8C25094C8 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
-		5066505EF683798B0A4951F5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		72F7F7A040B3588A24E75CDC /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
-		8B3ACE88D7E3C26F4DDB8ECB /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		9F4A759B350CB835CC047FCC /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
+		622F76F5D91B0FC1C6C3FBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		65443BEA4D82E4CAC77A1144 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
+		673582925B750CFF357BAFA5 /* VaccineSiteFinderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSiteFinderService.swift; sourceTree = "<group>"; };
+		6B66ACCB6745F99CDEF32E56 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		6B804259825249A2026D3771 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
+		6F009B32B07AFB876D7B6A6A /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		759A4D94CBA64179849E954E /* VaxNear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VaxNear.entitlements; sourceTree = "<group>"; };
+		79B13364A6FC7E3AB29F2967 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		7DE303E62FF29BF1074F6CE9 /* TravelPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlan.swift; sourceTree = "<group>"; };
+		7E318DE6B18146A0B25E5C1A /* ChildImmunizationScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildImmunizationScheduleView.swift; sourceTree = "<group>"; };
+		7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
+		81AC6FB74C4613DB8C6192DD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8798328375761F797B500C5E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8A728F1875895046E8EBA7FE /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
+		9943F11C58AF8B6C15F35DFD /* FamilyProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfilesView.swift; sourceTree = "<group>"; };
+		A20C2643DF2970F34F1C6B30 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
+		A9C184D1217FD16A2FE52085 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationRecord.swift; sourceTree = "<group>"; };
+		B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		B999C375E2D890C176AC961C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C1A77EB650C19A605C93E291 /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
+		D2131428B735879646517532 /* adult_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = adult_schedule.json; sourceTree = "<group>"; };
+		D8C03BB91E68CC522DA4DA7F /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
+		DFF11CBF8AF93C028E8B6A81 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfile.swift; sourceTree = "<group>"; };
+		EDD93768F1024A85703E1A25 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
+		EF8F95A48707C948FB033D1E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HealthKit.framework; sourceTree = "<group>"; };
+		FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectLog.swift; sourceTree = "<group>"; };
+		FEDB5E63EA298BBD192469DA /* vaccine_database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vaccine_database.json; sourceTree = "<group>"; };
+		FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		35C34058407AA4E7A37A00AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				804C884631B1E33FBBFD005E /* HealthKit.framework in Frameworks */,
+				114CFA4BB63D9378506E7BEF /* PassKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		CCB204E64F582A13E468BDE7 /* Root */ = {
+		294AF8841ECE87C62C1D8717 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				780E0EEEA1B792693A666313 /* VaxNear */,
-				A5600B63F1E15FCFB05F24E7 /* Products */,
+				8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */,
 			);
-			name = Root;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6A501A60EA48C2F5EFF6AE70 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		6A76844577D8DA9346C687E7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DFF11CBF8AF93C028E8B6A81 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		73C62B062F9A829661BC32D6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				316C4048BDF88311F9DA62F1 /* LockScreenView.swift */,
+				42AB38C74F42CE6263F507A2 /* MainTabView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		75F691C31CD6BE12FB0A099F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1F27E0EBCE61D55216B31FA2 /* .gitkeep */,
+				4E78074CF644F0F6EEBD498D /* ProfileColors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		780E0EEEA1B792693A666313 /* VaxNear */ = {
+			isa = PBXGroup;
+			children = (
+				00081A045B18030AA80043FB /* Assets.xcassets */,
+				622F76F5D91B0FC1C6C3FBB6 /* Info.plist */,
+				759A4D94CBA64179849E954E /* VaxNear.entitlements */,
+				53CBC87FC9DEE2A1135DC04C /* VaxNearApp.swift */,
+				9EEC9FC4B0ED4F748CD213F6 /* Models */,
+				88C17A4645C6C05298C0433A /* Resources */,
+				8D81CA63BDC8C530185B4FDE /* Services */,
+				75F691C31CD6BE12FB0A099F /* Utilities */,
+				294AF8841ECE87C62C1D8717 /* ViewModels */,
+				DAD98CC0273C66F2F7C46647 /* Views */,
+			);
+			path = VaxNear;
+			sourceTree = "<group>";
+		};
+		88C17A4645C6C05298C0433A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9C184D1217FD16A2FE52085 /* .gitkeep */,
+				9742C5D69847D4D4053DC5AF /* CDCData */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D81CA63BDC8C530185B4FDE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				79B13364A6FC7E3AB29F2967 /* .gitkeep */,
+				0E59E770F554287F9B165E6A /* CDCDataManager.swift */,
+				65443BEA4D82E4CAC77A1144 /* DataExportService.swift */,
+				23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */,
+				B999C375E2D890C176AC961C /* LocationManager.swift */,
+				8798328375761F797B500C5E /* NotificationManager.swift */,
+				6B804259825249A2026D3771 /* SyncManager.swift */,
+				673582925B750CFF357BAFA5 /* VaccineSiteFinderService.swift */,
+				1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9742C5D69847D4D4053DC5AF /* CDCData */ = {
+			isa = PBXGroup;
+			children = (
+				D2131428B735879646517532 /* adult_schedule.json */,
+				29D48E0571F4DE0DBAD5595B /* childhood_schedule.json */,
+				4E94E0A94113E7147C11176A /* travel_vaccines.json */,
+				FEDB5E63EA298BBD192469DA /* vaccine_database.json */,
+			);
+			path = CDCData;
+			sourceTree = "<group>";
+		};
+		99CCD8DC188AD8B86035F20C /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				EDD93768F1024A85703E1A25 /* AddRecordView.swift */,
+				387DF985570F162BCEFDB453 /* AddSideEffectView.swift */,
+				8A728F1875895046E8EBA7FE /* QRScannerView.swift */,
+				B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */,
+				A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		9EEC9FC4B0ED4F748CD213F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20C2643DF2970F34F1C6B30 /* .gitkeep */,
+				6F009B32B07AFB876D7B6A6A /* AppSettings.swift */,
+				ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */,
+				184B1297882F9AA366FCCCFF /* SavedLocation.swift */,
+				17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */,
+				FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */,
+				7DE303E62FF29BF1074F6CE9 /* TravelPlan.swift */,
+				ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */,
+				46FF929813A0D3F038E19CD6 /* VaccineSite.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A5600B63F1E15FCFB05F24E7 /* Products */ = {
@@ -125,167 +270,68 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		780E0EEEA1B792693A666313 /* VaxNear */ = {
+		AE368DBA7BC2A983C3B0D498 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00081A045B18030AA80043FB /* Assets.xcassets */,
-				622F76F5D91B0FC1C6C3FBB6 /* Info.plist */,
-				759A4D94CBA64179849E954E /* VaxNear.entitlements */,
-				8B0E687566BCC96E82D09265 /* VaxNearApp.swift */,
-				C9E04F99D8E7C9D4D391AEF8 /* Models */,
-				AE59D88C5460D2413CB142C1 /* Resources */,
-				9C035E7454E6255EF4EA445C /* Services */,
-				32120412CDF92CE44C01AF8D /* Utilities */,
-				EE1E649591DBDF61DE2E4396 /* ViewModels */,
-				9F58BDF7D4F04F6C4DC3CB6C /* Views */,
+				EF8F95A48707C948FB033D1E /* HealthKit.framework */,
+				445E1300A2326848993842A5 /* PassKit.framework */,
 			);
-			path = VaxNear;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9E04F99D8E7C9D4D391AEF8 /* Models */ = {
+		B07BD35988FA20688C84DED0 /* Family */ = {
 			isa = PBXGroup;
 			children = (
-				9DD5706072CEC19F80A9D981 /* AppSettings.swift */,
-				47C12DBF0450B53587FDD0E7 /* FamilyProfile.swift */,
-				3706FCEFCE38F65B16F6A9E8 /* SavedLocation.swift */,
-				A08F142F0FCE498EAAB586C8 /* ScheduledReminder.swift */,
-				EB131F287F5800F757DDF9AD /* SideEffectLog.swift */,
-				1BE0C50C8F0C3A46A55D58ED /* TravelPlan.swift */,
-				DB8E3C76BF415F5A51898C45 /* VaccinationRecord.swift */,
-				EFE332FD6A0C433D214DB9E6 /* VaccineSite.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		AE59D88C5460D2413CB142C1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E2A5C79F22FA536BB4603567 /* CDCData */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		E2A5C79F22FA536BB4603567 /* CDCData */ = {
-			isa = PBXGroup;
-			children = (
-				4C4E193B5175E0B8259CDA6A /* adult_schedule.json */,
-				43A6AA2D5E09399D02F3A15D /* childhood_schedule.json */,
-				C9F86B455693A12BDD2F99AD /* travel_vaccines.json */,
-				AC251CD71D10AB58C95EFB5C /* vaccine_database.json */,
-			);
-			path = CDCData;
-			sourceTree = "<group>";
-		};
-		9C035E7454E6255EF4EA445C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				72F6371D764A6F9A19C3AD14 /* CDCDataManager.swift */,
-				98B88534B2E59865383910D9 /* DataExportService.swift */,
-				0E3DF1D3D98BFD34754BF05F /* HealthKitManager.swift */,
-				A1B2C3D4E5F60001 /* SyncManager.swift */,
-				21645143130B47088F64071F /* LocationManager.swift */,
-				930711783BB9C5A268D99AE5 /* NotificationManager.swift */,
-				5FF9A0982DABF7ABB4D81C96 /* VaccineSiteFinderService.swift */,
-				E3063922AA181F6AB286C496 /* WalletPassManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		32120412CDF92CE44C01AF8D /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				D88D7A17AFAD7ADBA3E7E4B9 /* ProfileColors.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		EE1E649591DBDF61DE2E4396 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BB35167D99D26B71BB9EDFD4 /* FinderViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		9F58BDF7D4F04F6C4DC3CB6C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				16F622CC96E18EF101040918 /* Family */,
-				BEDF451EC9BF5EEDD05F28AF /* Finder */,
-				BAD11E1691D1FFB8FF8BF918 /* Onboarding */,
-				59682FA6B1655454EF4F8810 /* Records */,
-				73DA933AC0B9799DE29FB4A6 /* Settings */,
-				9B8EA7C3EDD85BDD3B598AA8 /* Shared */,
-				7D7CDE73C62F7D6FC096D678 /* Travel */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		16F622CC96E18EF101040918 /* Family */ = {
-			isa = PBXGroup;
-			children = (
-				2D5A00C1B16CC55DF144A2C1 /* AddEditProfileView.swift */,
-				F9B40AB27F5569CA82327A9D /* ChildImmunizationScheduleView.swift */,
-				443EEC6BDBF50CC56C8B9ADD /* FamilyProfilesView.swift */,
-				3D6C758570A3545B4E269E97 /* ProfileDetailView.swift */,
-				0599B4043D02D3CFFD41171F /* ShareProfileSheet.swift */,
+				6B66ACCB6745F99CDEF32E56 /* .gitkeep */,
+				FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */,
+				7E318DE6B18146A0B25E5C1A /* ChildImmunizationScheduleView.swift */,
+				9943F11C58AF8B6C15F35DFD /* FamilyProfilesView.swift */,
+				D8C03BB91E68CC522DA4DA7F /* ProfileDetailView.swift */,
+				0CCDD56BCCFB0CFF1771A84C /* ShareProfileSheet.swift */,
 			);
 			path = Family;
 			sourceTree = "<group>";
 		};
-		BEDF451EC9BF5EEDD05F28AF /* Finder */ = {
-			isa = PBXGroup;
-			children = (
-				167AA6BF5AB6B0FFC3E7E22D /* FavoritesView.swift */,
-				85EE00D21849952809217BBC /* FinderView.swift */,
-				35FE8AFED46DB67A83C03861 /* SiteDetailView.swift */,
-			);
-			path = Finder;
-			sourceTree = "<group>";
-		};
-		59682FA6B1655454EF4F8810 /* Records */ = {
-			isa = PBXGroup;
-			children = (
-				AF4625768FF995C7776C3BB2 /* AddRecordView.swift */,
-				A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */,
-				A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */,
-				A1B2C3D4E5F6789012345605 /* QRScannerView.swift */,
-				0F060CD3A311B0E8C25094C8 /* RecordsView.swift */,
-			);
-			path = Records;
-			sourceTree = "<group>";
-		};
-		73DA933AC0B9799DE29FB4A6 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				5066505EF683798B0A4951F5 /* SettingsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		9B8EA7C3EDD85BDD3B598AA8 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				72F7F7A040B3588A24E75CDC /* LockScreenView.swift */,
-				8B3ACE88D7E3C26F4DDB8ECB /* MainTabView.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		7D7CDE73C62F7D6FC096D678 /* Travel */ = {
-			isa = PBXGroup;
-			children = (
-				9F4A759B350CB835CC047FCC /* TravelView.swift */,
-			);
-			path = Travel;
-			sourceTree = "<group>";
-		};
-		BAD11E1691D1FFB8FF8BF918 /* Onboarding */ = {
+		BE518B81FD58D57D9A4D112F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				5CA15E86E7586D2A1CA7CA00 /* .gitkeep */,
+				81AC6FB74C4613DB8C6192DD /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CCB204E64F582A13E468BDE7 = {
+			isa = PBXGroup;
+			children = (
+				780E0EEEA1B792693A666313 /* VaxNear */,
+				AE368DBA7BC2A983C3B0D498 /* Frameworks */,
+				A5600B63F1E15FCFB05F24E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAD98CC0273C66F2F7C46647 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B07BD35988FA20688C84DED0 /* Family */,
+				EF9C718EE672AD54F2485005 /* Finder */,
+				BE518B81FD58D57D9A4D112F /* Onboarding */,
+				99CCD8DC188AD8B86035F20C /* Records */,
+				6A76844577D8DA9346C687E7 /* Settings */,
+				73C62B062F9A829661BC32D6 /* Shared */,
+				6A501A60EA48C2F5EFF6AE70 /* Travel */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF9C718EE672AD54F2485005 /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				4BFB946EA3516980891E4BB4 /* FavoritesView.swift */,
+				C1A77EB650C19A605C93E291 /* FinderView.swift */,
+				1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */,
+			);
+			path = Finder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +343,8 @@
 			buildPhases = (
 				BD742BAA69E628CAECA5381C /* Sources */,
 				D33BA347F272BC4443B8C4B6 /* Resources */,
+				35C34058407AA4E7A37A00AA /* Frameworks */,
+				41C385A433BAC4EC73B5E5CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,10 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A57BA81EE9D1246666B8D5 /* Assets.xcassets in Resources */,
-				BC13483CD7092FD43759E702 /* adult_schedule.json in Resources */,
-				B733366798A647A8D37B906D /* childhood_schedule.json in Resources */,
-				27B5057149CA2A5D53C6F3FA /* travel_vaccines.json in Resources */,
-				40FF9EA4349F641324EBF3A1 /* vaccine_database.json in Resources */,
+				6A9645E371C2F654AD9BBE67 /* adult_schedule.json in Resources */,
+				021B314CBC24DCCD0442A590 /* childhood_schedule.json in Resources */,
+				1F80FEF19AFA7F7E0959A8F8 /* travel_vaccines.json in Resources */,
+				586C755B0C9122D28E66D60C /* vaccine_database.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,72 +405,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B39C71917032A03813FE38 /* AppSettings.swift in Sources */,
-				359E6E6061B28C56406E7574 /* FamilyProfile.swift in Sources */,
-				E1F220B4F9ECE2C09F3C06B5 /* SavedLocation.swift in Sources */,
-				C81606FB5087F7D62997B3DD /* ScheduledReminder.swift in Sources */,
-				93E1476B3CE919D0A4F7FA86 /* SideEffectLog.swift in Sources */,
-				FF1704FBBF66572CF41ABE17 /* TravelPlan.swift in Sources */,
-				7CE3FA5858ADD78C66CD0AA2 /* VaccinationRecord.swift in Sources */,
-				08899050CE9B09C34791222D /* VaccineSite.swift in Sources */,
-				D154B89E7DF92B77C87AF461 /* CDCDataManager.swift in Sources */,
-				CBE89DBB02743107AF90A6F4 /* DataExportService.swift in Sources */,
-				F3FFAFD12E7E091D5D353D52 /* HealthKitManager.swift in Sources */,
-				A1B2C3D4E5F60002 /* SyncManager.swift in Sources */,
-				06F39D947BEF816879D76FF5 /* LocationManager.swift in Sources */,
-				A5A2EC77983617AA949D2D9E /* NotificationManager.swift in Sources */,
-				5B8469F397E921D3C2AC2A70 /* VaccineSiteFinderService.swift in Sources */,
-				D12E4102FE2ED9B71D0CAE80 /* WalletPassManager.swift in Sources */,
-				54C3477A81EA78008E6CFCD8 /* ProfileColors.swift in Sources */,
-				E127AA6C9D0A5B8D7D875612 /* VaxNearApp.swift in Sources */,
-				4F4DA44F847BCF6026B09B3A /* FinderViewModel.swift in Sources */,
-				BC4393A98E02572F1F82F756 /* AddEditProfileView.swift in Sources */,
-				D4930253311EA4B43A57A842 /* ChildImmunizationScheduleView.swift in Sources */,
-				EF3D2420DEB4AD9B2C4971F9 /* FamilyProfilesView.swift in Sources */,
-				D30A8C5580A24053CEDFB384 /* ProfileDetailView.swift in Sources */,
-				C0D248F23F642BBA46E7C647 /* ShareProfileSheet.swift in Sources */,
-				71AF269444B6FA9B316636F8 /* FavoritesView.swift in Sources */,
-				14990F68B1361F0B7FCCE84F /* FinderView.swift in Sources */,
-				41E3E6B5C7CE0F1E652F6362 /* SiteDetailView.swift in Sources */,
-				185AFEB2F9C5E883E4173255 /* AddRecordView.swift in Sources */,
-				A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */,
-				A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */,
-				A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */,
-		A1B2C3D4E5F6789012345602 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345601 /* RecordDetailView.swift */; };
-		A1B2C3D4E5F6789012345604 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345603 /* AddSideEffectView.swift */; };
-		A1B2C3D4E5F6789012345606 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6789012345605 /* QRScannerView.swift */; };
-				F3E5570E23248C1A1E39DC86 /* RecordsView.swift in Sources */,
-				BBA4AA96F1D30A490BA703F5 /* SettingsView.swift in Sources */,
-				D0F2002B63F04B12D95E1BE4 /* LockScreenView.swift in Sources */,
-				CF743982BB00FD8CAB23E51C /* MainTabView.swift in Sources */,
-				6010BA52BDE0349BE3630701 /* TravelView.swift in Sources */,
+				324D8E16ECDB7D93D435AB8E /* AddEditProfileView.swift in Sources */,
+				DF664C3C29525B922ED2C324 /* AddRecordView.swift in Sources */,
+				3D905CC94409FA087D48CD31 /* AddSideEffectView.swift in Sources */,
+				15ABEA823B2FBF887244DC0F /* AppSettings.swift in Sources */,
+				4867F14E44938FBC241BA030 /* CDCDataManager.swift in Sources */,
+				A72F838F3B677D8189CEAAAD /* ChildImmunizationScheduleView.swift in Sources */,
+				F364B42D5E30139586938774 /* DataExportService.swift in Sources */,
+				D922EB96922F5A31D73B6510 /* FamilyProfile.swift in Sources */,
+				2E7D7D9F5081D87922CCBFC1 /* FamilyProfilesView.swift in Sources */,
+				35775EE82121A335E2C6A67D /* FavoritesView.swift in Sources */,
+				799D2C2B7F7102222D6BE3F2 /* FinderView.swift in Sources */,
+				7E108471652F5EF8C5D0E11B /* FinderViewModel.swift in Sources */,
+				E28BEB89A34FA8E55115E308 /* HealthKitManager.swift in Sources */,
+				3126A3459946BCD62A14B85F /* LocationManager.swift in Sources */,
+				28B9A0445ADE8A06556E5DFF /* LockScreenView.swift in Sources */,
+				02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */,
+				55A5606A76C2581E304000C6 /* NotificationManager.swift in Sources */,
+				5993563A200D551D38AE9212 /* OnboardingView.swift in Sources */,
+				D52B34042AE5D394B720032F /* ProfileColors.swift in Sources */,
+				BDF62D66E3D1E094B76EA4DE /* ProfileDetailView.swift in Sources */,
+				615EF012B5D434FFA538DA3B /* QRScannerView.swift in Sources */,
+				8E75E5BB49697F1845805C04 /* RecordDetailView.swift in Sources */,
+				E56C0CD419219103805FBDB3 /* RecordsView.swift in Sources */,
+				CBE66DF3C9B544F7851EBDE9 /* SavedLocation.swift in Sources */,
+				0CAD95D0BC3FC4161760661D /* ScheduledReminder.swift in Sources */,
+				D4F8600FF07528CD5ED75239 /* SettingsView.swift in Sources */,
+				49E740287C947FA79ABA354E /* ShareProfileSheet.swift in Sources */,
+				DE9ADC2BB937055D2A53265A /* SideEffectLog.swift in Sources */,
+				37AE1B16A7B3F2E92F98AE86 /* SiteDetailView.swift in Sources */,
+				7263A64C51C3BDB9EF55E4A3 /* SyncManager.swift in Sources */,
+				83AD3FA032A117E7B1A5284C /* TravelPlan.swift in Sources */,
+				724572265A56031C3F7F3EBB /* TravelView.swift in Sources */,
+				74A6CB288FED010A86A8A06E /* VaccinationRecord.swift in Sources */,
+				857280AE225215C71B248125 /* VaccineSite.swift in Sources */,
+				54488F75A081B7A81B100A67 /* VaccineSiteFinderService.swift in Sources */,
+				4CE0006C13039CF931F4BD63 /* VaxNearApp.swift in Sources */,
+				433290C382BA195483E843F1 /* WalletPassManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4D365E40F840F000B357DA42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = VaxNear/VaxNear.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = VaxNear/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.vaxnear;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		276E0C3CAFB0E78699AF810B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,6 +456,10 @@
 				CODE_SIGN_ENTITLEMENTS = VaxNear/VaxNear.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
 				INFOPLIST_FILE = VaxNear/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,6 +472,31 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		4D365E40F840F000B357DA42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VaxNear/VaxNear.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = VaxNear/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.vaxnear;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		64208F071FADF632D1DE6BC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
