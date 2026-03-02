@@ -51,6 +51,8 @@
 		E28BEB89A34FA8E55115E308 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */; };
 		E56C0CD419219103805FBDB3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */; };
 		F364B42D5E30139586938774 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65443BEA4D82E4CAC77A1144 /* DataExportService.swift */; };
+		AA2222222222222222222222 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111111 /* TravelViewModel.swift */; };
+		AA4444444444444444444444 /* YellowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3333333333333333333333 /* YellowCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectLog.swift; sourceTree = "<group>"; };
 		FEDB5E63EA298BBD192469DA /* vaccine_database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vaccine_database.json; sourceTree = "<group>"; };
 		FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProfileView.swift; sourceTree = "<group>"; };
+		AA1111111111111111111111 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
+		AA3333333333333333333333 /* YellowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */,
+				AA1111111111111111111111 /* TravelViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */,
+				AA3333333333333333333333 /* YellowCardView.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -425,6 +431,8 @@
 				7263A64C51C3BDB9EF55E4A3 /* SyncManager.swift in Sources */,
 				83AD3FA032A117E7B1A5284C /* TravelPlan.swift in Sources */,
 				724572265A56031C3F7F3EBB /* TravelView.swift in Sources */,
+				AA2222222222222222222222 /* TravelViewModel.swift in Sources */,
+				AA4444444444444444444444 /* YellowCardView.swift in Sources */,
 				74A6CB288FED010A86A8A06E /* VaccinationRecord.swift in Sources */,
 				857280AE225215C71B248125 /* VaccineSite.swift in Sources */,
 				54488F75A081B7A81B100A67 /* VaccineSiteFinderService.swift in Sources */,
