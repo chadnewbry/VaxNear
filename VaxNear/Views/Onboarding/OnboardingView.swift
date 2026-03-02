@@ -111,6 +111,7 @@ struct OnboardingView: View {
 
             VStack(spacing: 16) {
                 TextField("Your Name", text: $userName)
+                    .accessibilityLabel("Your name")
                     .textContentType(.name)
                     .padding()
                     .background(Color(.secondarySystemBackground))
@@ -183,6 +184,7 @@ struct OnboardingView: View {
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
+                .accessibilityHint("Grant location access to find vaccination sites near you")
 
                 Button {
                     withAnimation { currentPage = 3 }
@@ -191,6 +193,7 @@ struct OnboardingView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+                .accessibilityLabel("Skip location permission")
             }
             .padding(.horizontal, 32)
             .padding(.bottom, 24)
@@ -237,6 +240,7 @@ struct OnboardingView: View {
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
+                .accessibilityHint("Allow booster and appointment reminders")
 
                 Button {
                     withAnimation { currentPage = 4 }
@@ -245,6 +249,7 @@ struct OnboardingView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+                .accessibilityLabel("Skip notification permission")
             }
             .padding(.horizontal, 32)
             .padding(.bottom, 24)

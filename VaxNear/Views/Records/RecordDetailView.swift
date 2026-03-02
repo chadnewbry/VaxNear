@@ -34,6 +34,7 @@ struct RecordDetailView: View {
                             Image(systemName: "syringe")
                                 .font(.title)
                                 .foregroundStyle(Color.accentColor)
+                                .accessibilityHidden(true)
                         }
 
                         Divider()
@@ -66,6 +67,7 @@ struct RecordDetailView: View {
                                     .font(.caption.bold())
                             }
                             .buttonStyle(.bordered)
+                            .accessibilityLabel("Add side effect")
                         }
 
                         if record.sideEffects.isEmpty {
@@ -134,6 +136,7 @@ struct RecordDetailView: View {
                                 .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.bordered)
+                        .accessibilityHint("Permanently delete this vaccination record")
                     }
                 }
             }
@@ -246,6 +249,8 @@ struct SideEffectRow: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(effect.symptom), \(effect.severity.displayName) severity, onset \(effect.onsetDate.formatted(date: .abbreviated, time: .omitted))")
     }
 }
 

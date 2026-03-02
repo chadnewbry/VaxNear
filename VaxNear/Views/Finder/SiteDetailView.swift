@@ -80,12 +80,14 @@ struct SiteDetailView: View {
                     )
                 }
                 .tint(isFav ? .red : .accentColor)
+                .accessibilityLabel(isFav ? "Remove \(site.name) from favorites" : "Save \(site.name) to favorites")
 
                 Button {
                     showAddRecord = true
                 } label: {
                     Label("I Got Vaccinated Here", systemImage: "checkmark.seal.fill")
                 }
+                .accessibilityHint("Add a vaccination record for this site")
             }
 
             // MARK: - Map Preview
@@ -101,6 +103,7 @@ struct SiteDetailView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .allowsHitTesting(false)
+                .accessibilityLabel("Map showing location of \(site.name)")
             }
         }
         .navigationTitle(site.name)

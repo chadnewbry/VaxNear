@@ -118,6 +118,7 @@ struct YellowCardView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 150, height: 150)
+                                    .accessibilityLabel("SMART Health Card QR code")
                             }
                             Text("Scan for digital verification")
                                 .font(.caption2)
@@ -139,6 +140,7 @@ struct YellowCardView: View {
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
+                    .accessibilityLabel("Export Yellow Card as PDF")
                 }
             }
             .sheet(isPresented: $showingShareSheet) {

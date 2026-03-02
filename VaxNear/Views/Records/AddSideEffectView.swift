@@ -40,6 +40,7 @@ struct AddSideEffectView: View {
 
                     if symptom == "Other" {
                         TextField("Describe symptom", text: $customSymptom)
+                            .accessibilityLabel("Custom symptom description")
                     }
                 }
 
@@ -54,11 +55,13 @@ struct AddSideEffectView: View {
                     DatePicker("Onset Date", selection: $onsetDate, displayedComponents: .date)
 
                     TextField("Duration (days)", text: $durationDays)
+                        .accessibilityLabel("Duration in days")
                         .keyboardType(.numberPad)
                 }
 
                 Section("Notes") {
                     TextField("Optional notes", text: $notes, axis: .vertical)
+                        .accessibilityLabel("Notes")
                         .lineLimit(3...6)
                 }
             }
@@ -71,6 +74,7 @@ struct AddSideEffectView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
                         .disabled(effectiveSymptom.isEmpty)
+                        .accessibilityHint(effectiveSymptom.isEmpty ? "Select a symptom first" : "Save this side effect")
                 }
             }
         }

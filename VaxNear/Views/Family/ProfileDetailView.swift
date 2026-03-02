@@ -19,6 +19,7 @@ struct ProfileDetailView: View {
                                 .font(.title3.bold())
                                 .foregroundStyle(.white)
                         }
+                        .accessibilityHidden(true)
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text(profile.name)
@@ -81,6 +82,7 @@ struct ProfileDetailView: View {
                 Button { showingShareSheet = true } label: {
                     Image(systemName: "square.and.arrow.up")
                 }
+                .accessibilityLabel("Share profile")
             }
             ToolbarItem(placement: .primaryAction) {
                 Button("Edit") { showingEditSheet = true }

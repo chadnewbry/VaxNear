@@ -17,6 +17,7 @@ struct PaywallView: View {
                         Image(systemName: "syringe.fill")
                             .font(.system(size: 56))
                             .foregroundStyle(Color.accentColor)
+                            .accessibilityHidden(true)
 
                         Text("Unlock VaxNear")
                             .font(.largeTitle.bold())
@@ -118,6 +119,7 @@ struct PaywallView: View {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundStyle(.secondary)
                     }
+                    .accessibilityLabel("Close")
                 }
             }
             .task {
@@ -145,6 +147,7 @@ private struct FeatureRow: View {
                 .font(.title3)
                 .foregroundStyle(Color.accentColor)
                 .frame(width: 32)
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)

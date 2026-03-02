@@ -37,6 +37,7 @@ struct TravelView: View {
                     } label: {
                         Image(systemName: "doc.text")
                     }
+                    .accessibilityLabel("Yellow Card")
                 }
             }
             .sheet(isPresented: $vm.showingYellowCard) {
@@ -57,6 +58,7 @@ struct TravelView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundStyle(.secondary)
                     TextField("Where are you traveling?", text: $vm.searchText)
+                        .accessibilityLabel("Travel destination search")
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled()
                 }
@@ -178,6 +180,7 @@ struct TravelView: View {
                                     .frame(maxWidth: .infinity)
                             }
                             .buttonStyle(.borderedProminent)
+                            .accessibilityHint("Generate a vaccination timeline for your trip")
                         }
                     }
                 } header: {
@@ -194,6 +197,7 @@ struct TravelView: View {
             Image(systemName: row.status.icon)
                 .foregroundStyle(row.status.color)
                 .font(.title3)
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(row.vaccineName)

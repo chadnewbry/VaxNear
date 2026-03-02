@@ -44,6 +44,9 @@ struct AddEditProfileView: View {
                                     }
                                 }
                                 .onTapGesture { selectedColor = color }
+                                .accessibilityLabel("Color \(ProfileColors.presets.firstIndex(of: color).map { String($0 + 1) } ?? "")")
+                                .accessibilityAddTraits(selectedColor == color ? .isSelected : [])
+                                .accessibilityHint("Double tap to select this color")
                         }
                     }
                     .padding(.vertical, 4)
@@ -58,6 +61,7 @@ struct AddEditProfileView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
                         .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
+                        .accessibilityHint(name.trimmingCharacters(in: .whitespaces).isEmpty ? "Enter a name first" : "Save this profile")
                 }
             }
             .onAppear {

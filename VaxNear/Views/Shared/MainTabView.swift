@@ -9,18 +9,21 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Find", systemImage: "mappin.and.ellipse")
                 }
+                .accessibilityLabel("Find vaccination sites")
                 .tag(AppTab.finder)
 
             RecordsView()
                 .tabItem {
                     Label("Records", systemImage: "list.clipboard")
                 }
+                .accessibilityLabel("Vaccination records")
                 .tag(AppTab.records)
 
             TravelView()
                 .tabItem {
                     Label("Travel", systemImage: "airplane")
                 }
+                .accessibilityLabel("Travel vaccine planning")
                 .tag(AppTab.travel)
 
             SettingsView()

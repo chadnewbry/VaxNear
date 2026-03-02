@@ -30,6 +30,7 @@ struct FavoritesView: View {
                                     Label(phone, systemImage: "phone")
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
+                                        .accessibilityLabel("Phone: \(phone)")
                                 }
                             }
                             .padding(.vertical, 2)

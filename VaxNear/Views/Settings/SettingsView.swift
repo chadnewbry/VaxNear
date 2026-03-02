@@ -85,6 +85,8 @@ struct SettingsView: View {
                                 }
                                 .buttonStyle(.bordered)
                                 .controlSize(.small)
+                                .accessibilityLabel("Enable HealthKit sync")
+                                .accessibilityHint("Authorize HealthKit access")
                             }
                         }
                     } else {
