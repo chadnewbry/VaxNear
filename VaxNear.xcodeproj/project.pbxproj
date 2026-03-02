@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		021B314CBC24DCCD0442A590 /* childhood_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 29D48E0571F4DE0DBAD5595B /* childhood_schedule.json */; };
 		02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB38C74F42CE6263F507A2 /* MainTabView.swift */; };
+		A1B2C3D4E5F60001AABB0002 /* UpgradeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001AABB0001 /* UpgradeBannerView.swift */; };
 		06A57BA81EE9D1246666B8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00081A045B18030AA80043FB /* Assets.xcassets */; };
 		0CAD95D0BC3FC4161760661D /* ScheduledReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */; };
 		1044A08A495D9AD42EE82C8B /* ShortcutDonation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E1A3010281C306DC891C7 /* ShortcutDonation.swift */; };
@@ -109,6 +110,7 @@
 		3DD2ECEBE776D89B4E221946 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		420E9064380936826CE0137D /* VaxNearWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = VaxNearWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AB38C74F42CE6263F507A2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001AABB0001 /* UpgradeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeBannerView.swift; sourceTree = "<group>"; };
 		445E1300A2326848993842A5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		453B55FFBBFEF6C106851FF5 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		46FF929813A0D3F038E19CD6 /* VaccineSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSite.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				316C4048BDF88311F9DA62F1 /* LockScreenView.swift */,
 				42AB38C74F42CE6263F507A2 /* MainTabView.swift */,
+				A1B2C3D4E5F60001AABB0001 /* UpgradeBannerView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				3126A3459946BCD62A14B85F /* LocationManager.swift in Sources */,
 				28B9A0445ADE8A06556E5DFF /* LockScreenView.swift in Sources */,
 				02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */,
+				A1B2C3D4E5F60001AABB0002 /* UpgradeBannerView.swift in Sources */,
 				315A94E68BF678A7FB47D46B /* NavigationState.swift in Sources */,
 				55A5606A76C2581E304000C6 /* NotificationManager.swift in Sources */,
 				5993563A200D551D38AE9212 /* OnboardingView.swift in Sources */,

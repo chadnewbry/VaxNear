@@ -23,21 +23,50 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 // MARK: - Purchase Section
-                Section {
-                    if appSettings.hasPurchasedFullVersion {
+                if appSettings.hasPurchasedFullVersion {
+                    Section {
                         Label("Full Version Unlocked", systemImage: "checkmark.seal.fill")
                             .foregroundStyle(.green)
-                    } else {
-                        Button {
-                            showingPaywall = true
-                        } label: {
-                            HStack {
-                                Label("Upgrade to Full Version", systemImage: "star.fill")
-                                    .foregroundStyle(Color.accentColor)
-                                Spacer()
-                                Text("$4.99")
-                                    .foregroundStyle(.secondary)
+                    }
+                } else {
+                    Section {
+                        Button { showingPaywall = true } label: {
+                            VStack(spacing: 12) {
+                                HStack(spacing: 12) {
+                                    ZStack {
+                                        Circle()
+                                            .fill(
+                                                LinearGradient(
+                                                    colors: [.blue, .purple],
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
+                                            )
+                                            .frame(width: 40, height: 40)
+                                        Image(systemName: "star.fill")
+                                            .foregroundStyle(.white)
+                                    }
+
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Upgrade to Full Version")
+                                            .font(.subheadline.bold())
+                                            .foregroundStyle(.primary)
+                                        Text("Unlimited records, family profiles & more")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Spacer()
+                                    VStack(alignment: .trailing, spacing: 2) {
+                                        Text(storeManager.fullVersionProduct?.displayPrice ?? "$4.99")
+                                            .font(.subheadline.bold())
+                                            .foregroundStyle(Color.accentColor)
+                                        Text("One-time")
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
                             }
+                            .padding(.vertical, 4)
                         }
 
                         Button {

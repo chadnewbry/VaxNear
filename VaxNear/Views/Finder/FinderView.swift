@@ -104,6 +104,9 @@ struct FinderView: View {
                     .padding(.vertical, 8)
                 Divider()
                 siteList
+                UpgradeBannerView(style: .compact)
+                    .padding(.horizontal)
+                    .padding(.bottom, 8)
             }
             .navigationTitle("Nearby Sites")
             .navigationBarTitleDisplayMode(.inline)
