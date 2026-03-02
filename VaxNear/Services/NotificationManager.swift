@@ -344,11 +344,11 @@ final class NotificationManager: ObservableObject {
         return date
     }
 
-    private func cancelReminders(for profileId: UUID, ofType type: ScheduledReminder.ReminderType, in context: ModelContext) {
+    private func cancelReminders(for profileId: UUID, ofType type: ReminderType, in context: ModelContext) {
         let typeRaw = type.rawValue
         let descriptor = FetchDescriptor<ScheduledReminder>(
             predicate: #Predicate<ScheduledReminder> {
-                $0.profileId == profileId && $0.type.rawValue == typeRaw
+                $0.profileId == profileId && $0.typeRawValue == typeRaw
             }
         )
         if let reminders = try? context.fetch(descriptor) {
@@ -386,7 +386,7 @@ final class NotificationManager: ObservableObject {
     private func saveReminder(
         id: String,
         profileId: UUID,
-        type: ScheduledReminder.ReminderType,
+        type: ReminderType,
         date: Date,
         title: String,
         body: String,

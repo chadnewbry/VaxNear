@@ -27,7 +27,17 @@ struct VaxNearApp: App {
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            // Delete stale store and retry
+            let url = config.url
+            let related = [url, url.appendingPathExtension("wal"), url.appendingPathExtension("shm")]
+            for file in related {
+                try? FileManager.default.removeItem(at: file)
+            }
+            do {
+                return try ModelContainer(for: schema, configurations: [config])
+            } catch {
+                fatalError("Could not create ModelContainer: \(error)")
+            }
         }
     }()
 

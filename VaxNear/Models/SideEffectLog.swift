@@ -15,10 +15,15 @@ final class SideEffectLog {
     var id: UUID = UUID()
     var record: VaccinationRecord?
     var symptom: String = ""
-    var severity: Severity = .mild
+    var severityRawValue: String = Severity.mild.rawValue
     var onsetDate: Date = Date()
     var durationDays: Int?
     var notes: String?
+
+    @Transient var severity: Severity {
+        get { Severity(rawValue: severityRawValue) ?? .mild }
+        set { severityRawValue = newValue.rawValue }
+    }
 
     init(
         id: UUID = UUID(),
@@ -32,7 +37,7 @@ final class SideEffectLog {
         self.id = id
         self.record = record
         self.symptom = symptom
-        self.severity = severity
+        self.severityRawValue = severity.rawValue
         self.onsetDate = onsetDate
         self.durationDays = durationDays
         self.notes = notes

@@ -25,10 +25,15 @@ enum Relationship: String, Codable, CaseIterable, Identifiable {
 final class FamilyProfile {
     var id: UUID = UUID()
     var name: String = ""
-    var relationship: Relationship = .selfUser
+    var relationshipRawValue: String = Relationship.selfUser.rawValue
     var dateOfBirth: Date = Date()
     var colorTag: String = "#007AFF"
     var createdAt: Date = Date()
+
+    @Transient var relationship: Relationship {
+        get { Relationship(rawValue: relationshipRawValue) ?? .selfUser }
+        set { relationshipRawValue = newValue.rawValue }
+    }
 
     @Relationship(deleteRule: .cascade, inverse: \VaccinationRecord.profile)
     var vaccinationRecords: [VaccinationRecord] = []
@@ -46,7 +51,7 @@ final class FamilyProfile {
     ) {
         self.id = id
         self.name = name
-        self.relationship = relationship
+        self.relationshipRawValue = relationship.rawValue
         self.dateOfBirth = dateOfBirth
         self.colorTag = colorTag
         self.createdAt = createdAt
