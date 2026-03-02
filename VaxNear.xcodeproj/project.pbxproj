@@ -23,6 +23,7 @@
 		315A94E68BF678A7FB47D46B /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2ECEBE776D89B4E221946 /* NavigationState.swift */; };
 		324D8E16ECDB7D93D435AB8E /* AddEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */; };
 		35775EE82121A335E2C6A67D /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB946EA3516980891E4BB4 /* FavoritesView.swift */; };
+		E898DC842A133CF2EB2D2BAE /* SavedLocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25472ADA83DD2478A7159AA4 /* SavedLocationDetailView.swift */; };
 		37AE1B16A7B3F2E92F98AE86 /* SiteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */; };
 		3D905CC94409FA087D48CD31 /* AddSideEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DF985570F162BCEFDB453 /* AddSideEffectView.swift */; };
 		433290C382BA195483E843F1 /* WalletPassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */; };
@@ -115,6 +116,7 @@
 		453B55FFBBFEF6C106851FF5 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		46FF929813A0D3F038E19CD6 /* VaccineSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSite.swift; sourceTree = "<group>"; };
 		4BFB946EA3516980891E4BB4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		25472ADA83DD2478A7159AA4 /* SavedLocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationDetailView.swift; sourceTree = "<group>"; };
 		4D23D7B519A4936D2C27E9B1 /* WidgetDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataProvider.swift; sourceTree = "<group>"; };
 		4E78074CF644F0F6EEBD498D /* ProfileColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColors.swift; sourceTree = "<group>"; };
 		4E94E0A94113E7147C11176A /* travel_vaccines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = travel_vaccines.json; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFB946EA3516980891E4BB4 /* FavoritesView.swift */,
+				25472ADA83DD2478A7159AA4 /* SavedLocationDetailView.swift */,
 				C1A77EB650C19A605C93E291 /* FinderView.swift */,
 				1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */,
 			);
@@ -530,6 +533,7 @@
 				D922EB96922F5A31D73B6510 /* FamilyProfile.swift in Sources */,
 				2E7D7D9F5081D87922CCBFC1 /* FamilyProfilesView.swift in Sources */,
 				35775EE82121A335E2C6A67D /* FavoritesView.swift in Sources */,
+				E898DC842A133CF2EB2D2BAE /* SavedLocationDetailView.swift in Sources */,
 				BDE3AF76C5F2DE2F0298F251 /* FindVaccinesIntent.swift in Sources */,
 				799D2C2B7F7102222D6BE3F2 /* FinderView.swift in Sources */,
 				7E108471652F5EF8C5D0E11B /* FinderViewModel.swift in Sources */,
