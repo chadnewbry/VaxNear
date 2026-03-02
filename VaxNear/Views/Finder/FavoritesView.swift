@@ -1,3 +1,4 @@
+import MapKit
 import SwiftData
 import SwiftUI
 
@@ -20,20 +21,11 @@ struct FavoritesView: View {
                 } else {
                     List {
                         ForEach(favorites) { loc in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(loc.name)
-                                    .font(.subheadline.weight(.medium))
-                                Text(loc.address)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                if let phone = loc.phoneNumber {
-                                    Label(phone, systemImage: "phone")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                        .accessibilityLabel("Phone: \(phone)")
-                                }
+                            NavigationLink(value: loc) {
+                                FavoriteRow(location: loc)
                             }
-                            .padding(.vertical, 2)
+                            .accessibilityLabel("\(loc.name), \(loc.address)")
+                            .accessibilityHint("Tap to view site details")
                         }
                         .onDelete(perform: deleteFavorites)
                     }
@@ -41,9 +33,17 @@ struct FavoritesView: View {
             }
             .navigationTitle("Favorites")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: SavedLocation.self) { loc in
+                SavedLocationDetailView(location: loc)
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Done") { dismiss() }
+                }
+                if !favorites.isEmpty {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        EditButton()
+                    }
                 }
             }
         }
@@ -51,9 +51,59 @@ struct FavoritesView: View {
 
     private func deleteFavorites(at offsets: IndexSet) {
         for index in offsets {
-            modelContext.delete(favorites[index])
+            favorites[index].isFavorite = false
         }
         try? modelContext.save()
+    }
+}
+
+// MARK: - Favorite Row
+
+private struct FavoriteRow: View {
+    let location: SavedLocation
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(location.name)
+                .font(.subheadline.weight(.semibold))
+
+            Text(location.address)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            HStack(spacing: 12) {
+                if let phone = location.phoneNumber {
+                    Label(phone, systemImage: "phone")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+                if location.isWalkIn {
+                    Label("Walk-in", systemImage: "figure.walk")
+                        .font(.caption2)
+                        .foregroundStyle(.green)
+                }
+            }
+
+            if !location.vaccineTypesAvailable.isEmpty {
+                HStack(spacing: 4) {
+                    ForEach(location.vaccineTypesAvailable.prefix(3), id: \.self) { vaccine in
+                        Text(vaccine)
+                            .font(.caption2.weight(.medium))
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(.blue.opacity(0.1))
+                            .foregroundStyle(.blue)
+                            .clipShape(Capsule())
+                    }
+                    if location.vaccineTypesAvailable.count > 3 {
+                        Text("+\(location.vaccineTypesAvailable.count - 3)")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+        }
+        .padding(.vertical, 4)
     }
 }
 
