@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif; background: #000; }
+.screenshot {
+  width: 1290px; height: 2796px; position: relative; overflow: hidden;
+  display: none; flex-direction: column; align-items: center; padding-top: 160px;
+}
+.screenshot.active { display: flex; }
+.bg-blue { background: linear-gradient(180deg, #0A84FF 0%, #004499 100%); }
+.bg-green { background: linear-gradient(180deg, #30D158 0%, #1E7E34 100%); }
+.bg-purple { background: linear-gradient(180deg, #BF5AF2 0%, #7B2ABF 100%); }
+.bg-orange { background: linear-gradient(180deg, #FF9F0A 0%, #CC7700 100%); }
+.bg-teal { background: linear-gradient(180deg, #64D2FF 0%, #1A8A9F 100%); }
+.bg-pink { background: linear-gradient(180deg, #FF375F 0%, #BF1A3F 100%); }
+.bg-indigo { background: linear-gradient(180deg, #5E5CE6 0%, #3A3ABF 100%); }
+.caption { color: white; font-size: 72px; font-weight: 700; text-align: center; padding: 0 80px; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
+.subcaption { color: rgba(255,255,255,0.85); font-size: 40px; text-align: center; padding: 0 100px; margin-bottom: 80px; }
+.phone-frame { width: 920px; height: 1880px; background: #1C1C1E; border-radius: 80px; padding: 20px; box-shadow: 0 40px 80px rgba(0,0,0,0.4); overflow: hidden; }
+.phone-screen { width: 100%; height: 100%; background: #000; border-radius: 64px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+.status-bar { height: 110px; padding: 50px 50px 0; display: flex; justify-content: space-between; align-items: center; color: white; font-size: 34px; font-weight: 600; flex-shrink: 0; }
+.nav-bar { height: 100px; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.nav-title { font-size: 54px; font-weight: 700; color: white; }
+.nav-icon { font-size: 40px; color: #0A84FF; }
+.tab-bar { height: 160px; background: rgba(28,28,30,0.95); display: flex; justify-content: space-around; align-items: flex-start; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+.tab-item { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #8E8E93; font-size: 22px; }
+.tab-item.active { color: #0A84FF; }
+.tab-icon { font-size: 44px; }
+
+.map-container { flex: 1; background: linear-gradient(135deg, #2C3E50 0%, #3D5A73 30%, #4A6741 60%, #3D5A73 100%); position: relative; overflow: hidden; }
+.map-road { position: absolute; background: rgba(255,255,255,0.15); border-radius: 4px; }
+.map-pin { position: absolute; width: 56px; height: 56px; background: #0A84FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.map-pin.green { background: #30D158; }
+.map-pin.orange { background: #FF9500; }
+.map-pin.user { background: #007AFF; width: 36px; height: 36px; border: 4px solid white; box-shadow: 0 0 0 4px rgba(0,122,255,0.3); }
+.site-sheet { position: absolute; bottom: 160px; left: 0; right: 0; height: 520px; background: #1C1C1E; border-radius: 30px 30px 0 0; padding: 20px 40px; }
+.sheet-handle { width: 80px; height: 10px; background: #48484A; border-radius: 5px; margin: 0 auto 24px; }
+.search-bar { background: #2C2C2E; border-radius: 20px; padding: 22px 30px; color: #8E8E93; font-size: 30px; margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+.site-row { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); gap: 20px; }
+.site-icon { width: 68px; height: 68px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; font-weight: 700; flex-shrink: 0; }
+.site-icon.cvs { background: #CC0000; }
+.site-icon.wal { background: #E31837; }
+.site-icon.hc { background: #30D158; }
+.site-info { flex: 1; }
+.site-name { color: white; font-size: 30px; font-weight: 600; }
+.site-detail { color: #8E8E93; font-size: 24px; margin-top: 4px; }
+.site-dist { color: #0A84FF; font-size: 26px; font-weight: 500; }
+
+.profile-switcher { display: flex; gap: 14px; padding: 14px 40px; flex-shrink: 0; }
+.profile-chip { display: flex; align-items: center; gap: 10px; padding: 12px 22px; background: #2C2C2E; border-radius: 30px; white-space: nowrap; }
+.profile-chip.active { background: #0A84FF; }
+.pchip-dot { width: 14px; height: 14px; border-radius: 50%; }
+.pchip-name { color: white; font-size: 24px; font-weight: 500; }
+.records-content { padding: 0 40px; flex: 1; overflow: hidden; }
+.year-header { color: #8E8E93; font-size: 26px; font-weight: 600; padding: 24px 0 12px; text-transform: uppercase; letter-spacing: 2px; }
+.record-card { background: #2C2C2E; border-radius: 22px; padding: 24px; margin-bottom: 14px; display: flex; align-items: center; gap: 18px; }
+.record-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.record-info { flex: 1; }
+.record-name { color: white; font-size: 28px; font-weight: 600; }
+.record-date { color: #8E8E93; font-size: 22px; margin-top: 4px; }
+.record-badge { background: rgba(10,132,255,0.15); color: #0A84FF; font-size: 20px; padding: 6px 14px; border-radius: 10px; font-weight: 600; }
+
+.scan-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #0A84FF; color: white; padding: 22px; margin: 16px 40px; border-radius: 20px; font-size: 28px; font-weight: 600; flex-shrink: 0; }
+.form-section-header { color: #8E8E93; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; padding: 16px 40px 8px; }
+.form-row { background: #1C1C1E; padding: 22px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.form-label { color: white; font-size: 28px; }
+.form-value { color: #8E8E93; font-size: 28px; }
+.form-value.blue { color: #0A84FF; }
+
+.travel-content { padding: 0 40px; flex: 1; overflow: hidden; }
+.dest-card { background: linear-gradient(135deg, #1C3A5F 0%, #1A2A40 100%); border-radius: 28px; padding: 32px; margin-bottom: 20px; }
+.dest-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.dest-flag { font-size: 52px; }
+.dest-name { color: white; font-size: 34px; font-weight: 700; }
+.dest-sub { color: #8E8E93; font-size: 22px; }
+.gap-item { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.06); border-radius: 14px; margin-bottom: 10px; }
+.gap-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.gap-icon.need { background: rgba(255,59,48,0.2); color: #FF3B30; }
+.gap-icon.done { background: rgba(48,209,88,0.2); color: #30D158; }
+.gap-icon.rec { background: rgba(255,159,10,0.2); color: #FF9F0A; }
+.gap-vname { color: white; font-size: 26px; font-weight: 500; }
+.gap-vdetail { color: #8E8E93; font-size: 20px; }
+.gap-info { flex: 1; }
+
+.family-card { background: #2C2C2E; border-radius: 22px; padding: 28px; margin-bottom: 14px; display: flex; align-items: center; gap: 22px; }
+.family-avatar { width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 34px; font-weight: 700; flex-shrink: 0; }
+.family-info { flex: 1; }
+.family-name { color: white; font-size: 30px; font-weight: 600; }
+.family-meta { color: #8E8E93; font-size: 22px; margin-top: 4px; }
+.family-count { color: #0A84FF; font-size: 22px; margin-top: 4px; }
+
+.milestone { margin-bottom: 16px; }
+.milestone-head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.ms-dot { width: 22px; height: 22px; border-radius: 50%; border: 4px solid #0A84FF; flex-shrink: 0; }
+.ms-dot.done { background: #30D158; border-color: #30D158; }
+.ms-dot.overdue { background: #FF3B30; border-color: #FF3B30; }
+.ms-label { color: white; font-size: 28px; font-weight: 600; }
+.vac-chip { display: inline-flex; padding: 10px 18px; border-radius: 12px; font-size: 22px; font-weight: 500; margin: 3px 0 3px 50px; }
+.vac-chip.done { background: rgba(48,209,88,0.15); color: #30D158; }
+.vac-chip.overdue { background: rgba(255,59,48,0.15); color: #FF3B30; }
+.vac-chip.up { background: rgba(142,142,147,0.15); color: #8E8E93; }
+
+.widget-mock { display: flex; flex-direction: column; align-items: center; }
+.hs-row { display: flex; gap: 36px; margin-bottom: 36px; }
+.hs-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+.hs-label { color: rgba(255,255,255,0.9); font-size: 20px; text-align: center; margin-top: 6px; }
+.hs-app { display: flex; flex-direction: column; align-items: center; }
+.widget-card { width: 680px; background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%); border-radius: 36px; padding: 32px; margin-top: 20px; }
+.w-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.w-icon { width: 44px; height: 44px; background: #0A84FF; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: white; font-size: 22px; }
+.w-title { color: #8E8E93; font-size: 22px; font-weight: 600; }
+.w-next { color: white; font-size: 30px; font-weight: 600; }
+.w-due { color: #FF9F0A; font-size: 24px; margin-top: 4px; }
+.w-stats { display: flex; justify-content: space-around; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+.w-stat-num { color: white; font-size: 32px; font-weight: 700; text-align: center; }
+.w-stat-label { color: #8E8E93; font-size: 18px; text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- 1: Finder -->
+<div class="screenshot bg-blue active" id="ss1">
+  <div class="caption">Find COVID & Flu Vaccines Near You</div>
+  <div class="subcaption">Real-time availability from pharmacies nearby</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title">Find</div><div class="nav-icon">🔖</div></div>
+    <div class="map-container">
+      <div class="map-road" style="width:3px;height:600px;top:40px;left:200px;transform:rotate(15deg)"></div>
+      <div class="map-road" style="width:3px;height:500px;top:100px;left:400px;transform:rotate(-8deg)"></div>
+      <div class="map-road" style="width:600px;height:3px;top:200px;left:50px"></div>
+      <div class="map-road" style="width:500px;height:3px;top:350px;left:100px"></div>
+      <div class="map-pin user" style="top:240px;left:380px"></div>
+      <div class="map-pin" style="top:130px;left:250px">💉</div>
+      <div class="map-pin green" style="top:200px;left:550px">💉</div>
+      <div class="map-pin" style="top:320px;left:180px">💉</div>
+      <div class="map-pin orange" style="top:100px;left:480px">💉</div>
+      <div class="map-pin" style="top:370px;left:500px">💉</div>
+    </div>
+    <div class="site-sheet">
+      <div class="sheet-handle"></div>
+      <div class="search-bar">🔍 Search vaccines, pharmacies...</div>
+      <div class="site-row"><div class="site-icon cvs">+</div><div class="site-info"><div class="site-name">CVS Pharmacy</div><div class="site-detail">COVID-19, Flu, Shingles</div></div><div class="site-dist">0.3 mi</div></div>
+      <div class="site-row"><div class="site-icon wal">W</div><div class="site-info"><div class="site-name">Walgreens</div><div class="site-detail">COVID-19, Flu, Tdap</div></div><div class="site-dist">0.7 mi</div></div>
+      <div class="site-row"><div class="site-icon hc">⚕</div><div class="site-info"><div class="site-name">City Health Center</div><div class="site-detail">All vaccines available</div></div><div class="site-dist">1.2 mi</div></div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-item active"><span class="tab-icon">📍</span>Find</div>
+      <div class="tab-item"><span class="tab-icon">📋</span>Records</div>
+      <div class="tab-item"><span class="tab-icon">✈️</span>Travel</div>
+      <div class="tab-item"><span class="tab-icon">👨‍👩‍👧‍👦</span>Family</div>
+      <div class="tab-item"><span class="tab-icon">⚙️</span>Settings</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 2: Records -->
+<div class="screenshot bg-green" id="ss2">
+  <div class="caption">Track Your Vaccination Records</div>
+  <div class="subcaption">Complete timeline with all your immunizations</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title">Records</div><div class="nav-icon">＋</div></div>
+    <div class="profile-switcher">
+      <div class="profile-chip active"><span class="pchip-dot" style="background:#fff"></span><span class="pchip-name">All</span></div>
+      <div class="profile-chip"><span class="pchip-dot" style="background:#007AFF"></span><span class="pchip-name">Chad</span></div>
+      <div class="profile-chip"><span class="pchip-dot" style="background:#34C759"></span><span class="pchip-name">Sarah</span></div>
+      <div class="profile-chip"><span class="pchip-dot" style="background:#FF9500"></span><span class="pchip-name">Emma</span></div>
+    </div>
+    <div class="records-content">
+      <div class="year-header">2025</div>
+      <div class="record-card"><div class="record-dot" style="background:#007AFF"></div><div class="record-info"><div class="record-name">COVID-19 Booster (2024-25)</div><div class="record-date">Feb 15, 2025 · CVS Pharmacy</div></div><div class="record-badge">Chad</div></div>
+      <div class="record-card"><div class="record-dot" style="background:#34C759"></div><div class="record-info"><div class="record-name">Influenza (Flu Shot)</div><div class="record-date">Jan 8, 2025 · Walgreens</div></div><div class="record-badge" style="background:rgba(52,199,89,0.15);color:#34C759">Sarah</div></div>
+      <div class="year-header">2024</div>
+      <div class="record-card"><div class="record-dot" style="background:#FF9500"></div><div class="record-info"><div class="record-name">DTaP – Dose 4</div><div class="record-date">Nov 20, 2024 · Pediatrician</div></div><div class="record-badge" style="background:rgba(255,149,0,0.15);color:#FF9500">Emma</div></div>
+      <div class="record-card"><div class="record-dot" style="background:#007AFF"></div><div class="record-info"><div class="record-name">Tdap (Boostrix)</div><div class="record-date">Sep 3, 2024 · City Health</div></div><div class="record-badge">Chad</div></div>
+      <div class="record-card"><div class="record-dot" style="background:#34C759"></div><div class="record-info"><div class="record-name">Shingrix – Dose 1</div><div class="record-date">Jul 14, 2024 · CVS Pharmacy</div></div><div class="record-badge" style="background:rgba(52,199,89,0.15);color:#34C759">Sarah</div></div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-item"><span class="tab-icon">📍</span>Find</div>
+      <div class="tab-item active"><span class="tab-icon">📋</span>Records</div>
+      <div class="tab-item"><span class="tab-icon">✈️</span>Travel</div>
+      <div class="tab-item"><span class="tab-icon">👨‍👩‍👧‍👦</span>Family</div>
+      <div class="tab-item"><span class="tab-icon">⚙️</span>Settings</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 3: QR Scan / Add Record -->
+<div class="screenshot bg-purple" id="ss3">
+  <div class="caption">Scan QR Codes Instantly</div>
+  <div class="subcaption">Import vaccination cards with one scan</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title" style="font-size:42px">Add Record</div><div class="nav-icon">✕</div></div>
+    <div class="scan-btn">📷 Scan Vaccine QR Code</div>
+    <div style="flex:1;overflow:hidden">
+      <div class="form-section-header">Profile</div>
+      <div class="form-row" style="border-radius:20px"><div class="form-label">For</div><div class="form-value blue">Chad ›</div></div>
+      <div class="form-section-header">Vaccine Details</div>
+      <div class="form-row"><div class="form-label">Vaccine</div><div class="form-value blue">Select ›</div></div>
+      <div class="form-row"><div class="form-label">Manufacturer</div><div class="form-value">Pfizer-BioNTech</div></div>
+      <div class="form-row"><div class="form-label">Lot Number</div><div class="form-value">EW0182</div></div>
+      <div class="form-row" style="border-bottom:none"><div class="form-label">Date</div><div class="form-value blue">Mar 1, 2025</div></div>
+      <div class="form-section-header">Administration</div>
+      <div class="form-row"><div class="form-label">Provider</div><div class="form-value">CVS Pharmacy</div></div>
+      <div class="form-row" style="border-bottom:none"><div class="form-label">Injection Site</div><div class="form-value">Left Arm</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 4: Travel -->
+<div class="screenshot bg-orange" id="ss4">
+  <div class="caption">Plan Travel Vaccines by Destination</div>
+  <div class="subcaption">CDC-powered gap analysis for every trip</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title">Travel</div><div class="nav-icon">＋</div></div>
+    <div class="travel-content">
+      <div class="dest-card">
+        <div class="dest-header"><span class="dest-flag">🇹🇭</span><div><div class="dest-name">Thailand</div><div class="dest-sub">Trip: Apr 15 – May 2, 2025</div></div></div>
+        <div class="gap-item"><div class="gap-icon need">✕</div><div class="gap-info"><div class="gap-vname">Hepatitis A</div><div class="gap-vdetail">Required · No record found</div></div></div>
+        <div class="gap-item"><div class="gap-icon need">✕</div><div class="gap-info"><div class="gap-vname">Typhoid</div><div class="gap-vdetail">Required · No record found</div></div></div>
+        <div class="gap-item"><div class="gap-icon rec">!</div><div class="gap-info"><div class="gap-vname">Japanese Encephalitis</div><div class="gap-vdetail">Recommended for rural areas</div></div></div>
+        <div class="gap-item"><div class="gap-icon done">✓</div><div class="gap-info"><div class="gap-vname">Tdap</div><div class="gap-vdetail">Up to date · Sep 2024</div></div></div>
+        <div class="gap-item"><div class="gap-icon done">✓</div><div class="gap-info"><div class="gap-vname">COVID-19</div><div class="gap-vdetail">Up to date · Feb 2025</div></div></div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-header"><span class="dest-flag">🇧🇷</span><div><div class="dest-name">Brazil</div><div class="dest-sub">Trip: Jul 10 – Jul 24, 2025</div></div></div>
+        <div class="gap-item"><div class="gap-icon need">✕</div><div class="gap-info"><div class="gap-vname">Yellow Fever</div><div class="gap-vdetail">Required · Certificate needed</div></div></div>
+        <div class="gap-item"><div class="gap-icon rec">!</div><div class="gap-info"><div class="gap-vname">Malaria Prophylaxis</div><div class="gap-vdetail">Recommended for Amazon region</div></div></div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-item"><span class="tab-icon">📍</span>Find</div>
+      <div class="tab-item"><span class="tab-icon">📋</span>Records</div>
+      <div class="tab-item active"><span class="tab-icon">✈️</span>Travel</div>
+      <div class="tab-item"><span class="tab-icon">👨‍👩‍👧‍👦</span>Family</div>
+      <div class="tab-item"><span class="tab-icon">⚙️</span>Settings</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 5: Family -->
+<div class="screenshot bg-teal" id="ss5">
+  <div class="caption">Manage Your Family's Immunizations</div>
+  <div class="subcaption">Everyone's records in one place</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title">Family</div><div class="nav-icon">＋</div></div>
+    <div style="padding:0 40px;flex:1;overflow:hidden">
+      <div class="family-card">
+        <div class="family-avatar" style="background:#007AFF">C</div>
+        <div class="family-info"><div class="family-name">Chad</div><div class="family-meta">Adult · 35 years old</div><div class="family-count">12 records</div></div>
+        <span style="color:#48484A;font-size:28px">›</span>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" style="background:#34C759">S</div>
+        <div class="family-info"><div class="family-name">Sarah</div><div class="family-meta">Adult · 33 years old</div><div class="family-count">9 records</div></div>
+        <span style="color:#48484A;font-size:28px">›</span>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" style="background:#FF9500">E</div>
+        <div class="family-info"><div class="family-name">Emma</div><div class="family-meta">Child · 2 years old</div><div class="family-count">8 records</div></div>
+        <span style="color:#48484A;font-size:28px">›</span>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" style="background:#AF52DE">L</div>
+        <div class="family-info"><div class="family-name">Liam</div><div class="family-meta">Child · 5 years old</div><div class="family-count">14 records</div></div>
+        <span style="color:#48484A;font        <span style="color:#48484A;font-size:28px">›</span>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" style="background:#FF2D55">G</div>
+        <div class="family-info"><div class="family-name">Grandma Rose</div><div class="family-meta">Adult · 68 years old</div><div class="family-count">6 records</div></div>
+        <span style="color:#48484A;font-size:28px">›</span>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-item"><span class="tab-icon">📍</span>Find</div>
+      <div class="tab-item"><span class="tab-icon">📋</span>Records</div>
+      <div class="tab-item"><span class="tab-icon">✈️</span>Travel</div>
+      <div class="tab-item active"><span class="tab-icon">👨‍👩‍👧‍👦</span>Family</div>
+      <div class="tab-item"><span class="tab-icon">⚙️</span>Settings</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 6: Child Schedule -->
+<div class="screenshot bg-pink" id="ss6">
+  <div class="caption">Never Miss a Booster</div>
+  <div class="subcaption">CDC immunization schedule with milestone tracking</div>
+  <div class="phone-frame"><div class="phone-screen">
+    <div class="status-bar"><span>9:41</span><span class="right">📶 🔋</span></div>
+    <div class="nav-bar"><div class="nav-title" style="font-size:42px">Emma's Schedule</div><div class="nav-icon"></div></div>
+    <div style="padding:0 40px;flex:1;overflow:hidden">
+      <div class="milestone">
+        <div class="milestone-head"><div class="ms-dot done"></div><div class="ms-label">Birth</div></div>
+        <div class="vac-chip done">✓ Hepatitis B – Dose 1</div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-head"><div class="ms-dot done"></div><div class="ms-label">2 Months</div></div>
+        <div class="vac-chip done">✓ DTaP – Dose 1</div><br>
+        <div class="vac-chip done">✓ IPV – Dose 1</div><br>
+        <div class="vac-chip done">✓ Hib – Dose 1</div><br>
+        <div class="vac-chip done">✓ PCV15 – Dose 1</div><br>
+        <div class="vac-chip done">✓ Rotavirus – Dose 1</div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-head"><div class="ms-dot done"></div><div class="ms-label">4 Months</div></div>
+        <div class="vac-chip done">✓ DTaP – Dose 2</div><br>
+        <div class="vac-chip done">✓ IPV – Dose 2</div><br>
+        <div class="vac-chip done">✓ Rotavirus – Dose 2</div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-head"><div class="ms-dot overdue"></div><div class="ms-label">6 Months</div></div>
+        <div class="vac-chip overdue">⚠ DTaP – Dose 3</div><br>
+        <div class="vac-chip overdue">⚠ Hepatitis B – Dose 3</div><br>
+        <div class="vac-chip overdue">⚠ Influenza – Annual</div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-head"><div class="ms-dot" style="border-color:#8E8E93"></div><div class="ms-label" style="color:#8E8E93">12 Months</div></div>
+        <div class="vac-chip up">MMR – Dose 1</div><br>
+        <div class="vac-chip up">Varicella – Dose 1</div><br>
+        <div class="vac-chip up">Hepatitis A – Dose 1</div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-item"><span class="tab-icon">📍</span>Find</div>
+      <div class="tab-item"><span class="tab-icon">📋</span>Records</div>
+      <div class="tab-item"><span class="tab-icon">✈️</span>Travel</div>
+      <div class="tab-item active"><span class="tab-icon">👨‍👩‍👧‍👦</span>Family</div>
+      <div class="tab-item"><span class="tab-icon">⚙️</span>Settings</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 7: Widget -->
+<div class="screenshot bg-indigo" id="ss7">
+  <div class="caption">Your Health at a Glance</div>
+  <div class="subcaption">Beautiful widgets for your home screen</div>
+  <div class="phone-frame"><div class="phone-screen" style="background:linear-gradient(180deg,#1a1a2e 0%,#16213e 100%);justify-content:center;align-items:center">
+    <div class="widget-mock">
+      <div class="hs-row">
+        <div class="hs-app"><div class="hs-icon" style="background:#30D158">📞</div><div class="hs-label">Phone</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#007AFF">💬</div><div class="hs-label">Messages</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#FF9500">📷</div><div class="hs-label">Camera</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#FF2D55">🎵</div><div class="hs-label">Music</div></div>
+      </div>
+      <div class="hs-row">
+        <div class="hs-app"><div class="hs-icon" style="background:#5AC8FA">🌤</div><div class="hs-label">Weather</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#FF3B30">📧</div><div class="hs-label">Mail</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#AF52DE">🗓</div><div class="hs-label">Calendar</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#0A84FF">💉</div><div class="hs-label">VaxNear</div></div>
+      </div>
+      <div class="widget-card">
+        <div class="w-header"><div class="w-icon">💉</div><div class="w-title">VAXNEAR</div></div>
+        <div class="w-next">Next: Flu Shot Due</div>
+        <div class="w-due">⏰ Due in 14 days</div>
+        <div class="w-stats">
+          <div><div class="w-stat-num">43</div><div class="w-stat-label">Total Records</div></div>
+          <div><div class="w-stat-num">5</div><div class="w-stat-label">Family</div></div>
+          <div><div class="w-stat-num">2</div><div class="w-stat-label">Upcoming</div></div>
+        </div>
+      </div>
+      <div style="height:40px"></div>
+      <div class="hs-row">
+        <div class="hs-app"><div class="hs-icon" style="background:#34C759">🏃</div><div class="hs-label">Fitness</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#FFCC00">📝</div><div class="hs-label">Notes</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#8E8E93">⚙️</div><div class="hs-label">Settings</div></div>
+        <div class="hs-app"><div class="hs-icon" style="background:#FF9F0A">🏪</div><div class="hs-label">App Store</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<script>
+// URL param ?ss=N activates that screenshot
+const params = new URLSearchParams(window.location.search);
+const ss = params.get('ss');
+if (ss) {
+  document.querySelectorAll('.screenshot').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById('ss' + ss);
+  if (target) target.classList.add('active');
+}
+</script>
+</body>
+</html>
