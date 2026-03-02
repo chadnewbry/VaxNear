@@ -4,6 +4,7 @@ enum DeepLink {
     case finder(vaccineFilter: String? = nil)
     case records
     case travel(country: String? = nil)
+    case family
     case recordDetail(id: UUID)
 
     static func from(url: URL) -> DeepLink? {
@@ -19,6 +20,8 @@ enum DeepLink {
             let country = URLComponents(url: url, resolvingAgainstBaseURL: false)?
                 .queryItems?.first(where: { $0.name == "country" })?.value
             return .travel(country: country)
+        case "family":
+            return .family
         case "record":
             if let idStr = URLComponents(url: url, resolvingAgainstBaseURL: false)?
                 .queryItems?.first(where: { $0.name == "id" })?.value,
@@ -43,6 +46,8 @@ enum DeepLink {
             var components = URLComponents(string: "vaxnear://travel")!
             if let country { components.queryItems = [URLQueryItem(name: "country", value: country)] }
             return components.url!
+        case .family:
+            return URL(string: "vaxnear://family")!
         case .recordDetail(let id):
             var components = URLComponents(string: "vaxnear://record")!
             components.queryItems = [URLQueryItem(name: "id", value: id.uuidString)]

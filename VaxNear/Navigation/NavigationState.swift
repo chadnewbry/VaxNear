@@ -3,8 +3,9 @@ import SwiftUI
 enum AppTab: Int, Hashable {
     case finder = 0
     case records = 1
-    case travel = 2
-    case settings = 3
+    case family = 2
+    case travel = 3
+    case settings = 4
 }
 
 @MainActor
@@ -28,6 +29,8 @@ final class NavigationState: ObservableObject {
             selectedTab = .finder
         case .records:
             selectedTab = .records
+        case .family:
+            selectedTab = .family
         case .travel(let country):
             travelCountry = country
             selectedTab = .travel

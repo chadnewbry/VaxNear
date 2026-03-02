@@ -19,6 +19,13 @@ struct MainTabView: View {
                 .accessibilityLabel("Vaccination records")
                 .tag(AppTab.records)
 
+            FamilyProfilesView()
+                .tabItem {
+                    Label("Family", systemImage: "person.3")
+                }
+                .accessibilityLabel("Family profiles")
+                .tag(AppTab.family)
+
             TravelView()
                 .tabItem {
                     Label("Travel", systemImage: "airplane")
