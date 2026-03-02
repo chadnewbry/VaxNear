@@ -154,14 +154,21 @@ struct RecordsView: View {
                 }
 
                 Button { showingFamilyManagement = true } label: {
-                    Image(systemName: "plus")
-                        .font(.caption.bold())
-                        .foregroundStyle(Color.accentColor)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(Capsule().strokeBorder(Color.accentColor, lineWidth: 1.5))
+                    HStack(spacing: 4) {
+                        Image(systemName: profiles.isEmpty ? "plus" : "person.2.badge.gearshape")
+                            .font(.caption.bold())
+                        if !profiles.isEmpty {
+                            Text("Manage")
+                                .font(.caption)
+                                .fontWeight(.medium)
+                        }
+                    }
+                    .foregroundStyle(Color.accentColor)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(Capsule().strokeBorder(Color.accentColor, lineWidth: 1.5))
                 }
-                .accessibilityLabel("Add family profile")
+                .accessibilityLabel(profiles.isEmpty ? "Add family profile" : "Manage family profiles")
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
