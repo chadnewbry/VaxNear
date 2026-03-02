@@ -177,4 +177,19 @@ final class CDCDataManager: Sendable {
         }
         return Calendar.current.date(byAdding: .month, value: intervalMonths, to: lastDoseDate)
     }
+
+    func allTravelCountries() -> [TravelVaccineInfo] {
+        travelData.map { entry in
+            TravelVaccineInfo(
+                countryCode: entry.countryCode,
+                countryName: entry.countryName,
+                required: entry.required,
+                recommended: entry.recommended,
+                malariaRisk: entry.malariaRisk,
+                yellowFeverCertRequired: entry.yellowFeverCertRequired,
+                notes: entry.notes
+            )
+        }
+    }
+
 }
