@@ -3,13 +3,13 @@ import SwiftData
 
 @Model
 final class ScheduledReminder {
-    @Attribute(.unique) var id: String
-    var profileId: UUID
-    var type: ReminderType
-    var scheduledDate: Date
-    var title: String
-    var body: String
-    var createdAt: Date
+    var id: String = UUID().uuidString
+    var profileId: UUID = UUID()
+    var type: ReminderType = .booster
+    var scheduledDate: Date = Date()
+    var title: String = ""
+    var body: String = ""
+    var createdAt: Date = Date()
 
     enum ReminderType: String, Codable {
         case booster

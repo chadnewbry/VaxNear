@@ -3,14 +3,14 @@ import SwiftData
 
 @Model
 final class AppSettings {
-    @Attribute(.unique) var id: UUID
-    var searchRadiusMiles: Int
-    var notificationAdvanceDays: Int
+    var id: UUID = UUID()
+    var searchRadiusMiles: Int = 25
+    var notificationAdvanceDays: Int = 7
     var quietHoursStart: Date?
     var quietHoursEnd: Date?
-    var isBiometricLockEnabled: Bool
-    var freeUsesRemaining: Int
-    var hasPurchasedFullVersion: Bool
+    var isBiometricLockEnabled: Bool = false
+    var freeUsesRemaining: Int = 5
+    var hasPurchasedFullVersion: Bool = false
 
     init(
         id: UUID = UUID(),

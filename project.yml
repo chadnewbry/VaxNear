@@ -20,6 +20,8 @@ targets:
         SWIFT_VERSION: "5.9"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        DEVELOPMENT_TEAM: 62R87RHN6R
+        CODE_SIGN_STYLE: Automatic
     entitlements:
       path: VaxNear/VaxNear.entitlements
       properties:
@@ -31,5 +33,5 @@ targets:
           - CloudKit
         aps-environment: development
     dependencies:
-      - framework: HealthKit.framework
-      - framework: PassKit.framework
+      - sdk: HealthKit.framework
+      - sdk: PassKit.framework

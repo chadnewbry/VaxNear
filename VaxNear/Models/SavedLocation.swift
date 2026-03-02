@@ -3,15 +3,15 @@ import SwiftData
 
 @Model
 final class SavedLocation {
-    @Attribute(.unique) var id: UUID
-    var name: String
-    var address: String
-    var latitude: Double
-    var longitude: Double
+    var id: UUID = UUID()
+    var name: String = ""
+    var address: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
     var phoneNumber: String?
-    var vaccineTypesAvailable: [String]
-    var isWalkIn: Bool
-    var isFavorite: Bool
+    var vaccineTypesAvailable: [String] = []
+    var isWalkIn: Bool = false
+    var isFavorite: Bool = false
 
     init(
         id: UUID = UUID(),

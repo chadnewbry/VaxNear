@@ -268,7 +268,6 @@ struct AddRecordView: View {
 
     private func decompressDeflate(_ data: Data) -> Data? {
         let bufferSize = 65_536
-        var decompressed = Data()
 
         let result = data.withUnsafeBytes { srcBuffer -> Data? in
             guard let srcPtr = srcBuffer.baseAddress?.assumingMemoryBound(to: UInt8.self) else { return nil }

@@ -3,17 +3,17 @@ import SwiftData
 
 @Model
 final class VaccinationRecord {
-    @Attribute(.unique) var id: UUID
+    var id: UUID = UUID()
     var profile: FamilyProfile?
-    var vaccineName: String
+    var vaccineName: String = ""
     var manufacturer: String?
     var lotNumber: String?
-    var dateAdministered: Date
+    var dateAdministered: Date = Date()
     var administeringProvider: String?
     var injectionSite: String?
     var notes: String?
     var smartHealthCardData: Data?
-    var createdAt: Date
+    var createdAt: Date = Date()
 
     @Relationship(deleteRule: .cascade, inverse: \SideEffectLog.record)
     var sideEffects: [SideEffectLog] = []

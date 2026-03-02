@@ -12,11 +12,11 @@ enum Severity: String, Codable, CaseIterable, Identifiable {
 
 @Model
 final class SideEffectLog {
-    @Attribute(.unique) var id: UUID
+    var id: UUID = UUID()
     var record: VaccinationRecord?
-    var symptom: String
-    var severity: Severity
-    var onsetDate: Date
+    var symptom: String = ""
+    var severity: Severity = .mild
+    var onsetDate: Date = Date()
     var durationDays: Int?
     var notes: String?
 

@@ -3,14 +3,14 @@ import SwiftData
 
 @Model
 final class TravelPlan {
-    @Attribute(.unique) var id: UUID
+    var id: UUID = UUID()
     var profile: FamilyProfile?
-    var destination: String
-    var countryCode: String
-    var departureDate: Date
-    var requiredVaccines: [String]
-    var recommendedVaccines: [String]
-    var completedVaccines: [String]
+    var destination: String = ""
+    var countryCode: String = ""
+    var departureDate: Date = Date()
+    var requiredVaccines: [String] = []
+    var recommendedVaccines: [String] = []
+    var completedVaccines: [String] = []
 
     init(
         id: UUID = UUID(),

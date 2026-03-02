@@ -23,12 +23,12 @@ enum Relationship: String, Codable, CaseIterable, Identifiable {
 
 @Model
 final class FamilyProfile {
-    @Attribute(.unique) var id: UUID
-    var name: String
-    var relationship: Relationship
-    var dateOfBirth: Date
-    var colorTag: String
-    var createdAt: Date
+    var id: UUID = UUID()
+    var name: String = ""
+    var relationship: Relationship = .selfUser
+    var dateOfBirth: Date = Date()
+    var colorTag: String = "#007AFF"
+    var createdAt: Date = Date()
 
     @Relationship(deleteRule: .cascade, inverse: \VaccinationRecord.profile)
     var vaccinationRecords: [VaccinationRecord] = []

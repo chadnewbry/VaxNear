@@ -21,7 +21,7 @@ final class WalletPassManager: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
 
-        var secondaryFields: [[String: Any]] = [
+        let secondaryFields: [[String: Any]] = [
             ["key": "manufacturer", "label": "MANUFACTURER", "value": record.manufacturer ?? "N/A"],
             ["key": "lot", "label": "LOT NUMBER", "value": record.lotNumber ?? "N/A"]
         ]
