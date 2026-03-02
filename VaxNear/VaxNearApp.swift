@@ -8,6 +8,7 @@ struct VaxNearApp: App {
     @State private var isUnlocked = false
     @StateObject private var notificationManager = NotificationManager()
     @StateObject private var syncManager = SyncManager()
+    @StateObject private var storeManager = StoreKitManager.shared
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -59,6 +60,12 @@ struct VaxNearApp: App {
                         _ = await notificationManager.requestPermission()
                         notificationManager.scheduleSeasonalAlerts()
                     }
+                }
+                // Check IAP status on launch and sync with AppSettings
+                Task {
+                    await storeManager.checkPurchaseStatus()
+                    await storeManager.loadProducts()
+                    storeManager.syncSettingsIfNeeded(context: sharedModelContainer.mainContext)
                 }
             }
         }

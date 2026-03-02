@@ -8,10 +8,12 @@ struct RecordsView: View {
 
     @Environment(\.modelContext) private var modelContext
     @StateObject private var healthKit = HealthKitManager.shared
+    @StateObject private var storeManager = StoreKitManager.shared
     @State private var showingAddRecord = false
     @State private var selectedProfileID: UUID?
     @State private var showingFamilyManagement = false
     @State private var showingExportSheet = false
+    @State private var showingPaywall = false
     @State private var exportedPDFURL: URL?
 
     private var appSettings: AppSettings {
@@ -90,6 +92,16 @@ struct RecordsView: View {
                     ShareSheet(items: [url])
                 }
             }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView {
+                    storeManager.syncSettingsIfNeeded(context: modelContext)
+                }
+            }
+            .onChange(of: storeManager.isPurchased) { _, purchased in
+                if purchased {
+                    storeManager.syncSettingsIfNeeded(context: modelContext)
+                }
+            }
         }
     }
 
@@ -104,12 +116,12 @@ struct RecordsView: View {
                     .font(.caption)
                     .foregroundStyle(.green)
             } else {
-                Text("\(settings.freeUsesRemaining) free records remaining")
+                Text("\(settings.freeUsesRemaining) of 5 free records remaining")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
                 Button("Upgrade") {
-                    // Navigate to paywall
+                    showingPaywall = true
                 }
                 .font(.caption.bold())
                 .buttonStyle(.bordered)
@@ -203,7 +215,8 @@ struct RecordsView: View {
     private func handleAddRecord() {
         let settings = appSettings
         if !settings.hasPurchasedFullVersion && settings.freeUsesRemaining <= 0 {
-            return // Show paywall
+            showingPaywall = true
+            return
         }
         showingAddRecord = true
     }

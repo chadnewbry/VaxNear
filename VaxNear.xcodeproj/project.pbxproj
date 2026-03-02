@@ -33,26 +33,30 @@
 		6A9645E371C2F654AD9BBE67 /* adult_schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = D2131428B735879646517532 /* adult_schedule.json */; };
 		724572265A56031C3F7F3EBB /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */; };
 		7263A64C51C3BDB9EF55E4A3 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B804259825249A2026D3771 /* SyncManager.swift */; };
+		748B086FEC1C0EAEF6E59959 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = D4FCF87E32F07BDABEEF4CD9 /* Configuration.storekit */; };
 		74A6CB288FED010A86A8A06E /* VaccinationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */; };
 		799D2C2B7F7102222D6BE3F2 /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A77EB650C19A605C93E291 /* FinderView.swift */; };
 		7E108471652F5EF8C5D0E11B /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */; };
 		804C884631B1E33FBBFD005E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8F95A48707C948FB033D1E /* HealthKit.framework */; };
+		829F1EB6464460285F790C4A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5A6586A5F396BD4C7F692C /* StoreKit.framework */; };
 		83AD3FA032A117E7B1A5284C /* TravelPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE303E62FF29BF1074F6CE9 /* TravelPlan.swift */; };
 		857280AE225215C71B248125 /* VaccineSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF929813A0D3F038E19CD6 /* VaccineSite.swift */; };
 		8E75E5BB49697F1845805C04 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */; };
+		9484A5C3E5A7B68029171DD2 /* YellowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88AAD2B7A94372A33D7345B /* YellowCardView.swift */; };
+		95871901C977BCE7F32F0BEF /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4722988CA518A07E1617698 /* TravelViewModel.swift */; };
 		A72F838F3B677D8189CEAAAD /* ChildImmunizationScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E318DE6B18146A0B25E5C1A /* ChildImmunizationScheduleView.swift */; };
 		BDF62D66E3D1E094B76EA4DE /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C03BB91E68CC522DA4DA7F /* ProfileDetailView.swift */; };
 		CBE66DF3C9B544F7851EBDE9 /* SavedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B1297882F9AA366FCCCFF /* SavedLocation.swift */; };
 		D4F8600FF07528CD5ED75239 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF11CBF8AF93C028E8B6A81 /* SettingsView.swift */; };
 		D52B34042AE5D394B720032F /* ProfileColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E78074CF644F0F6EEBD498D /* ProfileColors.swift */; };
+		D6ADEF8A86F29D5C3241792B /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5096E2244A48C2C807B116 /* StoreKitManager.swift */; };
 		D922EB96922F5A31D73B6510 /* FamilyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */; };
+		DD8FEF6E7BEFAD7310601947 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B55FFBBFEF6C106851FF5 /* PaywallView.swift */; };
 		DE9ADC2BB937055D2A53265A /* SideEffectLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */; };
 		DF664C3C29525B922ED2C324 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD93768F1024A85703E1A25 /* AddRecordView.swift */; };
 		E28BEB89A34FA8E55115E308 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */; };
 		E56C0CD419219103805FBDB3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */; };
 		F364B42D5E30139586938774 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65443BEA4D82E4CAC77A1144 /* DataExportService.swift */; };
-		AA2222222222222222222222 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111111 /* TravelViewModel.swift */; };
-		AA4444444444444444444444 /* YellowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3333333333333333333333 /* YellowCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,7 @@
 		0BB187473ED8E8AF1380A2C0 /* VaxNear.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VaxNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCDD56BCCFB0CFF1771A84C /* ShareProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProfileSheet.swift; sourceTree = "<group>"; };
 		0E59E770F554287F9B165E6A /* CDCDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCDataManager.swift; sourceTree = "<group>"; };
+		0E5A6586A5F396BD4C7F692C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		17853C3F4BB5D9A52CC1FE42 /* ScheduledReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledReminder.swift; sourceTree = "<group>"; };
 		184B1297882F9AA366FCCCFF /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
 		1AF150B5FED1B6BFF83A485F /* SiteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetailView.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		387DF985570F162BCEFDB453 /* AddSideEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSideEffectView.swift; sourceTree = "<group>"; };
 		42AB38C74F42CE6263F507A2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		445E1300A2326848993842A5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		453B55FFBBFEF6C106851FF5 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		46FF929813A0D3F038E19CD6 /* VaccineSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSite.swift; sourceTree = "<group>"; };
 		4BFB946EA3516980891E4BB4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		4E78074CF644F0F6EEBD498D /* ProfileColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColors.swift; sourceTree = "<group>"; };
@@ -93,14 +99,18 @@
 		8A728F1875895046E8EBA7FE /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
 		9943F11C58AF8B6C15F35DFD /* FamilyProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfilesView.swift; sourceTree = "<group>"; };
+		9D5096E2244A48C2C807B116 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		A20C2643DF2970F34F1C6B30 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		A4722988CA518A07E1617698 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
 		A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		A9C184D1217FD16A2FE52085 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		ADF5176FC21BB1D93DE797E5 /* VaccinationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationRecord.swift; sourceTree = "<group>"; };
 		B4DE4909BCFE6CABE063DFB5 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		B88AAD2B7A94372A33D7345B /* YellowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCardView.swift; sourceTree = "<group>"; };
 		B999C375E2D890C176AC961C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C1A77EB650C19A605C93E291 /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
 		D2131428B735879646517532 /* adult_schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = adult_schedule.json; sourceTree = "<group>"; };
+		D4FCF87E32F07BDABEEF4CD9 /* Configuration.storekit */ = {isa = PBXFileReference; path = Configuration.storekit; sourceTree = "<group>"; };
 		D8C03BB91E68CC522DA4DA7F /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		DFF11CBF8AF93C028E8B6A81 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ECCDBCD0112EFB773E147320 /* FamilyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyProfile.swift; sourceTree = "<group>"; };
@@ -109,8 +119,6 @@
 		FBAD6B46DE59A61B7546C6A4 /* SideEffectLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectLog.swift; sourceTree = "<group>"; };
 		FEDB5E63EA298BBD192469DA /* vaccine_database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vaccine_database.json; sourceTree = "<group>"; };
 		FEFBB176C36358BFC8DFCC10 /* AddEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProfileView.swift; sourceTree = "<group>"; };
-		AA1111111111111111111111 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
-		AA3333333333333333333333 /* YellowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			files = (
 				804C884631B1E33FBBFD005E /* HealthKit.framework in Frameworks */,
 				114CFA4BB63D9378506E7BEF /* PassKit.framework in Frameworks */,
+				829F1EB6464460285F790C4A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8AD348AB96F00CF2B2C4A8C7 /* FinderViewModel.swift */,
-				AA1111111111111111111111 /* TravelViewModel.swift */,
+				A4722988CA518A07E1617698 /* TravelViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -139,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7F2F9FD092BA49B5D81F2F67 /* TravelView.swift */,
-				AA3333333333333333333333 /* YellowCardView.swift */,
+				B88AAD2B7A94372A33D7345B /* YellowCardView.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -174,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				00081A045B18030AA80043FB /* Assets.xcassets */,
+				D4FCF87E32F07BDABEEF4CD9 /* Configuration.storekit */,
 				622F76F5D91B0FC1C6C3FBB6 /* Info.plist */,
 				759A4D94CBA64179849E954E /* VaxNear.entitlements */,
 				53CBC87FC9DEE2A1135DC04C /* VaxNearApp.swift */,
@@ -205,6 +215,7 @@
 				23EB00DD1923B17C65C17CE4 /* HealthKitManager.swift */,
 				B999C375E2D890C176AC961C /* LocationManager.swift */,
 				8798328375761F797B500C5E /* NotificationManager.swift */,
+				9D5096E2244A48C2C807B116 /* StoreKitManager.swift */,
 				6B804259825249A2026D3771 /* SyncManager.swift */,
 				673582925B750CFF357BAFA5 /* VaccineSiteFinderService.swift */,
 				1C541180BC52CB9E62A192C2 /* WalletPassManager.swift */,
@@ -233,6 +244,14 @@
 				A89EE49CC8DDDEFB5685DA77 /* RecordsView.swift */,
 			);
 			path = Records;
+			sourceTree = "<group>";
+		};
+		9D2CCE710B26EC6B120333EB /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				453B55FFBBFEF6C106851FF5 /* PaywallView.swift */,
+			);
+			path = Paywall;
 			sourceTree = "<group>";
 		};
 		9EEC9FC4B0ED4F748CD213F6 /* Models */ = {
@@ -264,6 +283,7 @@
 			children = (
 				EF8F95A48707C948FB033D1E /* HealthKit.framework */,
 				445E1300A2326848993842A5 /* PassKit.framework */,
+				0E5A6586A5F396BD4C7F692C /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,6 +325,7 @@
 				B07BD35988FA20688C84DED0 /* Family */,
 				EF9C718EE672AD54F2485005 /* Finder */,
 				BE518B81FD58D57D9A4D112F /* Onboarding */,
+				9D2CCE710B26EC6B120333EB /* Paywall */,
 				99CCD8DC188AD8B86035F20C /* Records */,
 				6A76844577D8DA9346C687E7 /* Settings */,
 				73C62B062F9A829661BC32D6 /* Shared */,
@@ -385,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A57BA81EE9D1246666B8D5 /* Assets.xcassets in Resources */,
+				748B086FEC1C0EAEF6E59959 /* Configuration.storekit in Resources */,
 				6A9645E371C2F654AD9BBE67 /* adult_schedule.json in Resources */,
 				021B314CBC24DCCD0442A590 /* childhood_schedule.json in Resources */,
 				1F80FEF19AFA7F7E0959A8F8 /* travel_vaccines.json in Resources */,
@@ -417,6 +439,7 @@
 				02233BF160F72DFA449A7914 /* MainTabView.swift in Sources */,
 				55A5606A76C2581E304000C6 /* NotificationManager.swift in Sources */,
 				5993563A200D551D38AE9212 /* OnboardingView.swift in Sources */,
+				DD8FEF6E7BEFAD7310601947 /* PaywallView.swift in Sources */,
 				D52B34042AE5D394B720032F /* ProfileColors.swift in Sources */,
 				BDF62D66E3D1E094B76EA4DE /* ProfileDetailView.swift in Sources */,
 				615EF012B5D434FFA538DA3B /* QRScannerView.swift in Sources */,
@@ -428,16 +451,17 @@
 				49E740287C947FA79ABA354E /* ShareProfileSheet.swift in Sources */,
 				DE9ADC2BB937055D2A53265A /* SideEffectLog.swift in Sources */,
 				37AE1B16A7B3F2E92F98AE86 /* SiteDetailView.swift in Sources */,
+				D6ADEF8A86F29D5C3241792B /* StoreKitManager.swift in Sources */,
 				7263A64C51C3BDB9EF55E4A3 /* SyncManager.swift in Sources */,
 				83AD3FA032A117E7B1A5284C /* TravelPlan.swift in Sources */,
 				724572265A56031C3F7F3EBB /* TravelView.swift in Sources */,
-				AA2222222222222222222222 /* TravelViewModel.swift in Sources */,
-				AA4444444444444444444444 /* YellowCardView.swift in Sources */,
+				95871901C977BCE7F32F0BEF /* TravelViewModel.swift in Sources */,
 				74A6CB288FED010A86A8A06E /* VaccinationRecord.swift in Sources */,
 				857280AE225215C71B248125 /* VaccineSite.swift in Sources */,
 				54488F75A081B7A81B100A67 /* VaccineSiteFinderService.swift in Sources */,
 				4CE0006C13039CF931F4BD63 /* VaxNearApp.swift in Sources */,
 				433290C382BA195483E843F1 /* WalletPassManager.swift in Sources */,
+				9484A5C3E5A7B68029171DD2 /* YellowCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

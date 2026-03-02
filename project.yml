@@ -32,6 +32,9 @@ targets:
         com.apple.developer.icloud-services:
           - CloudKit
         aps-environment: development
+        com.apple.developer.in-app-payments:
+          - merchant.com.chadnewbry.vaxnear
     dependencies:
       - sdk: HealthKit.framework
       - sdk: PassKit.framework
+      - sdk: StoreKit.framework
