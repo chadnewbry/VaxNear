@@ -38,6 +38,7 @@ struct FinderView: View {
                 FavoritesView()
             }
             .task {
+                ShortcutDonation.donateVaccineSearch(vaccine: "")
                 await vm.initialSearch()
             }
         }

@@ -33,7 +33,7 @@ struct SettingsView: View {
                         } label: {
                             HStack {
                                 Label("Upgrade to Full Version", systemImage: "star.fill")
-                                    .foregroundStyle(.accent)
+                                    .foregroundStyle(Color.accentColor)
                                 Spacer()
                                 Text("$4.99")
                                     .foregroundStyle(.secondary)

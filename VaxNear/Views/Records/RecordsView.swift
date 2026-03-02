@@ -50,6 +50,7 @@ struct RecordsView: View {
                 }
             }
             .navigationTitle("Records")
+            .onAppear { ShortcutDonation.donateRecordsView() }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button { handleAddRecord() } label: {

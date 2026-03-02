@@ -77,6 +77,11 @@ struct ProfileDetailView: View {
         .navigationTitle(profile.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button { showingShareSheet = true } label: {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
             ToolbarItem(placement: .primaryAction) {
                 Button("Edit") { showingEditSheet = true }
             }

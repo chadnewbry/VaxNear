@@ -8,7 +8,6 @@ struct VaxNearApp: App {
     @State private var isUnlocked = false
     @StateObject private var notificationManager = NotificationManager()
     @StateObject private var syncManager = SyncManager()
-    @StateObject private var storeManager = StoreKitManager.shared
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -28,7 +27,6 @@ struct VaxNearApp: App {
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
-            // Delete stale store and retry
             let url = config.url
             let related = [url, url.appendingPathExtension("wal"), url.appendingPathExtension("shm")]
             for file in related {
@@ -59,13 +57,13 @@ struct VaxNearApp: App {
                     Task {
                         _ = await notificationManager.requestPermission()
                         notificationManager.scheduleSeasonalAlerts()
+                        WidgetDataProvider(context: sharedModelContainer.mainContext).updateWidgetData()
                     }
                 }
-                // Check IAP status on launch and sync with AppSettings
-                Task {
-                    await storeManager.checkPurchaseStatus()
-                    await storeManager.loadProducts()
-                    storeManager.syncSettingsIfNeeded(context: sharedModelContainer.mainContext)
+            }
+            .onOpenURL { url in
+                if let deepLink = DeepLink.from(url: url) {
+                    NavigationState.shared.handle(deepLink)
                 }
             }
         }
