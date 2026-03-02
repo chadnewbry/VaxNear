@@ -33,10 +33,10 @@ _(100 characters)_
 **Free** — with one-time $4.99 In-App Purchase to unlock full features
 
 ### Privacy URL
-`https://chadnewbry.github.io/vaxnear/privacy-policy.html`
+`https://chadnewbry.github.io/VaxNear/privacy-policy.html`
 
 ### Support URL
-`https://chadnewbry.github.io/vaxnear/support.html`
+`https://chadnewbry.github.io/VaxNear/support.html`
 
 ---
 

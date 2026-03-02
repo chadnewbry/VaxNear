@@ -8,6 +8,7 @@ struct SiteDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var isFav = false
     @State private var travelTime: String?
+    @State private var showAddRecord = false
 
     var body: some View {
         List {
@@ -81,7 +82,7 @@ struct SiteDetailView: View {
                 .tint(isFav ? .red : .accentColor)
 
                 Button {
-                    // Navigate to add record — placeholder for now
+                    showAddRecord = true
                 } label: {
                     Label("I Got Vaccinated Here", systemImage: "checkmark.seal.fill")
                 }
@@ -104,6 +105,11 @@ struct SiteDetailView: View {
         }
         .navigationTitle(site.name)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showAddRecord) {
+            NavigationStack {
+                AddRecordView()
+            }
+        }
         .onAppear {
             isFav = viewModel.isFavorite(site: site, context: modelContext)
             estimateTravelTime()
