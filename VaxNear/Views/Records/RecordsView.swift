@@ -10,9 +10,11 @@ struct RecordsView: View {
     @StateObject private var healthKit = HealthKitManager.shared
     @StateObject private var storeManager = StoreKitManager.shared
     @State private var showingAddRecord = false
+    @StateObject private var navigationState = NavigationState.shared
     @State private var selectedProfileID: UUID?
     @State private var showingFamilyManagement = false
     @State private var showingExportSheet = false
+    @State private var pendingProfileFilter: UUID?
     @State private var showingPaywall = false
     @State private var exportedPDFURL: URL?
 
@@ -50,6 +52,18 @@ struct RecordsView: View {
                 }
             }
             .navigationTitle("Records")
+            .onAppear {
+                if let filter = navigationState.profileFilter {
+                    selectedProfileID = filter
+                    navigationState.profileFilter = nil
+                }
+            }
+            .onChange(of: navigationState.profileFilter) { _, newValue in
+                if let filter = newValue {
+                    selectedProfileID = filter
+                    navigationState.profileFilter = nil
+                }
+            }
             .onAppear { ShortcutDonation.donateRecordsView() }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {

@@ -14,6 +14,12 @@ final class NavigationState: ObservableObject {
     @Published var selectedTab: AppTab = .finder
     @Published var vaccineFilter: String?
     @Published var travelCountry: String?
+    @Published var profileFilter: UUID?
+
+    func showRecords(for profileID: UUID) {
+        profileFilter = profileID
+        selectedTab = .records
+    }
 
     func handle(_ deepLink: DeepLink) {
         switch deepLink {

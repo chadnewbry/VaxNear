@@ -4,6 +4,7 @@ import SwiftUI
 struct ProfileDetailView: View {
     @Bindable var profile: FamilyProfile
     @Environment(\.modelContext) private var modelContext
+    @StateObject private var navigationState = NavigationState.shared
     @State private var showingEditSheet = false
     @State private var showingShareSheet = false
 
@@ -46,13 +47,22 @@ struct ProfileDetailView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(profile.vaccinationRecords.sorted { $0.dateAdministered > $1.dateAdministered }) { record in
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(record.vaccineName)
-                                .font(.subheadline.bold())
-                            Text(record.dateAdministered, style: .date)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                        NavigationLink {
+                            RecordDetailView(record: record)
+                        } label: {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(record.vaccineName)
+                                    .font(.subheadline.bold())
+                                Text(record.dateAdministered, style: .date)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
+                    }
+                    Button {
+                        navigationState.showRecords(for: profile.id)
+                    } label: {
+                        Label("View All Records", systemImage: "list.clipboard")
                     }
                 }
             }
