@@ -13,6 +13,29 @@ struct QRScannerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: QRScannerViewController, context: Context) {}
 }
 
+struct QRScannerSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    let onScan: (String) -> Void
+
+    var body: some View {
+        NavigationStack {
+            QRScannerView { data in
+                onScan(data)
+            }
+            .ignoresSafeArea()
+            .navigationTitle("Scan QR Code")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                        .tint(.white)
+                }
+            }
+            .toolbarBackground(.hidden, for: .navigationBar)
+        }
+    }
+}
+
 final class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var onScan: ((String) -> Void)?
 
@@ -69,22 +92,36 @@ final class QRScannerViewController: UIViewController, AVCaptureMetadataOutputOb
         view.layer.addSublayer(layer)
         previewLayer = layer
 
-        // Overlay
         let overlay = UIView(frame: view.bounds)
         overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         overlay.backgroundColor = .clear
         view.addSubview(overlay)
 
+        let frameSize: CGFloat = 250
+        let frameView = UIView()
+        frameView.translatesAutoresizingMaskIntoConstraints = false
+        frameView.layer.borderColor = UIColor.white.withAlphaComponent(0.8).cgColor
+        frameView.layer.borderWidth = 2
+        frameView.layer.cornerRadius = 12
+        overlay.addSubview(frameView)
+        NSLayoutConstraint.activate([
+            frameView.centerXAnchor.constraint(equalTo: overlay.centerXAnchor),
+            frameView.centerYAnchor.constraint(equalTo: overlay.centerYAnchor, constant: -30),
+            frameView.widthAnchor.constraint(equalToConstant: frameSize),
+            frameView.heightAnchor.constraint(equalToConstant: frameSize)
+        ])
+
         let label = UILabel()
-        label.text = "Point camera at SMART Health Card QR code"
+        label.text = "Point camera at a SMART Health Card QR code"
         label.textColor = .white
         label.font = .preferredFont(forTextStyle: .subheadline)
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         overlay.addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: overlay.centerXAnchor),
-            label.bottomAnchor.constraint(equalTo: overlay.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            label.topAnchor.constraint(equalTo: frameView.bottomAnchor, constant: 24),
             label.leadingAnchor.constraint(greaterThanOrEqualTo: overlay.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(lessThanOrEqualTo: overlay.trailingAnchor, constant: -20)
         ])

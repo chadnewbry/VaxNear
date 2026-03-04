@@ -14,6 +14,7 @@ struct RecordsView: View {
     @State private var showingFamilyManagement = false
     @State private var showingExportSheet = false
     @State private var showingPaywall = false
+    @State private var showingQRScannerDirect = false
     @State private var exportedPDFURL: URL?
 
     private var appSettings: AppSettings {
@@ -98,6 +99,9 @@ struct RecordsView: View {
                     storeManager.syncSettingsIfNeeded(context: modelContext)
                 }
             }
+            .sheet(isPresented: $showingQRScannerDirect) {
+                AddRecordView(assignToProfile: selectedProfile, openScannerOnAppear: true)
+            }
             .onChange(of: storeManager.isPurchased) { _, purchased in
                 if purchased {
                     storeManager.syncSettingsIfNeeded(context: modelContext)
@@ -178,7 +182,7 @@ struct RecordsView: View {
                 }
                 .buttonStyle(.borderedProminent)
 
-                Button { handleAddRecord() } label: {
+                Button { showingQRScannerDirect = true } label: {
                     Label("Scan QR Code", systemImage: "qrcode.viewfinder")
                 }
                 .buttonStyle(.bordered)

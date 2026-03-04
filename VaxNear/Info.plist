@@ -23,7 +23,7 @@
     <key>NSHealthUpdateUsageDescription</key>
     <string>VaxNear saves vaccination records to HealthKit so they appear in the Health app.</string>
     <key>NSCameraUsageDescription</key>
-    <string>VaxNear uses the camera to scan QR codes on vaccination cards.</string>
+    <string>VaxNear uses your camera to scan SMART Health Card QR codes found on vaccination cards and digital vaccine certificates. This lets you quickly import vaccine name, date, lot number, and provider details into your records without manual entry.</string>
     <key>NSFaceIDUsageDescription</key>
     <string>VaxNear uses Face ID to protect your sensitive health records.</string>
     <key>UIBackgroundModes</key>
