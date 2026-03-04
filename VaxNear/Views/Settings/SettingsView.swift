@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct SettingsView: View {
+    @Query private var profiles: [FamilyProfile]
     @AppStorage("isBiometricLockEnabled") private var isBiometricLockEnabled = false
     @StateObject private var healthKit = HealthKitManager.shared
     @StateObject private var storeManager = StoreKitManager.shared
@@ -10,6 +11,8 @@ struct SettingsView: View {
     @State private var showingPaywall = false
     @State private var showRestoreAlert = false
     @State private var restoreSuccess = false
+    @State private var showingExportSheet = false
+    @State private var exportedFileURLs: [URL] = []
 
     private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
     private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
@@ -70,7 +73,9 @@ struct SettingsView: View {
 
                 Section("Data") {
                     iCloudSyncRow
-                    Label("Export Records", systemImage: "square.and.arrow.up")
+                    Button { exportAllRecords() } label: {
+                        Label("Export Records", systemImage: "square.and.arrow.up")
+                    }
 
                     if healthKit.isAvailable {
                         HStack {
@@ -142,7 +147,29 @@ struct SettingsView: View {
                     storeManager.syncSettingsIfNeeded(context: modelContext)
                 }
             }
+            .sheet(isPresented: $showingExportSheet) {
+                if !exportedFileURLs.isEmpty {
+                    ShareSheet(items: exportedFileURLs)
+                }
+            }
         }
+    }
+
+
+    private func exportAllRecords() {
+        let service = DataExportService(context: modelContext)
+        var urls: [URL] = []
+        let profilesToExport = profiles.isEmpty ? [] : profiles
+        for profile in profilesToExport {
+            let pdfData = service.exportAsPDF(profile: profile)
+            let tempURL = FileManager.default.temporaryDirectory
+                .appendingPathComponent("\(profile.name)_Vaccination_Records.pdf")
+            try? pdfData.write(to: tempURL)
+            urls.append(tempURL)
+        }
+        guard !urls.isEmpty else { return }
+        exportedFileURLs = urls
+        showingExportSheet = true
     }
 
     @ViewBuilder
