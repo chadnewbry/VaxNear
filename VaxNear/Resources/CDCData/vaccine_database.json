@@ -1,31 +1,1122 @@
 [
-  { "name": "Hepatitis B (HepB)", "alternateNames": ["Engerix-B", "Recombivax HB", "Heplisav-B", "PreHevbrio"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Rotavirus (RV)", "alternateNames": ["RotaTeq", "Rotarix"], "manufacturer": "Merck/GSK", "type": "live", "typicalBoosterIntervalMonths": null },
-  { "name": "DTaP", "alternateNames": ["Daptacel", "Infanrix", "Kinrix", "Quadracel", "Pentacel", "Vaxelis"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Tdap", "alternateNames": ["Boostrix", "Adacel"], "manufacturer": "GSK/Sanofi", "type": "inactivated", "typicalBoosterIntervalMonths": 120 },
-  { "name": "Td", "alternateNames": ["Tenivac", "TDVAX"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": 120 },
-  { "name": "Haemophilus influenzae type b (Hib)", "alternateNames": ["ActHIB", "PedvaxHIB", "Hiberix", "Pentacel", "Vaxelis"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Pneumococcal Conjugate (PCV15)", "alternateNames": ["Vaxneuvance"], "manufacturer": "Merck", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Pneumococcal Conjugate (PCV20)", "alternateNames": ["Prevnar 20"], "manufacturer": "Pfizer", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Pneumococcal Polysaccharide (PPSV23)", "alternateNames": ["Pneumovax 23"], "manufacturer": "Merck", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Inactivated Poliovirus (IPV)", "alternateNames": ["IPOL", "Kinrix", "Quadracel", "Pentacel"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Influenza (IIV)", "alternateNames": ["Fluzone", "Fluarix", "Flucelvax", "Fluad", "Flublok"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": 12 },
-  { "name": "Influenza (LAIV)", "alternateNames": ["FluMist"], "manufacturer": "AstraZeneca", "type": "live", "typicalBoosterIntervalMonths": 12 },
-  { "name": "MMR", "alternateNames": ["M-M-R II", "Priorix"], "manufacturer": "Merck/GSK", "type": "live", "typicalBoosterIntervalMonths": null },
-  { "name": "Varicella (VAR)", "alternateNames": ["Varivax"], "manufacturer": "Merck", "type": "live", "typicalBoosterIntervalMonths": null },
-  { "name": "Hepatitis A (HepA)", "alternateNames": ["Havrix", "Vaqta", "Twinrix"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "HPV", "alternateNames": ["Gardasil 9"], "manufacturer": "Merck", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Meningococcal ACWY (MenACWY)", "alternateNames": ["Menactra", "Menveo", "MenQuadfi"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": 60 },
-  { "name": "Meningococcal B (MenB)", "alternateNames": ["Bexsero", "Trumenba", "Penbraya"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Zoster Recombinant (Shingrix)", "alternateNames": ["RZV"], "manufacturer": "GSK", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "COVID-19 mRNA", "alternateNames": ["Comirnaty", "Spikevax"], "manufacturer": "Pfizer/Moderna", "type": "mRNA", "typicalBoosterIntervalMonths": 12 },
-  { "name": "COVID-19 Protein Subunit", "alternateNames": ["Novavax"], "manufacturer": "Novavax", "type": "inactivated", "typicalBoosterIntervalMonths": 12 },
-  { "name": "RSV (Respiratory Syncytial Virus)", "alternateNames": ["Arexvy", "Abrysvo"], "manufacturer": "GSK/Pfizer", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Yellow Fever", "alternateNames": ["YF-Vax", "Stamaril"], "manufacturer": "Sanofi", "type": "live", "typicalBoosterIntervalMonths": null },
-  { "name": "Typhoid (Injectable)", "alternateNames": ["Typhim Vi"], "manufacturer": "Sanofi", "type": "inactivated", "typicalBoosterIntervalMonths": 24 },
-  { "name": "Typhoid (Oral)", "alternateNames": ["Vivotif"], "manufacturer": "Emergent", "type": "live", "typicalBoosterIntervalMonths": 60 },
-  { "name": "Japanese Encephalitis", "alternateNames": ["Ixiaro"], "manufacturer": "Valneva", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Rabies", "alternateNames": ["Imovax", "RabAvert"], "manufacturer": "Various", "type": "inactivated", "typicalBoosterIntervalMonths": null },
-  { "name": "Cholera", "alternateNames": ["Vaxchora"], "manufacturer": "Emergent", "type": "live", "typicalBoosterIntervalMonths": null },
-  { "name": "Mpox", "alternateNames": ["Jynneos"], "manufacturer": "Bavarian Nordic", "type": "live", "typicalBoosterIntervalMonths": null }
+  {
+    "name": "Adenovirus types 4 and 7",
+    "fullName": "Adenovirus, type 4 and type 7, live, oral",
+    "cvxCode": "143",
+    "alternateNames": [
+      "Adenovirus Type 4 and Type 7 Vaccine"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Anthrax, post-exposure prophylaxis",
+    "fullName": "Anthrax vaccine, adsorbed, adjuvanted, post-exposure prophylaxis",
+    "cvxCode": "318",
+    "alternateNames": [
+      "Cyfendus"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Anthrax, pre-exposure prophylaxis, post-exposure prophylaxis",
+    "fullName": "Anthrax vaccine, adsorbed, pre-exposure and post-exposure prophylaxis",
+    "cvxCode": "24",
+    "alternateNames": [
+      "BioThrax"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "BCG",
+    "fullName": "Bacillus Calmette-Guerin vaccine",
+    "cvxCode": "19",
+    "alternateNames": [
+      "BCG Vaccine"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Chikungunya live attenuated vaccine, 0.5 mL, PF",
+    "fullName": "Chikungunya, live attenuated vaccine, 0.5 mL, preservative free",
+    "cvxCode": "317",
+    "alternateNames": [
+      "Ixchiq"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Chikungunya, VLP, recombinant, 0.8 mL, PF",
+    "fullName": "Chikungunya, virus-like particle (VLP), recombinant vaccine, 0.8 mL, preservative free",
+    "cvxCode": "329",
+    "alternateNames": [],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "cholera, live attenuated",
+    "fullName": "cholera, live attenuated",
+    "cvxCode": "174",
+    "alternateNames": [
+      "Vaxchora"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "COVID-19, mRNA, LNP-S, PF, 10 mcg/0.2 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 10 mcg/0.2 mL dose",
+    "cvxCode": "334",
+    "alternateNames": [
+      "Spikevax"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 25 mcg/0.25 mL dose",
+    "cvxCode": "311",
+    "alternateNames": [
+      "Spikevax"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose",
+    "cvxCode": "312",
+    "alternateNames": [
+      "Spikevax"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, tris-sucrose, 10 mcg/0.3 mL dose",
+    "cvxCode": "310",
+    "alternateNames": [
+      "Comirnaty"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, tris-sucrose, 30 mcg/0.3 mL dose",
+    "cvxCode": "309",
+    "alternateNames": [
+      "Comirnaty"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL",
+    "fullName": "SARS-COV-2 (COVID-19) vaccine, subunit, recombinant spike protein-nanoparticle+Matrix-M1 Adjuvant, preservative free, 5 mcg/0.5 mL dose",
+    "cvxCode": "313",
+    "alternateNames": [
+      "Novavax"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "dengue fever tetravalent",
+    "fullName": "dengue fever vaccine, tetravalent",
+    "cvxCode": "56",
+    "alternateNames": [
+      "Dengvaxia"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP",
+    "fullName": "diphtheria, tetanus toxoids and acellular pertussis vaccine",
+    "cvxCode": "20",
+    "alternateNames": [
+      "Daptacel",
+      "Infanrix"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP, 5 pertussis antigens",
+    "fullName": "diphtheria, tetanus toxoids and acellular pertussis vaccine, 5 pertussis antigens",
+    "cvxCode": "106",
+    "alternateNames": [
+      "Daptacel"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP,IPV,Hib,HepB",
+    "fullName": "Diphtheria and Tetanus Toxoids and Acellular Pertussis Adsorbed, Inactivated Poliovirus, Haemophilus b Conjugate, and Hepatitis B Vaccine",
+    "cvxCode": "146",
+    "alternateNames": [
+      "Vaxelis"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP-Hep B-IPV",
+    "fullName": "DTaP-hepatitis B and poliovirus vaccine",
+    "cvxCode": "110",
+    "alternateNames": [
+      "Pediarix"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP-Hib-IPV",
+    "fullName": "diphtheria, tetanus toxoids and acellular pertussis vaccine, Haemophilus influenzae type b conjugate, and poliovirus vaccine, inactivated",
+    "cvxCode": "120",
+    "alternateNames": [
+      "Pentacel"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "DTaP-IPV",
+    "fullName": "Diphtheria, tetanus toxoids and acellular pertussis vaccine, and poliovirus vaccine, inactivated",
+    "cvxCode": "130",
+    "alternateNames": [
+      "Kinrix",
+      "Quadracel"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Ebola Zaire vaccine, live, recombinant, 1mL dose",
+    "fullName": "Ebola Zaire vaccine, live, recombinant, 1mL dose",
+    "cvxCode": "204",
+    "alternateNames": [
+      "ERVEBO"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep A, adult",
+    "fullName": "hepatitis A vaccine, adult dosage",
+    "cvxCode": "52",
+    "alternateNames": [
+      "Havrix",
+      "Vaqta"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep A, ped/adol, 2 dose",
+    "fullName": "hepatitis A vaccine, pediatric/adolescent dosage, 2 dose schedule",
+    "cvxCode": "83",
+    "alternateNames": [
+      "Havrix",
+      "Vaqta"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep A-Hep B",
+    "fullName": "hepatitis A and hepatitis B vaccine",
+    "cvxCode": "104",
+    "alternateNames": [
+      "Twinrix"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep B, adolescent or pediatric",
+    "fullName": "hepatitis B vaccine, pediatric or pediatric/adolescent dosage",
+    "cvxCode": "08",
+    "alternateNames": [
+      "Engerix-B",
+      "Recombivax HB"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep B, adult",
+    "fullName": "hepatitis B vaccine, adult dosage",
+    "cvxCode": "43",
+    "alternateNames": [
+      "Engerix-B",
+      "Recombivax HB"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hep B, high-dosage, dialysis or IC",
+    "fullName": "Hepatitis B vaccine, high-dosage, dialysis or immunocompromised patient",
+    "cvxCode": "44",
+    "alternateNames": [
+      "Engerix-B",
+      "Recombivax HB"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "HepB-CpG",
+    "fullName": "Hepatitis B vaccine (recombinant), CpG adjuvanted",
+    "cvxCode": "189",
+    "alternateNames": [
+      "Heplisav-B"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hib (PRP-OMP)",
+    "fullName": "Haemophilus influenzae type b vaccine, PRP-OMP conjugate",
+    "cvxCode": "49",
+    "alternateNames": [
+      "PedvaxHIB"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Hib (PRP-T)",
+    "fullName": "Haemophilus influenzae type b vaccine, PRP-T conjugate",
+    "cvxCode": "48",
+    "alternateNames": [
+      "ActHIB",
+      "Hiberix"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "HPV, quadrivalent",
+    "fullName": "human papilloma virus vaccine, quadrivalent",
+    "cvxCode": "62",
+    "alternateNames": [
+      "Gardasil"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "HPV9",
+    "fullName": "Human Papillomavirus 9-valent vaccine",
+    "cvxCode": "165",
+    "alternateNames": [
+      "Gardasil 9"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Influenza A monovalent (H5N1), ADJUVANTED-2013",
+    "fullName": "Influenza A monovalent (H5N1), adjuvanted, National stockpile 2013",
+    "cvxCode": "160",
+    "alternateNames": [],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, adjuvanted, quadrivalent, PF",
+    "fullName": "Influenza, adjuvanted, inactivated, quadrivalent, injectable, preservative free",
+    "cvxCode": "205",
+    "alternateNames": [
+      "Fluad Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, adjuvanted, trivalent, PF",
+    "fullName": "Influenza, adjuvanted, inactivated, trivalent, injectable, preservative free",
+    "cvxCode": "168",
+    "alternateNames": [
+      "Fluad"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, high-dose, quadrivalent, PF",
+    "fullName": "Influenza, high-dose, split virus, quadrivalent, injectable, preservative free",
+    "cvxCode": "197",
+    "alternateNames": [
+      "Fluzone High-Dose Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, high-dose, trivalent, PF",
+    "fullName": "Influenza, high-dose, split virus, trivalent, injectable, preservative free",
+    "cvxCode": "135",
+    "alternateNames": [
+      "Fluzone High-Dose"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, injectable,quadrivalent, preservative free, pediatric",
+    "fullName": "Influenza, injectable,quadrivalent, preservative free, pediatric",
+    "cvxCode": "161",
+    "alternateNames": [
+      "Fluzone Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, live, quadrivalent, intranasal",
+    "fullName": "Influenza, live, quadrivalent, intranasal",
+    "cvxCode": "149",
+    "alternateNames": [
+      "FluMist Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, live, trivalent, intranasal, PF",
+    "fullName": "Influenza, live, trivalent, intranasal, preservative free",
+    "cvxCode": "111",
+    "alternateNames": [
+      "FluMist"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, live, trivalent, intranasal, self/caregiver admin, PF",
+    "fullName": "Influenza, live, trivalent, intranasal, self or caregiver administered, preservative free",
+    "cvxCode": "333",
+    "alternateNames": [
+      "FluMist"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, MDCK, quadrivalent, PF",
+    "fullName": "Influenza, Madin Darby Canine Kidney, subunit, quadrivalent, injectable, preservative free",
+    "cvxCode": "171",
+    "alternateNames": [
+      "Flucelvax Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, MDCK, quadrivalent, preservative",
+    "fullName": "Influenza, Madin Darby Canine Kidney, subunit, quadrivalent, injectable, contains preservative",
+    "cvxCode": "186",
+    "alternateNames": [
+      "Flucelvax Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, MDCK, trivalent, PF",
+    "fullName": "Influenza, Madin Darby Canine Kidney, subunit, trivalent, injectable, preservative free",
+    "cvxCode": "153",
+    "alternateNames": [
+      "Flucelvax"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, MDCK, trivalent, preservative",
+    "fullName": "Influenza, Madin Darby Canine Kidney, subunit, trivalent, injectable, contains preservative",
+    "cvxCode": "320",
+    "alternateNames": [
+      "Flucelvax"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, recombinant, quadrivalent, PF",
+    "fullName": "Influenza, recombinant, quadrivalent, injectable, preservative free",
+    "cvxCode": "185",
+    "alternateNames": [
+      "Flublok Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, recombinant, trivalent, PF",
+    "fullName": "Influenza, recombinant, trivalent, injectable, preservative free",
+    "cvxCode": "155",
+    "alternateNames": [
+      "Flublok"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, split virus, quadrivalent, PF",
+    "fullName": "Influenza, split virus, quadrivalent, injectable, preservative free",
+    "cvxCode": "150",
+    "alternateNames": [
+      "Fluarix Quadrivalent",
+      "Fluzone Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, split virus, quadrivalent, preservative",
+    "fullName": "Influenza, split virus, quadrivalent, injectable, contains preservative",
+    "cvxCode": "158",
+    "alternateNames": [
+      "Fluarix Quadrivalent",
+      "Fluzone Quadrivalent"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, split virus, trivalent, PF",
+    "fullName": "Influenza, split virus, trivalent, injectable, preservative free",
+    "cvxCode": "140",
+    "alternateNames": [
+      "Fluarix",
+      "Fluzone"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza, split virus, trivalent, preservative",
+    "fullName": "Influenza, split virus, trivalent, injectable, contains preservative",
+    "cvxCode": "141",
+    "alternateNames": [
+      "Fluarix",
+      "Fluzone"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza-avian, H5N8, monovalent, PF",
+    "fullName": "Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free",
+    "cvxCode": "321",
+    "alternateNames": [],
+    "manufacturer": "Various",
+    "type": "viral vector",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "Influenza-avian, H5N8, monovalent, preservative",
+    "fullName": "Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative",
+    "cvxCode": "322",
+    "alternateNames": [],
+    "manufacturer": "Various",
+    "type": "viral vector",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 12
+  },
+  {
+    "name": "IPV",
+    "fullName": "poliovirus vaccine, inactivated",
+    "cvxCode": "10",
+    "alternateNames": [
+      "IPOL"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Japanese Encephalitis IM",
+    "fullName": "Japanese Encephalitis vaccine for intramuscular administration",
+    "cvxCode": "134",
+    "alternateNames": [
+      "Ixiaro"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "meningococcal B, OMV",
+    "fullName": "meningococcal B vaccine, recombinant, OMV, adjuvanted",
+    "cvxCode": "163",
+    "alternateNames": [
+      "Bexsero"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "meningococcal B, recombinant",
+    "fullName": "meningococcal B vaccine, fully recombinant",
+    "cvxCode": "162",
+    "alternateNames": [
+      "Trumenba"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "meningococcal conjugate quadrivalent, MenACWY-TT",
+    "fullName": "meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine",
+    "cvxCode": "203",
+    "alternateNames": [
+      "MenQuadfi"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 60
+  },
+  {
+    "name": "Meningococcal MCV4O",
+    "fullName": "meningococcal oligosaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine",
+    "cvxCode": "136",
+    "alternateNames": [
+      "Menveo"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 60
+  },
+  {
+    "name": "meningococcal MCV4P",
+    "fullName": "meningococcal polysaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine",
+    "cvxCode": "114",
+    "alternateNames": [
+      "Menactra"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 60
+  },
+  {
+    "name": "Meningococcal oligosaccharide (MenACWY), (MenB), PF",
+    "fullName": "Meningococcal oligosaccharide conjugated (groups A, C, W, Y) and group B, 0.5 mL, preservative free",
+    "cvxCode": "328",
+    "alternateNames": [
+      "Penbraya"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+    "fullName": "Meningococcal polysaccharide (groups A, C, Y, W) tetanus toxoid conjugate, meningococcal B recombinant vaccine",
+    "cvxCode": "316",
+    "alternateNames": [
+      "Penbraya"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "MMR",
+    "fullName": "measles, mumps and rubella virus vaccine",
+    "cvxCode": "03",
+    "alternateNames": [
+      "M-M-R II",
+      "Priorix"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "MMRV",
+    "fullName": "measles, mumps, rubella, and varicella virus vaccine",
+    "cvxCode": "94",
+    "alternateNames": [
+      "ProQuad"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Pneumococcal conjugate PCV 13",
+    "fullName": "pneumococcal conjugate vaccine, 13 valent",
+    "cvxCode": "133",
+    "alternateNames": [
+      "Prevnar 13"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Pneumococcal conjugate PCV15",
+    "fullName": "Pneumococcal conjugate vaccine 15-valent (PCV15)",
+    "cvxCode": "215",
+    "alternateNames": [
+      "Vaxneuvance"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Pneumococcal conjugate PCV20",
+    "fullName": "Pneumococcal conjugate vaccine 20-valent (PCV20)",
+    "cvxCode": "216",
+    "alternateNames": [
+      "Prevnar 20"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Pneumococcal conjugate PCV21",
+    "fullName": "Pneumococcal conjugate vaccine, 21 valent (PCV21)",
+    "cvxCode": "327",
+    "alternateNames": [
+      "Capvaxive"
+    ],
+    "manufacturer": "Various",
+    "type": "conjugate",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "pneumococcal polysaccharide PPV23",
+    "fullName": "pneumococcal polysaccharide vaccine, 23 valent",
+    "cvxCode": "33",
+    "alternateNames": [
+      "Pneumovax 23"
+    ],
+    "manufacturer": "Various",
+    "type": "polysaccharide",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Rabies - IM Diploid cell culture",
+    "fullName": "Human Rabies vaccine from human diploid cell culture",
+    "cvxCode": "175",
+    "alternateNames": [
+      "Imovax"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Rabies - IM fibroblast culture",
+    "fullName": "Human rabies vaccine from Chicken fibroblast culture",
+    "cvxCode": "176",
+    "alternateNames": [
+      "RabAvert"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "rotavirus, monovalent",
+    "fullName": "rotavirus, live, monovalent vaccine",
+    "cvxCode": "119",
+    "alternateNames": [
+      "Rotarix"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "rotavirus, pentavalent",
+    "fullName": "rotavirus, live, pentavalent vaccine",
+    "cvxCode": "116",
+    "alternateNames": [
+      "RotaTeq"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, bivalent, protein subunit RSVpreF",
+    "fullName": "Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F",
+    "cvxCode": "305",
+    "alternateNames": [
+      "Abrysvo"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, mAb, clesrovimab-cfor, 0.7 mL",
+    "fullName": "Respiratory syncytial virus (RSV), monoclonal antibody, clesrovimab-cfor, 0.7 mL",
+    "cvxCode": "332",
+    "alternateNames": [
+      "Enflonsia"
+    ],
+    "manufacturer": "Various",
+    "type": "monoclonal antibody",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, mAb, nirsevimab-alip, 0.5 mL",
+    "fullName": "Respiratory syncytial virus (RSV) monoclonal antibody, nirsevimab-alip, 0.5 mL",
+    "cvxCode": "306",
+    "alternateNames": [
+      "Beyfortus"
+    ],
+    "manufacturer": "Various",
+    "type": "monoclonal antibody",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, mAb, nirsevimab-alip, 1 mL",
+    "fullName": "Respiratory syncytial virus (RSV) monoclonal antibody, nirsevimab-alip, 1 mL",
+    "cvxCode": "307",
+    "alternateNames": [
+      "Beyfortus"
+    ],
+    "manufacturer": "Various",
+    "type": "monoclonal antibody",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, mRNA, injectable, PF",
+    "fullName": "Respiratory syncytial virus (RSV), mRNA, injectable, preservative free",
+    "cvxCode": "326",
+    "alternateNames": [
+      "mResvia"
+    ],
+    "manufacturer": "Various",
+    "type": "mRNA",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "RSV, recombinant, protein subunit RSVpreF, adjuvant",
+    "fullName": "Respiratory syncytial virus (RSV), vaccine, recombinant, protein subunit RSV prefusion F, adjuvant",
+    "cvxCode": "303",
+    "alternateNames": [
+      "Arexvy"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Td (adult), 2 Lf tetanus toxoid, preservative free, adsorbed",
+    "fullName": "tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use (2 Lf)",
+    "cvxCode": "09",
+    "alternateNames": [
+      "Tenivac"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 120
+  },
+  {
+    "name": "Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed",
+    "fullName": "tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use (5 Lf)",
+    "cvxCode": "113",
+    "alternateNames": [
+      "TDVAX"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 120
+  },
+  {
+    "name": "Td, adsorbed, preservative free, adult use, Lf unspecified",
+    "fullName": "tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified",
+    "cvxCode": "196",
+    "alternateNames": [],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 120
+  },
+  {
+    "name": "Tdap",
+    "fullName": "tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccine, adsorbed",
+    "cvxCode": "115",
+    "alternateNames": [
+      "Boostrix",
+      "Adacel"
+    ],
+    "manufacturer": "Various",
+    "type": "toxoid",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 120
+  },
+  {
+    "name": "Tick-borne encephalitis, inactivated, PF, 0.25mL",
+    "fullName": "Tick-borne encephalitis vaccine, inactivated, preservative free, 0.25mL dose",
+    "cvxCode": "223",
+    "alternateNames": [
+      "TicoVac"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Tick-borne encephalitis, inactivated, PF, 0.5mL",
+    "fullName": "Tick-borne encephalitis vaccine, inactivated, preservative free, 0.5mL dose",
+    "cvxCode": "224",
+    "alternateNames": [
+      "TicoVac"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "typhoid, oral",
+    "fullName": "typhoid vaccine, live, oral",
+    "cvxCode": "25",
+    "alternateNames": [
+      "Vivotif"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 60
+  },
+  {
+    "name": "typhoid, ViCPs",
+    "fullName": "typhoid Vi capsular polysaccharide vaccine",
+    "cvxCode": "101",
+    "alternateNames": [
+      "Typhim Vi"
+    ],
+    "manufacturer": "Various",
+    "type": "polysaccharide",
+    "status": "active",
+    "typicalBoosterIntervalMonths": 24
+  },
+  {
+    "name": "Vaccinia (smallpox, monkeypox), live",
+    "fullName": "Vaccinia (smallpox, monkeypox) vaccine, live",
+    "cvxCode": "75",
+    "alternateNames": [
+      "ACAM2000"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Vaccinia, smallpox monkeypox vaccine live, PF, SQ or ID injection",
+    "fullName": "Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free",
+    "cvxCode": "206",
+    "alternateNames": [
+      "Jynneos"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "varicella",
+    "fullName": "varicella virus vaccine",
+    "cvxCode": "21",
+    "alternateNames": [
+      "Varivax"
+    ],
+    "manufacturer": "Various",
+    "type": "inactivated",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "yellow fever live",
+    "fullName": "yellow fever vaccine live",
+    "cvxCode": "37",
+    "alternateNames": [
+      "YF-Vax"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "Yellow fever vaccine live - alt",
+    "fullName": "Yellow fever vaccine live - alternative formulation",
+    "cvxCode": "183",
+    "alternateNames": [
+      "Stamaril"
+    ],
+    "manufacturer": "Various",
+    "type": "live",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  },
+  {
+    "name": "zoster recombinant",
+    "fullName": "zoster vaccine recombinant",
+    "cvxCode": "187",
+    "alternateNames": [
+      "Shingrix"
+    ],
+    "manufacturer": "Various",
+    "type": "recombinant",
+    "status": "active",
+    "typicalBoosterIntervalMonths": null
+  }
 ]

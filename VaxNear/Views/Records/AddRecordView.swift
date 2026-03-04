@@ -137,13 +137,23 @@ struct AddRecordView: View {
                         }
                         showingVaccinePicker = false
                     } label: {
+                    } label: {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(vaccine.name).font(.body).foregroundStyle(.primary)
+                            HStack {
+                                Text(vaccine.name).font(.body).foregroundStyle(.primary)
+                                Spacer()
+                                if let cvx = vaccine.cvxCode {
+                                    Text("CVX (cvx)")
+                                        .font(.caption2).foregroundStyle(.tertiary)
+                                        .padding(.horizontal, 6).padding(.vertical, 2)
+                                        .background(.quaternary, in: Capsule())
+                                }
+                            }
                             if !vaccine.alternateNames.isEmpty {
                                 Text(vaccine.alternateNames.joined(separator: ", "))
                                     .font(.caption).foregroundStyle(.secondary)
                             }
-                            Text("\(vaccine.manufacturer) · \(vaccine.type)")
+                            Text("(vaccine.manufacturer) · (vaccine.type)")
                                 .font(.caption).foregroundStyle(.tertiary)
                         }
                         .padding(.vertical, 2)
