@@ -5,7 +5,7 @@ import SwiftData
 final class StoreKitManager: ObservableObject {
     static let shared = StoreKitManager()
 
-    static let fullVersionProductID = "com.chadnewbry.vaxnear.fullversion"
+    nonisolated static let fullVersionProductID = "com.chadnewbry.vaxnear.fullversion"
 
     @Published private(set) var fullVersionProduct: Product?
     @Published private(set) var isPurchased = false

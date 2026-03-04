@@ -30,7 +30,7 @@ _(100 characters)_
 **4+** — No restricted content
 
 ### Price
-**Free** — with one-time $4.99 In-App Purchase to unlock full features
+**Free** — with one-time $19.99 In-App Purchase to unlock full features
 
 ### Privacy URL
 `https://chadnewbry.github.io/VaxNear/privacy-policy.html`
@@ -67,7 +67,7 @@ BUILT FOR APPLE
 • Siri Shortcuts — check records hands-free
 
 ONE PRICE. NO SUBSCRIPTIONS.
-Download free to explore. Unlock everything with a single $4.99 purchase — no recurring fees, no upsells, no ads. Ever.
+Download free to explore. Unlock everything with a single $19.99 purchase — no recurring fees, no upsells, no ads. Ever.
 
 VaxNear is designed and built by an independent developer who believes health tools should be simple, private, and affordable.
 ```

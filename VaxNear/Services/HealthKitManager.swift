@@ -10,14 +10,27 @@ final class HealthKitManager: ObservableObject {
     @Published var isAuthorized = false
     @Published var isAvailable = HKHealthStore.isHealthDataAvailable()
 
-    private let immunizationType = HKClinicalType(.immunizationRecord)
+    /// Whether the health-records entitlement is available.
+    /// Without it, requesting clinical types causes an unrecoverable NSException.
+    private var hasClinicalEntitlement: Bool {
+        let entitlements = Bundle.main.infoDictionary?["com.apple.developer.healthkit.access"] as? [String]
+        return entitlements?.contains("health-records") == true
+    }
 
     // MARK: - Authorization
 
     func requestAuthorization() async {
         guard isAvailable else { return }
 
-        let readTypes: Set<HKObjectType> = [immunizationType]
+        // Clinical record types require the health-records entitlement.
+        // Without it, HealthKit throws an uncatchable NSException.
+        guard hasClinicalEntitlement else {
+            print("HealthKit: health-records entitlement not found, skipping clinical authorization")
+            isAuthorized = false
+            return
+        }
+
+        let readTypes: Set<HKObjectType> = [HKClinicalType(.immunizationRecord)]
 
         do {
             try await store.requestAuthorization(toShare: [], read: readTypes)
@@ -31,8 +44,9 @@ final class HealthKitManager: ObservableObject {
     // MARK: - Read Immunization Records
 
     func readImmunizationRecords() async -> [HealthKitVaccineRecord] {
-        guard isAuthorized else { return [] }
+        guard isAuthorized, hasClinicalEntitlement else { return [] }
 
+        let immunizationType = HKClinicalType(.immunizationRecord)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
 
         return await withCheckedContinuation { continuation in

@@ -5,7 +5,7 @@ import SwiftUI
 struct FinderView: View {
     @StateObject private var vm = FinderViewModel()
     @Environment(\.modelContext) private var modelContext
-    @State private var sheetDetent: PresentationDetent = .fraction(0.4)
+    @State private var sheetExpanded = false
     @State private var showFavorites = false
 
     var body: some View {
@@ -16,12 +16,26 @@ struct FinderView: View {
                     searchAreaButton
                 }
             }
-            .sheet(isPresented: .constant(true)) {
+            .safeAreaInset(edge: .bottom) {
                 siteListSheet
-                    .presentationDetents([.fraction(0.4), .large], selection: $sheetDetent)
-                    .presentationDragIndicator(.visible)
-                    .presentationBackgroundInteraction(.enabled(upThrough: .fraction(0.4)))
-                    .interactiveDismissDisabled()
+                    .frame(height: sheetExpanded ? UIScreen.main.bounds.height * 0.7 : UIScreen.main.bounds.height * 0.4)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(radius: 10)
+                    .gesture(
+                        DragGesture()
+                            .onEnded { value in
+                                withAnimation(.spring(response: 0.3)) {
+                                    if value.translation.height < -50 {
+                                        sheetExpanded = true
+                                    } else if value.translation.height > 50 {
+                                        sheetExpanded = false
+                                    }
+                                }
+                            }
+                    )
+                    .animation(.spring(response: 0.3), value: sheetExpanded)
+                    .padding(.horizontal, 4)
             }
             .navigationTitle("Find")
             .navigationBarTitleDisplayMode(.inline)

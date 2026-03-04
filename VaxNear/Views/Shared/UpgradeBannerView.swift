@@ -60,7 +60,7 @@ struct UpgradeBannerView: View {
                 Text("Unlock all features")
                     .font(.subheadline.weight(.medium))
                 Spacer()
-                Text(storeManager.fullVersionProduct?.displayPrice ?? "$4.99")
+                Text(storeManager.fullVersionProduct?.displayPrice ?? "$19.99")
                     .font(.caption.bold())
                     .foregroundStyle(.secondary)
                 Image(systemName: "chevron.right")
@@ -110,7 +110,7 @@ struct UpgradeBannerView: View {
                 }
 
                 HStack {
-                    Text("One-time purchase · \(storeManager.fullVersionProduct?.displayPrice ?? "$4.99")")
+                    Text("One-time purchase · \(storeManager.fullVersionProduct?.displayPrice ?? "$19.99")")
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                     Spacer()

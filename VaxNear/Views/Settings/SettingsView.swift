@@ -57,7 +57,7 @@ struct SettingsView: View {
                                     }
                                     Spacer()
                                     VStack(alignment: .trailing, spacing: 2) {
-                                        Text(storeManager.fullVersionProduct?.displayPrice ?? "$4.99")
+                                        Text(storeManager.fullVersionProduct?.displayPrice ?? "$19.99")
                                             .font(.subheadline.bold())
                                             .foregroundStyle(Color.accentColor)
                                         Text("One-time")

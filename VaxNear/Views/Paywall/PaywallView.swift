@@ -66,7 +66,7 @@ struct PaywallView: View {
                                     )
                                 )
                         } else {
-                            Text("$4.99")
+                            Text("$19.99")
                                 .font(.system(size: 36, weight: .bold))
                                 .foregroundStyle(
                                     LinearGradient(
@@ -88,7 +88,7 @@ struct PaywallView: View {
                             Text("Others")
                                 .font(.caption2.weight(.semibold))
                                 .foregroundStyle(.secondary)
-                            Text("$4.99/wk")
+                            Text("$19.99/wk")
                                 .font(.caption.weight(.medium))
                                 .strikethrough()
                                 .foregroundStyle(.red.opacity(0.7))
@@ -102,7 +102,7 @@ struct PaywallView: View {
                             Text("VaxNear")
                                 .font(.caption2.weight(.semibold))
                                 .foregroundStyle(Color.accentColor)
-                            Text("$4.99 once")
+                            Text("$19.99 once")
                                 .font(.caption.weight(.bold))
                                 .foregroundStyle(.green)
                         }
