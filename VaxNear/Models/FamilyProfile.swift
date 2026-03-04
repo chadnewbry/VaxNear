@@ -4,8 +4,12 @@ import SwiftData
 enum Relationship: String, Codable, CaseIterable, Identifiable {
     case selfUser = "self"
     case spouse
+    case son
+    case daughter
     case child
     case parent
+    case grandparent
+    case sibling
     case other
 
     var id: String { rawValue }
@@ -14,11 +18,49 @@ enum Relationship: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .selfUser: return "Self"
         case .spouse: return "Spouse"
+        case .son: return "Son"
+        case .daughter: return "Daughter"
         case .child: return "Child"
         case .parent: return "Parent"
+        case .grandparent: return "Grandparent"
+        case .sibling: return "Sibling"
         case .other: return "Other"
         }
     }
+
+    var systemImage: String {
+        switch self {
+        case .selfUser: return "person.fill"
+        case .spouse: return "heart.fill"
+        case .son, .daughter, .child: return "figure.child"
+        case .parent: return "figure.and.child.holdinghands"
+        case .grandparent: return "figure.2"
+        case .sibling: return "person.2.fill"
+        case .other: return "person.fill.questionmark"
+        }
+    }
+
+    /// Whether this relationship represents a child (for immunization schedule purposes)
+    var isChild: Bool {
+        switch self {
+        case .son, .daughter, .child: return true
+        default: return false
+        }
+    }
+}
+
+enum BloodType: String, Codable, CaseIterable, Identifiable {
+    case unknown = "Unknown"
+    case aPositive = "A+"
+    case aNegative = "A-"
+    case bPositive = "B+"
+    case bNegative = "B-"
+    case abPositive = "AB+"
+    case abNegative = "AB-"
+    case oPositive = "O+"
+    case oNegative = "O-"
+
+    var id: String { rawValue }
 }
 
 @Model
@@ -30,9 +72,21 @@ final class FamilyProfile {
     var colorTag: String = "#007AFF"
     var createdAt: Date = Date()
 
+    // Additional tracking fields
+    var allergies: String = ""
+    var bloodTypeRawValue: String = BloodType.unknown.rawValue
+    var medicalNotes: String = ""
+    var emergencyContact: String = ""
+    var insuranceInfo: String = ""
+
     @Transient var relationship: Relationship {
         get { Relationship(rawValue: relationshipRawValue) ?? .selfUser }
         set { relationshipRawValue = newValue.rawValue }
+    }
+
+    @Transient var bloodType: BloodType {
+        get { BloodType(rawValue: bloodTypeRawValue) ?? .unknown }
+        set { bloodTypeRawValue = newValue.rawValue }
     }
 
     @Relationship(deleteRule: .cascade, inverse: \VaccinationRecord.profile)
@@ -57,7 +111,12 @@ final class FamilyProfile {
         relationship: Relationship,
         dateOfBirth: Date,
         colorTag: String = "#007AFF",
-        createdAt: Date = Date()
+        createdAt: Date = Date(),
+        allergies: String = "",
+        bloodType: BloodType = .unknown,
+        medicalNotes: String = "",
+        emergencyContact: String = "",
+        insuranceInfo: String = ""
     ) {
         self.id = id
         self.name = name
@@ -65,6 +124,11 @@ final class FamilyProfile {
         self.dateOfBirth = dateOfBirth
         self.colorTag = colorTag
         self.createdAt = createdAt
+        self.allergies = allergies
+        self.bloodTypeRawValue = bloodType.rawValue
+        self.medicalNotes = medicalNotes
+        self.emergencyContact = emergencyContact
+        self.insuranceInfo = insuranceInfo
     }
 
     var ageInMonths: Int {

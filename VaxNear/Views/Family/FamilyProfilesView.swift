@@ -73,7 +73,12 @@ struct ProfileRow: View {
         HStack(spacing: 12) {
             Circle()
                 .fill(Color(hex: profile.colorTag))
-                .frame(width: 12, height: 12)
+                .frame(width: 36, height: 36)
+                .overlay {
+                    Image(systemName: profile.relationship.systemImage)
+                        .font(.system(size: 14))
+                        .foregroundStyle(.white)
+                }
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack {
