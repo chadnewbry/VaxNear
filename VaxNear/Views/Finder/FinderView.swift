@@ -145,7 +145,11 @@ struct FinderView: View {
         } else if vm.isSearching {
             loadingView
         } else if vm.sites.isEmpty {
-            emptyView
+            if let error = vm.searchError {
+                errorView(message: error)
+            } else {
+                emptyView
+            }
         } else {
             List(vm.sites) { site in
                 NavigationLink {
@@ -238,6 +242,19 @@ struct FinderView: View {
             .redacted(reason: .placeholder)
         }
         .listStyle(.plain)
+    }
+
+    private func errorView(message: String) -> some View {
+        ContentUnavailableView {
+            Label("Search Error", systemImage: "exclamationmark.triangle")
+        } description: {
+            Text(message)
+        } actions: {
+            Button("Retry") {
+                Task { await vm.initialSearch() }
+            }
+            .buttonStyle(.borderedProminent)
+        }
     }
 }
 
