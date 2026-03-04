@@ -123,7 +123,7 @@ final class NotificationManager: ObservableObject {
 
     func scheduleChildMilestoneReminders(for profile: FamilyProfile) {
         guard let context = modelContext,
-              profile.relationship == .child else { return }
+              profile.relationship.isChild else { return }
 
         // Cancel existing milestone reminders for this profile
         cancelReminders(for: profile.id, ofType: .childMilestone, in: context)

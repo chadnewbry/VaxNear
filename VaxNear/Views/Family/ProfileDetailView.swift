@@ -24,7 +24,7 @@ struct ProfileDetailView: View {
                         Text(profile.name)
                             .font(.title3.bold())
                         HStack(spacing: 8) {
-                            Text(profile.relationship.displayName)
+                            Label(profile.relationship.displayName, systemImage: profile.relationship.systemImage)
                                 .font(.caption)
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 2)
@@ -37,6 +37,49 @@ struct ProfileDetailView: View {
                     }
                 }
                 .padding(.vertical, 4)
+            }
+
+            if !profile.allergies.isEmpty || profile.bloodType != .unknown || !profile.medicalNotes.isEmpty {
+                Section("Medical Information") {
+                    if profile.bloodType != .unknown {
+                        LabeledContent("Blood Type", value: profile.bloodType.rawValue)
+                    }
+                    if !profile.allergies.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Allergies")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text(profile.allergies)
+                                .font(.subheadline)
+                        }
+                    }
+                    if !profile.medicalNotes.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Medical Notes")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text(profile.medicalNotes)
+                                .font(.subheadline)
+                        }
+                    }
+                }
+            }
+
+            if !profile.emergencyContact.isEmpty || !profile.insuranceInfo.isEmpty {
+                Section("Additional Info") {
+                    if !profile.emergencyContact.isEmpty {
+                        LabeledContent("Emergency Contact", value: profile.emergencyContact)
+                    }
+                    if !profile.insuranceInfo.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Insurance")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text(profile.insuranceInfo)
+                                .font(.subheadline)
+                        }
+                    }
+                }
             }
 
             Section("Vaccination Records (\(profile.vaccinationRecords.count))") {
@@ -56,7 +99,7 @@ struct ProfileDetailView: View {
                 }
             }
 
-            if profile.relationship == .child {
+            if profile.relationship.isChild {
                 Section {
                     NavigationLink {
                         ChildImmunizationScheduleView(profile: profile)
@@ -106,7 +149,7 @@ struct ProfileDetailView: View {
 
 #Preview {
     NavigationStack {
-        ProfileDetailView(profile: FamilyProfile(name: "Test", relationship: .child, dateOfBirth: Calendar.current.date(byAdding: .month, value: -6, to: .now)!))
+        ProfileDetailView(profile: FamilyProfile(name: "Test", relationship: .son, dateOfBirth: Calendar.current.date(byAdding: .month, value: -6, to: .now)!))
     }
     .modelContainer(for: FamilyProfile.self, inMemory: true)
 }
