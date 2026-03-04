@@ -137,7 +137,6 @@ struct AddRecordView: View {
                         }
                         showingVaccinePicker = false
                     } label: {
-                    } label: {
                         VStack(alignment: .leading, spacing: 4) {
                             HStack {
                                 Text(vaccine.name).font(.body).foregroundStyle(.primary)
