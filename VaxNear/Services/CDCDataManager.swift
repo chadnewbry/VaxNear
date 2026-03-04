@@ -43,10 +43,14 @@ struct TravelVaccineEntry: Codable {
 }
 
 struct VaccineDBEntry: Codable {
+    let fullName: String?
+    let cvxCode: String?
+
     let name: String
     let alternateNames: [String]
     let manufacturer: String
     let type: String
+    let status: String?
     let typicalBoosterIntervalMonths: Int?
 }
 
@@ -70,6 +74,8 @@ struct TravelVaccineInfo {
 
 struct VaccineInfo {
     let name: String
+    let fullName: String?
+    let cvxCode: String?
     let alternateNames: [String]
     let manufacturer: String
     let type: String
@@ -152,6 +158,8 @@ final class CDCDataManager: Sendable {
         vaccineDB.map { entry in
             VaccineInfo(
                 name: entry.name,
+                fullName: entry.fullName,
+                cvxCode: entry.cvxCode,
                 alternateNames: entry.alternateNames,
                 manufacturer: entry.manufacturer,
                 type: entry.type,
@@ -164,6 +172,8 @@ final class CDCDataManager: Sendable {
         let q = query.lowercased()
         return allVaccines().filter { vaccine in
             vaccine.name.lowercased().contains(q) ||
+            vaccine.fullName?.lowercased().contains(q) == true ||
+            vaccine.cvxCode == q ||
             vaccine.alternateNames.contains { $0.lowercased().contains(q) } ||
             vaccine.manufacturer.lowercased().contains(q) ||
             vaccine.type.lowercased().contains(q)
