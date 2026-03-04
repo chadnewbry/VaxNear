@@ -51,6 +51,17 @@ struct TimelineItem: Identifiable {
 }
 
 // MARK: - ViewModel
+//
+// NOTE: Travel vaccine data is sourced from a local JSON dataset (194 countries) based on
+// CDC Travelers' Health and WHO International Travel and Health recommendations.
+//
+// No free public API exists for structured travel vaccine requirements by country.
+// Paid/commercial alternatives for future consideration:
+//   - Sherpa° API (https://www.joinsherpa.com/) — travel restrictions including vaccines
+//   - IATA Timatic API — airline-grade entry requirements (expensive)
+//   - Amadeus/Riskline Travel Restrictions API
+//
+// The local dataset should be reviewed/updated periodically against CDC and WHO sources.
 
 @MainActor
 final class TravelViewModel: ObservableObject {

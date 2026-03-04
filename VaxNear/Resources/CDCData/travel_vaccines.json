@@ -1,22 +1,2628 @@
 [
-  { "countryCode": "BR", "countryName": "Brazil", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Yellow Fever", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Yellow fever vaccine recommended for certain areas. Malaria prophylaxis for Amazon region." },
-  { "countryCode": "IN", "countryName": "India", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Hepatitis B", "Japanese Encephalitis", "Rabies", "Cholera"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Yellow fever certificate required if arriving from endemic area." },
-  { "countryCode": "KE", "countryName": "Kenya", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Yellow Fever", "Rabies", "Meningococcal", "Hepatitis B", "Cholera"], "malariaRisk": true, "yellowFeverCertRequired": true, "notes": "Yellow fever certificate required for travelers from endemic countries. Malaria prophylaxis strongly recommended." },
-  { "countryCode": "TH", "countryName": "Thailand", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Japanese Encephalitis", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Malaria risk in border areas. Japanese encephalitis for rural stays >1 month." },
-  { "countryCode": "MX", "countryName": "Mexico", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Hepatitis B", "Rabies"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Limited malaria risk in some rural areas. Routine vaccines should be up to date." },
-  { "countryCode": "NG", "countryName": "Nigeria", "required": ["Yellow Fever"], "recommended": ["Hepatitis A", "Typhoid", "Meningococcal", "Rabies", "Hepatitis B", "Cholera"], "malariaRisk": true, "yellowFeverCertRequired": true, "notes": "Yellow fever vaccination required for all travelers. High malaria risk throughout." },
-  { "countryCode": "PE", "countryName": "Peru", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Yellow Fever", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Yellow fever recommended for jungle areas. Malaria prophylaxis for Amazon basin." },
-  { "countryCode": "EG", "countryName": "Egypt", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Hepatitis B", "Rabies"], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Yellow fever certificate required if arriving from endemic area." },
-  { "countryCode": "CO", "countryName": "Colombia", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Yellow Fever", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Yellow fever recommended for areas below 2300m. Malaria in rural areas." },
-  { "countryCode": "ZA", "countryName": "South Africa", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Hepatitis B", "Rabies"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Malaria risk in northeast (Limpopo, Mpumalanga, KwaZulu-Natal). Yellow fever cert required from endemic countries." },
-  { "countryCode": "PH", "countryName": "Philippines", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Japanese Encephalitis", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Malaria in rural areas below 600m. Japanese encephalitis for extended rural stays." },
-  { "countryCode": "VN", "countryName": "Vietnam", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Japanese Encephalitis", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Malaria in rural highlands. Japanese encephalitis for stays >1 month in rural areas." },
-  { "countryCode": "ET", "countryName": "Ethiopia", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Yellow Fever", "Meningococcal", "Rabies", "Hepatitis B", "Cholera"], "malariaRisk": true, "yellowFeverCertRequired": true, "notes": "Yellow fever certificate required. Malaria throughout below 2000m." },
-  { "countryCode": "SA", "countryName": "Saudi Arabia", "required": ["Meningococcal ACWY"], "recommended": ["Hepatitis A", "Typhoid", "Hepatitis B", "Rabies"], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Meningococcal vaccination required for Hajj/Umrah pilgrims." },
-  { "countryCode": "JP", "countryName": "Japan", "required": [], "recommended": ["Hepatitis A", "Japanese Encephalitis", "Hepatitis B"], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Japanese encephalitis for extended stays in rural areas. Routine vaccines should be current." },
-  { "countryCode": "DE", "countryName": "Germany", "required": [], "recommended": ["Hepatitis B"], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Routine vaccines should be up to date. Tick-borne encephalitis for certain rural areas." },
-  { "countryCode": "GB", "countryName": "United Kingdom", "required": [], "recommended": [], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Routine vaccines should be up to date." },
-  { "countryCode": "FR", "countryName": "France", "required": [], "recommended": ["Hepatitis B"], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Routine vaccines should be up to date." },
-  { "countryCode": "AU", "countryName": "Australia", "required": [], "recommended": [], "malariaRisk": false, "yellowFeverCertRequired": false, "notes": "Yellow fever certificate required if arriving from endemic area. Routine vaccines should be current." },
-  { "countryCode": "CN", "countryName": "China", "required": [], "recommended": ["Hepatitis A", "Typhoid", "Japanese Encephalitis", "Rabies", "Hepatitis B"], "malariaRisk": true, "yellowFeverCertRequired": false, "notes": "Malaria in rural southern/central areas. Japanese encephalitis for rural stays >1 month." }
+  {
+    "countryCode": "AF",
+    "countryName": "Afghanistan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria risk throughout below 2500m. Polio vaccine may be required."
+  },
+  {
+    "countryCode": "AL",
+    "countryName": "Albania",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "DZ",
+    "countryName": "Algeria",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "AD",
+    "countryName": "Andorra",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "AO",
+    "countryName": "Angola",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers over 9 months."
+  },
+  {
+    "countryCode": "AG",
+    "countryName": "Antigua and Barbuda",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "AR",
+    "countryName": "Argentina",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Yellow fever recommended for certain northern provinces."
+  },
+  {
+    "countryCode": "AM",
+    "countryName": "Armenia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "AU",
+    "countryName": "Australia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "AT",
+    "countryName": "Austria",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended for outdoor activities."
+  },
+  {
+    "countryCode": "AZ",
+    "countryName": "Azerbaijan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "BS",
+    "countryName": "Bahamas",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "BH",
+    "countryName": "Bahrain",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "BD",
+    "countryName": "Bangladesh",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria risk in Chittagong Hill Tracts."
+  },
+  {
+    "countryCode": "BB",
+    "countryName": "Barbados",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "BY",
+    "countryName": "Belarus",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "BE",
+    "countryName": "Belgium",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "BZ",
+    "countryName": "Belize",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Limited malaria risk in some areas."
+  },
+  {
+    "countryCode": "BJ",
+    "countryName": "Benin",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "BT",
+    "countryName": "Bhutan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Limited malaria risk in southern districts."
+  },
+  {
+    "countryCode": "BO",
+    "countryName": "Bolivia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever recommended for areas below 2300m."
+  },
+  {
+    "countryCode": "BA",
+    "countryName": "Bosnia and Herzegovina",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "BW",
+    "countryName": "Botswana",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria risk in northern districts."
+  },
+  {
+    "countryCode": "BR",
+    "countryName": "Brazil",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Yellow fever vaccine recommended for certain areas. Malaria prophylaxis for Amazon region."
+  },
+  {
+    "countryCode": "BN",
+    "countryName": "Brunei",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "BG",
+    "countryName": "Bulgaria",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "BF",
+    "countryName": "Burkina Faso",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. Meningococcal vaccine recommended during dry season."
+  },
+  {
+    "countryCode": "BI",
+    "countryName": "Burundi",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers over 9 months."
+  },
+  {
+    "countryCode": "CV",
+    "countryName": "Cabo Verde",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "KH",
+    "countryName": "Cambodia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in forested areas."
+  },
+  {
+    "countryCode": "CM",
+    "countryName": "Cameroon",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "CF",
+    "countryName": "Central African Republic",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "TD",
+    "countryName": "Chad",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required."
+  },
+  {
+    "countryCode": "CL",
+    "countryName": "Chile",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "CN",
+    "countryName": "China",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in rural southern/central areas. Japanese encephalitis for rural stays over 1 month."
+  },
+  {
+    "countryCode": "CO",
+    "countryName": "Colombia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Yellow fever recommended for areas below 2300m. Malaria in rural areas."
+  },
+  {
+    "countryCode": "KM",
+    "countryName": "Comoros",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "CG",
+    "countryName": "Congo",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers."
+  },
+  {
+    "countryCode": "CD",
+    "countryName": "Congo (DRC)",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "CR",
+    "countryName": "Costa Rica",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Limited malaria risk in some areas."
+  },
+  {
+    "countryCode": "CI",
+    "countryName": "Côte d'Ivoire",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers."
+  },
+  {
+    "countryCode": "HR",
+    "countryName": "Croatia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "CU",
+    "countryName": "Cuba",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "CY",
+    "countryName": "Cyprus",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "CZ",
+    "countryName": "Czechia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended for outdoor activities."
+  },
+  {
+    "countryCode": "DK",
+    "countryName": "Denmark",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "DJ",
+    "countryName": "Djibouti",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "DM",
+    "countryName": "Dominica",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "DO",
+    "countryName": "Dominican Republic",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Limited malaria risk in certain provinces."
+  },
+  {
+    "countryCode": "EC",
+    "countryName": "Ecuador",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Yellow fever recommended for Amazon basin areas."
+  },
+  {
+    "countryCode": "EG",
+    "countryName": "Egypt",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "SV",
+    "countryName": "El Salvador",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "GQ",
+    "countryName": "Equatorial Guinea",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk."
+  },
+  {
+    "countryCode": "ER",
+    "countryName": "Eritrea",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria below 2200m."
+  },
+  {
+    "countryCode": "EE",
+    "countryName": "Estonia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended."
+  },
+  {
+    "countryCode": "SZ",
+    "countryName": "Eswatini",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in lowveld regions."
+  },
+  {
+    "countryCode": "ET",
+    "countryName": "Ethiopia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Meningococcal",
+      "Rabies",
+      "Hepatitis B",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required. Malaria throughout below 2000m."
+  },
+  {
+    "countryCode": "FJ",
+    "countryName": "Fiji",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "FI",
+    "countryName": "Finland",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended for outdoor activities."
+  },
+  {
+    "countryCode": "FR",
+    "countryName": "France",
+    "required": [],
+    "recommended": [
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "GA",
+    "countryName": "Gabon",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers."
+  },
+  {
+    "countryCode": "GM",
+    "countryName": "Gambia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk."
+  },
+  {
+    "countryCode": "GE",
+    "countryName": "Georgia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "DE",
+    "countryName": "Germany",
+    "required": [],
+    "recommended": [
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis for certain rural areas."
+  },
+  {
+    "countryCode": "GH",
+    "countryName": "Ghana",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "GR",
+    "countryName": "Greece",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "GD",
+    "countryName": "Grenada",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "GT",
+    "countryName": "Guatemala",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in rural areas below 1500m."
+  },
+  {
+    "countryCode": "GN",
+    "countryName": "Guinea",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "GW",
+    "countryName": "Guinea-Bissau",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "GY",
+    "countryName": "Guyana",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever recommended. Malaria in interior regions."
+  },
+  {
+    "countryCode": "HT",
+    "countryName": "Haiti",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "HN",
+    "countryName": "Honduras",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in rural areas."
+  },
+  {
+    "countryCode": "HU",
+    "countryName": "Hungary",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "IS",
+    "countryName": "Iceland",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "IN",
+    "countryName": "India",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "ID",
+    "countryName": "Indonesia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in eastern provinces."
+  },
+  {
+    "countryCode": "IR",
+    "countryName": "Iran",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Limited malaria risk in southern provinces."
+  },
+  {
+    "countryCode": "IQ",
+    "countryName": "Iraq",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "IE",
+    "countryName": "Ireland",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "IL",
+    "countryName": "Israel",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "IT",
+    "countryName": "Italy",
+    "required": [],
+    "recommended": [
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "JM",
+    "countryName": "Jamaica",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "JP",
+    "countryName": "Japan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Japanese Encephalitis",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Japanese encephalitis for extended stays in rural areas."
+  },
+  {
+    "countryCode": "JO",
+    "countryName": "Jordan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "KZ",
+    "countryName": "Kazakhstan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "KE",
+    "countryName": "Kenya",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Rabies",
+      "Meningococcal",
+      "Hepatitis B",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required from endemic countries."
+  },
+  {
+    "countryCode": "KI",
+    "countryName": "Kiribati",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "KP",
+    "countryName": "North Korea",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Limited malaria risk in southern areas."
+  },
+  {
+    "countryCode": "KR",
+    "countryName": "South Korea",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Japanese Encephalitis",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Japanese encephalitis vaccine recommended."
+  },
+  {
+    "countryCode": "KW",
+    "countryName": "Kuwait",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "KG",
+    "countryName": "Kyrgyzstan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "LA",
+    "countryName": "Laos",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in rural areas."
+  },
+  {
+    "countryCode": "LV",
+    "countryName": "Latvia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended."
+  },
+  {
+    "countryCode": "LB",
+    "countryName": "Lebanon",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "LS",
+    "countryName": "Lesotho",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "LR",
+    "countryName": "Liberia",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "LY",
+    "countryName": "Libya",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "LI",
+    "countryName": "Liechtenstein",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "LT",
+    "countryName": "Lithuania",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended."
+  },
+  {
+    "countryCode": "LU",
+    "countryName": "Luxembourg",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MG",
+    "countryName": "Madagascar",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "MW",
+    "countryName": "Malawi",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk throughout."
+  },
+  {
+    "countryCode": "MY",
+    "countryName": "Malaysia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in interior Borneo."
+  },
+  {
+    "countryCode": "MV",
+    "countryName": "Maldives",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "ML",
+    "countryName": "Mali",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. Meningococcal vaccine recommended."
+  },
+  {
+    "countryCode": "MT",
+    "countryName": "Malta",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MH",
+    "countryName": "Marshall Islands",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MR",
+    "countryName": "Mauritania",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "MU",
+    "countryName": "Mauritius",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "MX",
+    "countryName": "Mexico",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Limited malaria risk in some rural areas."
+  },
+  {
+    "countryCode": "FM",
+    "countryName": "Micronesia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MD",
+    "countryName": "Moldova",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MC",
+    "countryName": "Monaco",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MN",
+    "countryName": "Mongolia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "ME",
+    "countryName": "Montenegro",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "MA",
+    "countryName": "Morocco",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "MZ",
+    "countryName": "Mozambique",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk throughout."
+  },
+  {
+    "countryCode": "MM",
+    "countryName": "Myanmar",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in rural areas."
+  },
+  {
+    "countryCode": "NA",
+    "countryName": "Namibia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in northern regions."
+  },
+  {
+    "countryCode": "NR",
+    "countryName": "Nauru",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "NP",
+    "countryName": "Nepal",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in Terai district. Japanese encephalitis for extended stays."
+  },
+  {
+    "countryCode": "NL",
+    "countryName": "Netherlands",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "NZ",
+    "countryName": "New Zealand",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "NI",
+    "countryName": "Nicaragua",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in some rural areas."
+  },
+  {
+    "countryCode": "NE",
+    "countryName": "Niger",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. Meningococcal vaccine recommended."
+  },
+  {
+    "countryCode": "NG",
+    "countryName": "Nigeria",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Meningococcal",
+      "Rabies",
+      "Hepatitis B",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required for all travelers. High malaria risk throughout."
+  },
+  {
+    "countryCode": "MK",
+    "countryName": "North Macedonia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "NO",
+    "countryName": "Norway",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "OM",
+    "countryName": "Oman",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "PK",
+    "countryName": "Pakistan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout below 2500m. Polio vaccine may be required."
+  },
+  {
+    "countryCode": "PW",
+    "countryName": "Palau",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "PS",
+    "countryName": "Palestine",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "PA",
+    "countryName": "Panama",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in eastern provinces. Yellow fever for Darien province."
+  },
+  {
+    "countryCode": "PG",
+    "countryName": "Papua New Guinea",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk throughout below 1800m."
+  },
+  {
+    "countryCode": "PY",
+    "countryName": "Paraguay",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever recommended for certain departments."
+  },
+  {
+    "countryCode": "PE",
+    "countryName": "Peru",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Yellow fever recommended for jungle areas. Malaria in Amazon basin."
+  },
+  {
+    "countryCode": "PH",
+    "countryName": "Philippines",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria in rural areas below 600m."
+  },
+  {
+    "countryCode": "PL",
+    "countryName": "Poland",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended for forested areas."
+  },
+  {
+    "countryCode": "PT",
+    "countryName": "Portugal",
+    "required": [],
+    "recommended": [
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "QA",
+    "countryName": "Qatar",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "RO",
+    "countryName": "Romania",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "RU",
+    "countryName": "Russia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis recommended for Siberia and Far East."
+  },
+  {
+    "countryCode": "RW",
+    "countryName": "Rwanda",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area. Malaria throughout."
+  },
+  {
+    "countryCode": "KN",
+    "countryName": "Saint Kitts and Nevis",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "LC",
+    "countryName": "Saint Lucia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "VC",
+    "countryName": "Saint Vincent and the Grenadines",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "WS",
+    "countryName": "Samoa",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "ST",
+    "countryName": "São Tomé and Príncipe",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "SA",
+    "countryName": "Saudi Arabia",
+    "required": [
+      "Meningococcal ACWY"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Meningococcal vaccination required for Hajj/Umrah pilgrims."
+  },
+  {
+    "countryCode": "SN",
+    "countryName": "Senegal",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever recommended. High malaria risk."
+  },
+  {
+    "countryCode": "RS",
+    "countryName": "Serbia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "SC",
+    "countryName": "Seychelles",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "SL",
+    "countryName": "Sierra Leone",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "SG",
+    "countryName": "Singapore",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "SK",
+    "countryName": "Slovakia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended."
+  },
+  {
+    "countryCode": "SI",
+    "countryName": "Slovenia",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis vaccine recommended for forested areas."
+  },
+  {
+    "countryCode": "SB",
+    "countryName": "Solomon Islands",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "SO",
+    "countryName": "Somalia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "High malaria risk. Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "ZA",
+    "countryName": "South Africa",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria risk in northeast. Yellow fever cert required from endemic countries."
+  },
+  {
+    "countryCode": "SS",
+    "countryName": "South Sudan",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "ES",
+    "countryName": "Spain",
+    "required": [],
+    "recommended": [
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "LK",
+    "countryName": "Sri Lanka",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "SD",
+    "countryName": "Sudan",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "SR",
+    "countryName": "Suriname",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. Malaria in interior."
+  },
+  {
+    "countryCode": "SE",
+    "countryName": "Sweden",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis recommended for southern/central Sweden."
+  },
+  {
+    "countryCode": "CH",
+    "countryName": "Switzerland",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Tick-borne encephalitis recommended for forested areas."
+  },
+  {
+    "countryCode": "SY",
+    "countryName": "Syria",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "TW",
+    "countryName": "Taiwan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Japanese Encephalitis",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Japanese encephalitis for extended rural stays."
+  },
+  {
+    "countryCode": "TJ",
+    "countryName": "Tajikistan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Limited malaria risk in southern border areas."
+  },
+  {
+    "countryCode": "TZ",
+    "countryName": "Tanzania",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area. High malaria risk."
+  },
+  {
+    "countryCode": "TH",
+    "countryName": "Thailand",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria in border areas. Japanese encephalitis for rural stays over 1 month."
+  },
+  {
+    "countryCode": "TL",
+    "countryName": "Timor-Leste",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Japanese Encephalitis",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "TG",
+    "countryName": "Togo",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "TO",
+    "countryName": "Tonga",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "TT",
+    "countryName": "Trinidad and Tobago",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "TN",
+    "countryName": "Tunisia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "TR",
+    "countryName": "Turkey",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "TM",
+    "countryName": "Turkmenistan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "TV",
+    "countryName": "Tuvalu",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "UG",
+    "countryName": "Uganda",
+    "required": [
+      "Yellow Fever"
+    ],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Meningococcal",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever vaccination required. High malaria risk."
+  },
+  {
+    "countryCode": "UA",
+    "countryName": "Ukraine",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "AE",
+    "countryName": "United Arab Emirates",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area."
+  },
+  {
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "US",
+    "countryName": "United States",
+    "required": [],
+    "recommended": [],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "UY",
+    "countryName": "Uruguay",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "UZ",
+    "countryName": "Uzbekistan",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": false,
+    "yellowFeverCertRequired": false,
+    "notes": "Routine vaccines should be up to date."
+  },
+  {
+    "countryCode": "VU",
+    "countryName": "Vanuatu",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria throughout."
+  },
+  {
+    "countryCode": "VE",
+    "countryName": "Venezuela",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever recommended. Malaria in Bolivar state and Amazon."
+  },
+  {
+    "countryCode": "VN",
+    "countryName": "Vietnam",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Japanese Encephalitis",
+      "Rabies",
+      "Hepatitis B"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": false,
+    "notes": "Malaria in rural highlands. Japanese encephalitis for stays over 1 month in rural areas."
+  },
+  {
+    "countryCode": "YE",
+    "countryName": "Yemen",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria throughout. Cholera risk."
+  },
+  {
+    "countryCode": "ZM",
+    "countryName": "Zambia",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Yellow Fever",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Yellow fever certificate required if arriving from endemic area. High malaria risk."
+  },
+  {
+    "countryCode": "ZW",
+    "countryName": "Zimbabwe",
+    "required": [],
+    "recommended": [
+      "Hepatitis A",
+      "Typhoid",
+      "Hepatitis B",
+      "Rabies",
+      "Cholera"
+    ],
+    "malariaRisk": true,
+    "yellowFeverCertRequired": true,
+    "notes": "Malaria in Zambezi Valley and other low-lying areas."
+  }
 ]
