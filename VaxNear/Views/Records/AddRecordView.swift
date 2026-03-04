@@ -10,6 +10,7 @@ struct AddRecordView: View {
 
     var assignToProfile: FamilyProfile?
     var existingRecord: VaccinationRecord?
+    var openScannerOnAppear: Bool = false
 
     @State private var vaccineName = ""
     @State private var vaccineSearchText = ""
@@ -101,6 +102,9 @@ struct AddRecordView: View {
             }
             .onAppear {
                 selectedProfileID = assignToProfile?.id
+                if openScannerOnAppear {
+                    showingQRScanner = true
+                }
                 if let record = existingRecord {
                     vaccineName = record.vaccineName
                     manufacturer = record.manufacturer ?? ""
@@ -113,7 +117,7 @@ struct AddRecordView: View {
                 }
             }
             .sheet(isPresented: $showingQRScanner) {
-                QRScannerView { scannedData in
+                QRScannerSheet { scannedData in
                     handleQRData(scannedData)
                     showingQRScanner = false
                 }
@@ -249,16 +253,27 @@ struct AddRecordView: View {
               let fhirBundle = credSubject["fhirBundle"] as? [String: Any],
               let entries = fhirBundle["entry"] as? [[String: Any]] else { return }
 
+        // Build a lookup of resources by fullUrl for resolving references
+        var resourcesByUrl: [String: [String: Any]] = [:]
+        for entry in entries {
+            if let fullUrl = entry["fullUrl"] as? String,
+               let resource = entry["resource"] as? [String: Any] {
+                resourcesByUrl[fullUrl] = resource
+            }
+        }
+
         for entry in entries {
             guard let resource = entry["resource"] as? [String: Any],
                   resource["resourceType"] as? String == "Immunization" else { continue }
 
+            // Vaccine name
             if let vaccineCode = resource["vaccineCode"] as? [String: Any],
                let codings = vaccineCode["coding"] as? [[String: Any]],
                let display = codings.first?["display"] as? String {
                 vaccineName = display
             }
 
+            // Date administered
             if let occurrenceDate = resource["occurrenceDateTime"] as? String {
                 let formatter = ISO8601DateFormatter()
                 formatter.formatOptions = [.withFullDate]
@@ -267,8 +282,41 @@ struct AddRecordView: View {
                 }
             }
 
+            // Lot number
             if let lotNumberValue = resource["lotNumber"] as? String {
                 lotNumber = lotNumberValue
+            }
+
+            // Provider / performer
+            if let performers = resource["performer"] as? [[String: Any]] {
+                for performer in performers {
+                    if let actor = performer["actor"] as? [String: Any],
+                       let display = actor["display"] as? String, !display.isEmpty {
+                        provider = display
+                        break
+                    }
+                }
+            }
+
+            // Injection site from FHIR site coding
+            if let site = resource["site"] as? [String: Any],
+               let codings = site["coding"] as? [[String: Any]],
+               let display = codings.first?["display"] as? String {
+                let siteLower = display.lowercased()
+                if siteLower.contains("left") && siteLower.contains("arm") {
+                    injectionSite = "Left Arm"
+                } else if siteLower.contains("right") && siteLower.contains("arm") {
+                    injectionSite = "Right Arm"
+                } else if siteLower.contains("left") && siteLower.contains("thigh") {
+                    injectionSite = "Left Thigh"
+                } else if siteLower.contains("right") && siteLower.contains("thigh") {
+                    injectionSite = "Right Thigh"
+                } else {
+                    injectionSite = "Other"
+                    if notes.isEmpty {
+                        notes = "Injection site: \(display)"
+                    }
+                }
             }
 
             break
