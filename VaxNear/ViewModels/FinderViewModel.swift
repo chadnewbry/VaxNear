@@ -1,3 +1,4 @@
+import Combine
 import CoreLocation
 import Foundation
 import MapKit
@@ -20,10 +21,27 @@ final class FinderViewModel: ObservableObject {
     @Published var hasMovedMap = false
     @Published var visibleRegion: MKCoordinateRegion?
 
-    // MARK: - Computed
+    // Forward published changes from finderService so SwiftUI reacts
+    @Published private(set) var sites: [VaccineSite] = []
+    @Published private(set) var isSearching = false
+    @Published private(set) var searchError: String?
 
-    var sites: [VaccineSite] { finderService.sites }
-    var isSearching: Bool { finderService.isSearching }
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        // Pipe finderService published properties into our own @Published
+        finderService.$sites
+            .receive(on: RunLoop.main)
+            .assign(to: &$sites)
+
+        finderService.$isSearching
+            .receive(on: RunLoop.main)
+            .assign(to: &$isSearching)
+
+        finderService.$searchError
+            .receive(on: RunLoop.main)
+            .assign(to: &$searchError)
+    }
 
     // MARK: - Search
 

@@ -20,7 +20,18 @@ final class VaccineSiteFinderService: ObservableObject {
         let filter: String
     }
 
-    private var cache: [CacheKey: [VaccineSite]] = [:]
+    private var cache: [CacheKey: CacheEntry] = [:]
+
+    private struct CacheEntry {
+        let sites: [VaccineSite]
+        let timestamp: Date
+    }
+
+    private let cacheTTL: TimeInterval = 300 // 5 minutes
+
+    // MARK: - Debounce
+
+    private var searchTask: Task<Void, Never>?
 
     // MARK: - Public API
 
@@ -29,6 +40,9 @@ final class VaccineSiteFinderService: ObservableObject {
         radiusMiles: Double = 10,
         vaccineTypeFilter: VaccineTypeFilter = .all
     ) async {
+        // Cancel any in-flight search
+        searchTask?.cancel()
+
         let key = CacheKey(
             lat: round(location.coordinate.latitude * 100) / 100,
             lon: round(location.coordinate.longitude * 100) / 100,
@@ -36,35 +50,67 @@ final class VaccineSiteFinderService: ObservableObject {
             filter: vaccineTypeFilter.rawValue
         )
 
-        if let cached = cache[key] {
-            sites = cached
+        // Check cache (with TTL)
+        if let entry = cache[key],
+           Date().timeIntervalSince(entry.timestamp) < cacheTTL {
+            sites = entry.sites
             return
         }
 
         isSearching = true
         searchError = nil
 
-        var allSites: [String: VaccineSite] = [:]
+        let task = Task {
+            var allSites: [String: VaccineSite] = [:]
+            var errorCount = 0
+            let queries = vaccineTypeFilter.searchQueries
 
-        for query in vaccineTypeFilter.searchQueries {
-            do {
-                let results = try await performSearch(
-                    query: query,
-                    location: location,
-                    radiusMiles: radiusMiles
-                )
-                for site in results {
-                    allSites[site.id] = site
+            // Run all queries concurrently
+            await withTaskGroup(of: Result<[VaccineSite], Error>.self) { group in
+                for query in queries {
+                    group.addTask {
+                        do {
+                            let results = try await self.performSearch(
+                                query: query,
+                                location: location,
+                                radiusMiles: radiusMiles
+                            )
+                            return .success(results)
+                        } catch {
+                            return .failure(error)
+                        }
+                    }
                 }
-            } catch {
-                // Continue with other queries even if one fails
+
+                for await result in group {
+                    if Task.isCancelled { return }
+                    switch result {
+                    case .success(let results):
+                        for site in results {
+                            allSites[site.id] = site
+                        }
+                    case .failure:
+                        errorCount += 1
+                    }
+                }
+            }
+
+            if Task.isCancelled { return }
+
+            let sorted = allSites.values.sorted { ($0.distance ?? .infinity) < ($1.distance ?? .infinity) }
+            cache[key] = CacheEntry(sites: sorted, timestamp: Date())
+            sites = sorted
+            isSearching = false
+
+            if sorted.isEmpty && errorCount == queries.count {
+                searchError = "Unable to search for sites. Check your connection and try again."
+            } else if sorted.isEmpty && errorCount > 0 {
+                searchError = "Some searches failed. Results may be incomplete."
             }
         }
 
-        let sorted = allSites.values.sorted { ($0.distance ?? .infinity) < ($1.distance ?? .infinity) }
-        cache[key] = sorted
-        sites = sorted
-        isSearching = false
+        searchTask = task
+        await task.value
     }
 
     func clearCache() {
