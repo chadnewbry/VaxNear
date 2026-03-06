@@ -10,6 +10,9 @@ struct SettingsView: View {
     @State private var showingPaywall = false
     @State private var showRestoreAlert = false
     @State private var restoreSuccess = false
+    @State private var showingExport = false
+    @Query(filter: #Predicate<FamilyProfile> { $0.relationshipRawValue == "selfUser" })
+    private var selfProfiles: [FamilyProfile]
 
     private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
     private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
@@ -91,7 +94,7 @@ struct SettingsView: View {
 
                 Section("Data") {
                     iCloudSyncRow
-                    Label("Export Records", systemImage: "square.and.arrow.up")
+                    Button { showingExport = true } label: { Label("Export Records", systemImage: "square.and.arrow.up") }.disabled(selfProfiles.isEmpty)
 
                     if healthKit.isAvailable {
                         HStack {
@@ -150,6 +153,11 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .sheet(isPresented: $showingExport) {
+                if let profile = selfProfiles.first {
+                    ExportView(profile: profile)
+                }
+            }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView {
                     storeManager.syncSettingsIfNeeded(context: modelContext)
