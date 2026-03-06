@@ -143,7 +143,6 @@ final class DataExportService {
         try context.delete(model: VaccinationRecord.self)
         try context.delete(model: SideEffectLog.self)
         try context.delete(model: SavedLocation.self)
-        try context.delete(model: TravelPlan.self)
         try context.delete(model: AppSettings.self)
         try context.save()
         let _ = AppSettings.shared(in: context)

@@ -71,7 +71,7 @@ struct OnboardingView: View {
                 .font(.title.bold())
                 .multilineTextAlignment(.center)
 
-            Text("VaxNear helps you find vaccination sites near you, keep digital records, manage your family's immunizations, and plan travel vaccines — all in one app.")
+            Text("VaxNear helps you find vaccination sites near you, keep digital records, manage your family's immunizations — all in one app.")
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)

@@ -29,12 +29,6 @@ struct MainTabView: View {
                 .accessibilityLabel("Family profiles")
                 .tag(AppTab.family)
 
-            TravelView()
-                .tabItem {
-                    Label("Travel", systemImage: "airplane")
-                }
-                .accessibilityLabel("Travel vaccine planning")
-                .tag(AppTab.travel)
 
             SettingsView()
                 .tabItem {

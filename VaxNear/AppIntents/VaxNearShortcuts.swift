@@ -20,14 +20,5 @@ struct VaxNearShortcuts: AppShortcutsProvider {
             shortTitle: "Vaccine Records",
             systemImageName: "list.clipboard"
         )
-        AppShortcut(
-            intent: TravelVaccinesIntent(),
-            phrases: [
-                "What vaccines do I need in \(.applicationName)",
-                "Travel vaccines in \(.applicationName)"
-            ],
-            shortTitle: "Travel Vaccines",
-            systemImageName: "airplane"
-        )
     }
 }
