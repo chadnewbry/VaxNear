@@ -9,6 +9,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var showingPaywall = false
     @State private var showRestoreAlert = false
+    @Query private var allRecords: [VaccinationRecord]
     @State private var restoreSuccess = false
     @State private var showingExport = false
     @Query(filter: #Predicate<FamilyProfile> { $0.relationshipRawValue == "selfUser" })
@@ -101,8 +102,17 @@ struct SettingsView: View {
                             Label("HealthKit Sync", systemImage: "heart.text.square")
                             Spacer()
                             if healthKit.isAuthorized {
-                                Text("On")
-                                    .foregroundStyle(.green)
+                                if healthKit.isSyncing {
+                                    ProgressView()
+                                        .controlSize(.small)
+                                } else if let lastSync = healthKit.lastSyncedDate {
+                                    Text(lastSync, format: .relative(presentation: .named))
+                                        .foregroundStyle(.secondary)
+                                        .font(.caption)
+                                } else {
+                                    Text("On")
+                                        .foregroundStyle(.green)
+                                }
                             } else {
                                 Button("Enable") {
                                     Task { await healthKit.requestAuthorization() }
@@ -112,6 +122,14 @@ struct SettingsView: View {
                                 .accessibilityLabel("Enable HealthKit sync")
                                 .accessibilityHint("Authorize HealthKit access")
                             }
+                        }
+                        if healthKit.isAuthorized {
+                            Button {
+                                Task { await syncToHealthKit() }
+                            } label: {
+                                Label("Sync Now", systemImage: "arrow.triangle.2.circlepath")
+                            }
+                            .disabled(healthKit.isSyncing)
                         }
                     } else {
                         HStack {
@@ -126,7 +144,7 @@ struct SettingsView: View {
                 if !healthKit.isAuthorized && healthKit.isAvailable {
                     Section {
                         Label(
-                            "HealthKit sync is off. Enable it to automatically save vaccination records to Apple Health.",
+                            "HealthKit sync is off. Enable it to save vaccination records to Apple Health.",
                             systemImage: "info.circle"
                         )
                         .font(.caption)
@@ -174,6 +192,10 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    private func syncToHealthKit() async {
+        await healthKit.syncAllRecords(allRecords)
     }
 
     @ViewBuilder

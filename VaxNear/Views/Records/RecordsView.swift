@@ -247,15 +247,10 @@ struct RecordsView: View {
     }
 
     private func importFromHealthKit() async {
-        let hkRecords = await healthKit.readImmunizationRecords()
-        let existingKeys = Set(allRecords.map { "\($0.vaccineName)-\($0.dateAdministered)" })
-        for hkRecord in hkRecords {
-            let key = "\(hkRecord.vaccineName)-\(hkRecord.dateAdministered)"
-            guard !existingKeys.contains(key) else { continue }
-            let record = VaccinationRecord(vaccineName: hkRecord.vaccineName, dateAdministered: hkRecord.dateAdministered)
-            record.profile = selectedProfile
-            modelContext.insert(record)
-        }
+        // Clinical record reading requires the health-records entitlement
+        // (Apple approval needed). For v1, HealthKit sync is write-only:
+        // records added in VaxNear are pushed to Apple Health.
+        // Import from HealthKit will be available in a future update.
     }
 
 

@@ -209,7 +209,7 @@ struct AddRecordView: View {
             notificationManager.scheduleBoosterReminder(for: record)
 
             // Write to HealthKit
-            Task { await healthKit.syncIfAuthorized(record: record) }
+            Task { try? await healthKit.syncRecord(record) }
         }
 
         dismiss()

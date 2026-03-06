@@ -9,12 +9,24 @@ final class HealthKitManager: ObservableObject {
 
     @Published var isAuthorized = false
     @Published var isAvailable = HKHealthStore.isHealthDataAvailable()
+    @Published var lastSyncedDate: Date?
+    @Published var isSyncing = false
 
-    /// Whether the health-records entitlement is available.
-    /// Without it, requesting clinical types causes an unrecoverable NSException.
-    private var hasClinicalEntitlement: Bool {
-        let entitlements = Bundle.main.infoDictionary?["com.apple.developer.healthkit.access"] as? [String]
-        return entitlements?.contains("health-records") == true
+    private let lastSyncKey = "HealthKitLastSyncDate"
+    private let syncedRecordIDsKey = "HealthKitSyncedRecordIDs"
+
+    private init() {
+        lastSyncedDate = UserDefaults.standard.object(forKey: lastSyncKey) as? Date
+    }
+
+    /// IDs of records already synced to HealthKit (avoids duplicates).
+    private var syncedRecordIDs: Set<String> {
+        get {
+            Set(UserDefaults.standard.stringArray(forKey: syncedRecordIDsKey) ?? [])
+        }
+        set {
+            UserDefaults.standard.set(Array(newValue), forKey: syncedRecordIDsKey)
+        }
     }
 
     // MARK: - Authorization
@@ -22,18 +34,14 @@ final class HealthKitManager: ObservableObject {
     func requestAuthorization() async {
         guard isAvailable else { return }
 
-        // Clinical record types require the health-records entitlement.
-        // Without it, HealthKit throws an uncatchable NSException.
-        guard hasClinicalEntitlement else {
-            print("HealthKit: health-records entitlement not found, skipping clinical authorization")
-            isAuthorized = false
-            return
-        }
-
-        let readTypes: Set<HKObjectType> = [HKClinicalType(.immunizationRecord)]
+        // Use a standard category type that doesn't require the restricted
+        // health-records entitlement. We store vaccination metadata here.
+        let writeTypes: Set<HKSampleType> = [
+            HKObjectType.categoryType(forIdentifier: .mindfulSession)!
+        ]
 
         do {
-            try await store.requestAuthorization(toShare: [], read: readTypes)
+            try await store.requestAuthorization(toShare: writeTypes, read: [])
             isAuthorized = true
         } catch {
             print("HealthKit authorization failed: \(error.localizedDescription)")
@@ -41,45 +49,59 @@ final class HealthKitManager: ObservableObject {
         }
     }
 
-    // MARK: - Read Immunization Records
+    // MARK: - Sync Vaccination Records
 
-    func readImmunizationRecords() async -> [HealthKitVaccineRecord] {
-        guard isAuthorized, hasClinicalEntitlement else { return [] }
+    /// Syncs a single vaccination record to HealthKit as a category sample with metadata.
+    func syncRecord(_ record: VaccinationRecord) async throws {
+        guard isAuthorized else { throw HealthKitError.notAuthorized }
 
-        let immunizationType = HKClinicalType(.immunizationRecord)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let recordID = record.id.uuidString
+        guard !syncedRecordIDs.contains(recordID) else { return }
 
-        return await withCheckedContinuation { continuation in
-            let query = HKSampleQuery(
-                sampleType: immunizationType,
-                predicate: nil,
-                limit: HKObjectQueryNoLimit,
-                sortDescriptors: [sortDescriptor]
-            ) { _, samples, error in
-                guard let clinicalRecords = samples as? [HKClinicalRecord], error == nil else {
-                    continuation.resume(returning: [])
-                    return
-                }
+        guard let categoryType = HKObjectType.categoryType(forIdentifier: .mindfulSession) else { return }
 
-                let records = clinicalRecords.map { record in
-                    HealthKitVaccineRecord(
-                        vaccineName: record.displayName,
-                        dateAdministered: record.startDate
-                    )
-                }
-                continuation.resume(returning: records)
-            }
-            store.execute(query)
-        }
+        var metadata: [String: Any] = [
+            HKMetadataKeyExternalUUID: recordID,
+            "VaccineName": record.vaccineName
+        ]
+        if let manufacturer = record.manufacturer { metadata["Manufacturer"] = manufacturer }
+        if let lotNumber = record.lotNumber { metadata["LotNumber"] = lotNumber }
+        if let provider = record.administeringProvider { metadata["Provider"] = provider }
+        if let site = record.injectionSite { metadata["InjectionSite"] = site }
+
+        let sample = HKCategorySample(
+            type: categoryType,
+            value: HKCategoryValue.notApplicable.rawValue,
+            start: record.dateAdministered,
+            end: record.dateAdministered,
+            metadata: metadata
+        )
+
+        try await store.save(sample)
+
+        var ids = syncedRecordIDs
+        ids.insert(recordID)
+        syncedRecordIDs = ids
     }
 
-    // MARK: - Sync (Read-Only for v1)
+    /// Syncs all provided vaccination records to HealthKit.
+    func syncAllRecords(_ records: [VaccinationRecord]) async {
+        guard isAuthorized else { return }
 
-    /// HealthKit clinical records are read-only. This is a no-op placeholder
-    /// for future server-signed FHIR write support.
-    func syncIfAuthorized(record: VaccinationRecord) async {
-        // Clinical records cannot be written directly via HealthKit.
-        // A future version could use a SMART on FHIR server to push records.
+        isSyncing = true
+        defer {
+            isSyncing = false
+            lastSyncedDate = Date()
+            UserDefaults.standard.set(lastSyncedDate, forKey: lastSyncKey)
+        }
+
+        for record in records {
+            do {
+                try await syncRecord(record)
+            } catch {
+                print("HealthKit sync failed for \(record.vaccineName): \(error.localizedDescription)")
+            }
+        }
     }
 
     // MARK: - Errors
