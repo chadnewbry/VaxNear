@@ -247,7 +247,7 @@ struct TravelView: View {
 
                 HStack(spacing: 12) {
                     NavigationLink {
-                        FinderView()
+                        FinderView(vm: FinderViewModel())
                     } label: {
                         Label("Find Site", systemImage: "mappin.circle")
                             .font(.caption)

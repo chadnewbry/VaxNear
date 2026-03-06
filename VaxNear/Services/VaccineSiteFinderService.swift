@@ -37,29 +37,46 @@ final class VaccineSiteFinderService: ObservableObject {
         )
 
         if let cached = cache[key] {
+            print("💾 Cache hit for filter: \(vaccineTypeFilter.rawValue) (\(cached.count) sites)")
             sites = cached
             return
         }
 
         isSearching = true
         searchError = nil
+        print("🔍 Starting search with \(vaccineTypeFilter.searchQueries.count) queries, filter: \(vaccineTypeFilter.rawValue)")
 
         var allSites: [String: VaccineSite] = [:]
 
         for query in vaccineTypeFilter.searchQueries {
+            print("🔍 Querying: '\(query)'...")
             do {
-                let results = try await performSearch(
-                    query: query,
-                    location: location,
-                    radiusMiles: radiusMiles
-                )
+                let results = try await withThrowingTaskGroup(of: [VaccineSite].self) { group in
+                    group.addTask {
+                        try await self.performSearch(
+                            query: query,
+                            location: location,
+                            radiusMiles: radiusMiles
+                        )
+                    }
+                    group.addTask {
+                        try await Task.sleep(for: .seconds(10))
+                        throw CancellationError()
+                    }
+                    let result = try await group.next() ?? []
+                    group.cancelAll()
+                    return result
+                }
+                print("✅ '\(query)' returned \(results.count) results")
                 for site in results {
                     allSites[site.id] = site
                 }
             } catch {
-                // Continue with other queries even if one fails
+                print("⚠️ Search failed for query '\(query)': \(error)")
+                // Continue with other queries even if one fails or times out
             }
         }
+        print("🔍 Search complete: \(allSites.count) total sites")
 
         let sorted = allSites.values.sorted { ($0.distance ?? .infinity) < ($1.distance ?? .infinity) }
         cache[key] = sorted

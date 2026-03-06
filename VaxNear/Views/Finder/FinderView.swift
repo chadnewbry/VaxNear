@@ -3,7 +3,7 @@ import SwiftData
 import SwiftUI
 
 struct FinderView: View {
-    @StateObject private var vm = FinderViewModel()
+    @ObservedObject var vm: FinderViewModel
     @Environment(\.modelContext) private var modelContext
     @State private var sheetExpanded = false
     @State private var showFavorites = false
@@ -267,6 +267,6 @@ struct FinderView: View {
 }
 
 #Preview {
-    FinderView()
+    FinderView(vm: FinderViewModel())
         .modelContainer(for: SavedLocation.self, inMemory: true)
 }

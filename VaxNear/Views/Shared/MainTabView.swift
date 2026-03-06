@@ -2,10 +2,11 @@ import SwiftUI
 
 struct MainTabView: View {
     @StateObject private var navigationState = NavigationState.shared
+    @StateObject private var finderVM = FinderViewModel()
 
     var body: some View {
         TabView(selection: $navigationState.selectedTab) {
-            FinderView()
+            FinderView(vm: finderVM)
                 .tabItem {
                     Label("Find", systemImage: "mappin.and.ellipse")
                 }

@@ -1,3 +1,4 @@
+import Combine
 import CoreLocation
 import Foundation
 import MapKit
@@ -11,6 +12,7 @@ final class FinderViewModel: ObservableObject {
 
     let locationManager = LocationManager()
     let finderService = VaccineSiteFinderService()
+    private var cancellable: AnyCancellable?
 
     // MARK: - Published State
 
@@ -19,22 +21,39 @@ final class FinderViewModel: ObservableObject {
     @Published var mapPosition: MapCameraPosition = .userLocation(fallback: .automatic)
     @Published var hasMovedMap = false
     @Published var visibleRegion: MKCoordinateRegion?
+    @Published var sites: [VaccineSite] = []
+    @Published var isSearching = false
+    private(set) var hasPerformedInitialSearch = false
 
-    // MARK: - Computed
+    // MARK: - Init
 
-    var sites: [VaccineSite] { finderService.sites }
-    var isSearching: Bool { finderService.isSearching }
+    init() {
+        cancellable = finderService.objectWillChange.sink { [weak self] _ in
+            Task { @MainActor in
+                guard let self else { return }
+                self.sites = self.finderService.sites
+                self.isSearching = self.finderService.isSearching
+            }
+        }
+    }
 
     // MARK: - Search
 
     func initialSearch() async {
+        guard !hasPerformedInitialSearch else { return }
+        hasPerformedInitialSearch = true
         locationManager.requestPermission()
         // Wait briefly for location
         for _ in 0..<20 {
             if locationManager.currentLocation != nil { break }
             try? await Task.sleep(for: .milliseconds(250))
         }
-        guard let location = locationManager.currentLocation else { return }
+        guard let location = locationManager.currentLocation else {
+            print("📍 Location not available after 5s wait")
+            hasPerformedInitialSearch = false
+            return
+        }
+        print("📍 Got location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
         await search(at: location)
     }
 
@@ -49,7 +68,6 @@ final class FinderViewModel: ObservableObject {
         let location = locationManager.currentLocation
             ?? visibleRegion.map { CLLocation(latitude: $0.center.latitude, longitude: $0.center.longitude) }
         guard let location else { return }
-        finderService.clearCache()
         await search(at: location)
     }
 
