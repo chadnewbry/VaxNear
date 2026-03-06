@@ -20,7 +20,9 @@ struct MainTabView: View {
                 .accessibilityLabel("Vaccination records")
                 .tag(AppTab.records)
 
-            FamilyProfilesView()
+            NavigationStack {
+                FamilyProfilesView()
+            }
                 .tabItem {
                     Label("Family", systemImage: "person.3")
                 }
