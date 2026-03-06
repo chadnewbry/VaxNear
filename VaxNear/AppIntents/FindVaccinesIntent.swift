@@ -32,21 +32,3 @@ struct ShowRecordsIntent: AppIntent {
     }
 }
 
-struct TravelVaccinesIntent: AppIntent {
-    static var title: LocalizedStringResource = "Travel Vaccine Requirements"
-    static var description: IntentDescription = "Check what vaccines you need for a country"
-    static var openAppWhenRun: Bool = true
-
-    @Parameter(title: "Country")
-    var country: String
-
-    @MainActor
-    func perform() async throws -> some IntentResult {
-        NavigationState.shared.handle(.travel(country: country))
-        return .result()
-    }
-
-    static var parameterSummary: some ParameterSummary {
-        Summary("What vaccines do I need for \(\.$country)?")
-    }
-}

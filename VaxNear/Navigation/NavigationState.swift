@@ -4,8 +4,7 @@ enum AppTab: Int, Hashable {
     case finder = 0
     case records = 1
     case family = 2
-    case travel = 3
-    case settings = 4
+    case settings = 3
 }
 
 @MainActor
@@ -14,7 +13,6 @@ final class NavigationState: ObservableObject {
 
     @Published var selectedTab: AppTab = .finder
     @Published var vaccineFilter: String?
-    @Published var travelCountry: String?
     @Published var profileFilter: UUID?
 
     func showRecords(for profileID: UUID) {
@@ -31,9 +29,6 @@ final class NavigationState: ObservableObject {
             selectedTab = .records
         case .family:
             selectedTab = .family
-        case .travel(let country):
-            travelCountry = country
-            selectedTab = .travel
         case .recordDetail:
             selectedTab = .records
         }

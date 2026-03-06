@@ -48,7 +48,6 @@ struct PaywallView: View {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 14) {
                         FeatureCard(icon: "list.clipboard.fill", title: "Unlimited Records", color: .blue)
                         FeatureCard(icon: "person.3.fill", title: "Family Profiles", color: .purple)
-                        FeatureCard(icon: "airplane", title: "Travel Planning", color: .orange)
                         FeatureCard(icon: "doc.richtext", title: "PDF Export", color: .green)
                     }
                     .padding(.horizontal, 4)

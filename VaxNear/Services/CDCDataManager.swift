@@ -32,15 +32,6 @@ struct AdultVaccine: Codable {
     }
 }
 
-struct TravelVaccineEntry: Codable {
-    let countryCode: String
-    let countryName: String
-    let required: [String]
-    let recommended: [String]
-    let malariaRisk: Bool
-    let yellowFeverCertRequired: Bool
-    let notes: String
-}
 
 struct VaccineDBEntry: Codable {
     let name: String
@@ -58,15 +49,6 @@ struct RecommendedVaccine {
     let notes: String
 }
 
-struct TravelVaccineInfo {
-    let countryCode: String
-    let countryName: String
-    let required: [String]
-    let recommended: [String]
-    let malariaRisk: Bool
-    let yellowFeverCertRequired: Bool
-    let notes: String
-}
 
 struct VaccineInfo {
     let name: String
@@ -83,13 +65,11 @@ final class CDCDataManager: Sendable {
 
     private let childhoodSchedule: [ChildhoodVaccine]
     private let adultScheduleData: [AdultVaccine]
-    private let travelData: [TravelVaccineEntry]
     private let vaccineDB: [VaccineDBEntry]
 
     private init() {
         self.childhoodSchedule = Self.load("childhood_schedule")
         self.adultScheduleData = Self.load("adult_schedule")
-        self.travelData = Self.load("travel_vaccines")
         self.vaccineDB = Self.load("vaccine_database")
     }
 
@@ -133,20 +113,6 @@ final class CDCDataManager: Sendable {
         }
     }
 
-    func travelVaccines(forCountryCode code: String) -> TravelVaccineInfo? {
-        guard let entry = travelData.first(where: { $0.countryCode.uppercased() == code.uppercased() }) else {
-            return nil
-        }
-        return TravelVaccineInfo(
-            countryCode: entry.countryCode,
-            countryName: entry.countryName,
-            required: entry.required,
-            recommended: entry.recommended,
-            malariaRisk: entry.malariaRisk,
-            yellowFeverCertRequired: entry.yellowFeverCertRequired,
-            notes: entry.notes
-        )
-    }
 
     func allVaccines() -> [VaccineInfo] {
         vaccineDB.map { entry in
@@ -178,18 +144,5 @@ final class CDCDataManager: Sendable {
         return Calendar.current.date(byAdding: .month, value: intervalMonths, to: lastDoseDate)
     }
 
-    func allTravelCountries() -> [TravelVaccineInfo] {
-        travelData.map { entry in
-            TravelVaccineInfo(
-                countryCode: entry.countryCode,
-                countryName: entry.countryName,
-                required: entry.required,
-                recommended: entry.recommended,
-                malariaRisk: entry.malariaRisk,
-                yellowFeverCertRequired: entry.yellowFeverCertRequired,
-                notes: entry.notes
-            )
-        }
-    }
 
 }

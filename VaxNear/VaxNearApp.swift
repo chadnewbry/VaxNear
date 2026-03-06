@@ -15,7 +15,6 @@ struct VaxNearApp: App {
             VaccinationRecord.self,
             SideEffectLog.self,
             SavedLocation.self,
-            TravelPlan.self,
             AppSettings.self,
             ScheduledReminder.self
         ])

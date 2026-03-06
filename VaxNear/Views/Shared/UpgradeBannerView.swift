@@ -100,7 +100,7 @@ struct UpgradeBannerView: View {
                         Text("Upgrade to VaxNear Full")
                             .font(.subheadline.bold())
                             .foregroundStyle(.primary)
-                        Text("Unlimited records, family profiles, travel planning & more")
+                        Text("Unlimited records, family profiles & more")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)

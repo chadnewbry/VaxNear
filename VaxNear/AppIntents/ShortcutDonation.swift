@@ -15,11 +15,4 @@ enum ShortcutDonation {
         }
     }
 
-    static func donateTravelSearch(country: String) {
-        let intent = TravelVaccinesIntent()
-        intent.country = country
-        Task {
-            try? await intent.donate()
-        }
-    }
 }
