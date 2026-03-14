@@ -42,7 +42,7 @@ final class WalletPassManager: ObservableObject {
 
         var pass: [String: Any] = [
             "formatVersion": 1,
-            "passTypeIdentifier": "pass.com.chadnewbry.vaxnear",
+            "passTypeIdentifier": "pass." + AppConfig.shared.bundleId,
             "serialNumber": record.id.uuidString,
             "teamIdentifier": "TEAM_ID",
             "organizationName": "VaxNear",

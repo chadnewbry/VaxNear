@@ -15,6 +15,8 @@ targets:
     platform: iOS
     sources:
       - VaxNear
+      - path: .asc/app-config.json
+        buildPhase: resources
     settings:
       base:
         INFOPLIST_FILE: VaxNear/Info.plist
@@ -48,6 +50,10 @@ targets:
     platform: iOS
     sources:
       - VaxNearWidget
+      - path: VaxNear/Services/AppConfig.swift
+        buildPhase: sources
+      - path: .asc/app-config.json
+        buildPhase: resources
       - path: VaxNear/Navigation/DeepLink.swift
         buildPhase: sources
     settings:

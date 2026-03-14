@@ -19,7 +19,7 @@ final class SyncManager: ObservableObject {
     }
 
     func checkCloudStatus() {
-        CKContainer(identifier: "iCloud.com.chadnewbry.vaxnear").accountStatus { [weak self] status, error in
+        CKContainer(identifier: "iCloud." + AppConfig.shared.bundleId).accountStatus { [weak self] status, error in
             Task { @MainActor in
                 self?.isCloudAvailable = (status == .available)
                 if let error {

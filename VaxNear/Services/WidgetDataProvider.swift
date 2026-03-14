@@ -10,7 +10,7 @@ final class WidgetDataProvider {
     }
 
     func updateWidgetData() {
-        guard let defaults = UserDefaults(suiteName: "group.com.chadnewbry.vaxnear") else { return }
+        guard let defaults = UserDefaults(suiteName: "group." + AppConfig.shared.bundleId) else { return }
 
         let now = Date()
         let descriptor = FetchDescriptor<ScheduledReminder>(

@@ -15,9 +15,9 @@ struct SettingsView: View {
     @Query(filter: #Predicate<FamilyProfile> { $0.relationshipRawValue == "selfUser" })
     private var selfProfiles: [FamilyProfile]
 
-    private let privacyPolicyURL = URL(string: "https://chadnewbry.github.io/VaxNear/privacy-policy.html")!
-    private let termsOfServiceURL = URL(string: "https://chadnewbry.github.io/VaxNear/terms-of-service.html")!
-    private let supportURL = URL(string: "https://chadnewbry.github.io/VaxNear/support.html")!
+    private let privacyPolicyURL = URL(string: AppConfig.shared.urls.privacyPolicy)!
+    private let termsOfServiceURL = URL(string: AppConfig.shared.urls.termsOfService)!
+    private let supportURL = URL(string: AppConfig.shared.urls.support)!
 
     private var appSettings: AppSettings {
         AppSettings.shared(in: modelContext)
