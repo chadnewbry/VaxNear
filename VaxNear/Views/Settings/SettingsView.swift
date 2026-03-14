@@ -153,6 +153,15 @@ struct SettingsView: View {
                 }
 
                 Section("About") {
+                    Button {
+                        let email = AppConfig.shared.review?.contactEmail ?? "chad.newbry@gmail.com"
+                        let subject = "Feedback: VaxNear"
+                        if let url = URL(string: "mailto:\(email)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? subject)") {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Label("Feedback / Product Suggestions", systemImage: "envelope")
+                    }
                     Link(destination: privacyPolicyURL) {
                         Label("Privacy Policy", systemImage: "hand.raised")
                     }
