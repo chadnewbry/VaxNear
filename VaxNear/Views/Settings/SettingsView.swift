@@ -171,6 +171,15 @@ struct SettingsView: View {
                     Link(destination: supportURL) {
                         Label("Support", systemImage: "questionmark.circle")
                     }
+                    Button {
+                        let email = AppConfig.shared.review?.contactEmail ?? "chad.newbry@gmail.com"
+                        let subject = "Support: VaxNear"
+                        if let url = URL(string: "mailto:\(email)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? subject)") {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Label("Contact Support", systemImage: "envelope.fill")
+                    }
                     HStack {
                         Label("Version", systemImage: "info.circle")
                         Spacer()
