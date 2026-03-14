@@ -56,7 +56,7 @@ struct VaxNearTimelineProvider: AppIntentTimelineProvider {
 
     func timeline(for configuration: SelectProfileIntent, in context: Context) async -> Timeline<VaxNearEntry> {
         // Read from shared UserDefaults (app group)
-        let defaults = UserDefaults(suiteName: "group.com.chadnewbry.vaxnear")
+        let defaults = UserDefaults(suiteName: "group." + AppConfig.shared.bundleId)
         let profileName = configuration.profileName.isEmpty
             ? (defaults?.string(forKey: "primaryProfileName") ?? "You")
             : configuration.profileName

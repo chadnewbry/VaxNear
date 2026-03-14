@@ -1,0 +1,18 @@
+{
+  "bundleId": "com.chadnewbry.vaxnear",
+  "appName": "VaxNear",
+  "copyright": "© 2026 Chad Newbry",
+  "urls": {
+    "website": "https://chadnewbry.github.io/VaxNear",
+    "privacyPolicy": "https://chadnewbry.github.io/VaxNear/privacy-policy.html",
+    "termsOfService": "https://chadnewbry.github.io/VaxNear/terms-of-service.html",
+    "support": "https://chadnewbry.github.io/VaxNear/support.html"
+  },
+  "review": {
+    "demoAccountRequired": false,
+    "contactFirstName": "Chad",
+    "contactLastName": "Newbry",
+    "contactEmail": "chad.newbry@gmail.com",
+    "contactPhone": "+15417605021"
+  }
+}
