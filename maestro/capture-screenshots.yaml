@@ -1,0 +1,45 @@
+appId: com.chadnewbry.vaxnear
+name: "Capture App Store Screenshots"
+---
+
+# Launch with clean state to seed screenshot data
+- launchApp:
+    appId: com.chadnewbry.vaxnear
+    clearState: true
+    arguments:
+      --screenshot-mode: ""
+
+# Relaunch without clearing so @Query views pick up seeded data
+- launchApp:
+    appId: com.chadnewbry.vaxnear
+    clearState: false
+    arguments:
+      --screenshot-mode: ""
+
+# Onboarding is skipped via UserDefaults set in sample data
+- waitForAnimationToEnd
+
+# Screenshot 1: Records tab (vaccination history)
+- tapOn: "Records"
+- waitForAnimationToEnd
+- takeScreenshot: "01-records"
+
+# Screenshot 2: Family profiles
+- tapOn: "Family"
+- waitForAnimationToEnd
+- takeScreenshot: "02-family"
+
+# Screenshot 3: Travel planning
+- tapOn: "Travel"
+- waitForAnimationToEnd
+- takeScreenshot: "03-travel"
+
+# Screenshot 4: Find vaccination sites
+- tapOn: "Find"
+- waitForAnimationToEnd
+- takeScreenshot: "04-find"
+
+# Screenshot 5: Settings
+- tapOn: "Settings"
+- waitForAnimationToEnd
+- takeScreenshot: "05-settings"
