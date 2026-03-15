@@ -1,0 +1,80 @@
+{
+  // App Store Connect workflows for the iOS App Factory pipeline.
+  // These are the defaults from preferred-ios-stack. Copy to each app repo
+  // and customize per-app as needed. Agents run workflows from the app repo.
+  //
+  // Common env vars (pass via CLI):
+  //   APP_ID      - Numeric ASC app ID (from: asc apps list --bundle-id <bundle_id>)
+  //   VERSION_ID  - ASC version ID (from: asc versions list --app <app_id>)
+  //   VERSION     - Version string (e.g. "1.0")
+
+  "env": {
+    "APP_ID": "",
+    "VERSION_ID": "",
+    "VERSION": ""
+  },
+
+  "workflows": {
+
+    "compliance": {
+      "description": "Set up review details, availability, and copyright. Run during the compliance stage.",
+      "steps": [
+        {
+          "name": "review_details",
+          "run": "asc review details-create --version-id $VERSION_ID --contact-first-name Chad --contact-last-name Newbry --contact-email chad.newbry@gmail.com --contact-phone +15417605021 --demo-account-required=false --output json 2>&1 || asc review details-for-version --version-id $VERSION_ID --output json | python3 -c \"import sys,json; d=json.load(sys.stdin); print(d['data']['id'])\" | xargs -I{} asc review details-update --id {} --demo-account-required=false --contact-first-name Chad --contact-last-name Newbry --contact-email chad.newbry@gmail.com --contact-phone +15417605021 --output json"
+        },
+        {
+          "name": "availability",
+          "run": "TERRITORIES=$(asc pricing territories list --output json --paginate 2>/dev/null | python3 -c \"import sys,json; d=json.load(sys.stdin); print(','.join(t['id'] for t in d.get('data',d)))\" 2>/dev/null) && asc app-setup availability set --app $APP_ID --territory \"$TERRITORIES\" --available true --available-in-new-territories true --output json"
+        },
+        {
+          "name": "copyright",
+          "run": "asc versions update --version-id $VERSION_ID --copyright \"© $(date +%Y) Chad Newbry\" --output json"
+        }
+      ]
+    },
+
+    "validate": {
+      "description": "Pre-submission validation. Run during the validation stage.",
+      "steps": [
+        {
+          "name": "main",
+          "run": "asc validate --app $APP_ID --version \"$VERSION\" --output json"
+        },
+        {
+          "name": "subscriptions",
+          "run": "asc validate subscriptions --app $APP_ID --strict --output json"
+        },
+        {
+          "name": "iap",
+          "run": "asc validate iap --app $APP_ID --strict --output json"
+        }
+      ]
+    },
+
+    "sync-metadata": {
+      "description": "Push metadata and screenshots to ASC. Run during the metadata sync stage.",
+      "steps": [
+        {
+          "name": "push_metadata",
+          "run": "asc metadata push --app $APP_ID --version \"$VERSION\" --dir ./metadata --output json"
+        },
+        {
+          "name": "upload_screenshots",
+          "run": "asc screenshots upload --app $APP_ID --dir ./App-Store-Screenshots/apple/ --output json"
+        }
+      ]
+    },
+
+    "submit": {
+      "description": "Create a review submission. Run during the submission stage.",
+      "steps": [
+        {
+          "name": "create_submission",
+          "run": "asc submit create --app $APP_ID --platform IOS --output json"
+        }
+      ]
+    }
+
+  }
+}
