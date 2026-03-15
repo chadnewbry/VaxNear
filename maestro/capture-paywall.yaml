@@ -1,0 +1,7 @@
+appId: com.chadnewbry.vaxnear
+---
+- launchApp
+- tapOn: "Settings"
+- tapOn: "Upgrade to Full Version"
+- waitForAnimationToEnd
+- takeScreenshot: paywall
