@@ -15,6 +15,7 @@ struct VaxNearApp: App {
             VaccinationRecord.self,
             SideEffectLog.self,
             SavedLocation.self,
+            TravelPlan.self,
             AppSettings.self,
             ScheduledReminder.self
         ])
@@ -38,6 +39,15 @@ struct VaxNearApp: App {
             }
         }
     }()
+
+    init() {
+        #if DEBUG
+        if ScreenshotSampleData.isScreenshotMode {
+            let context = sharedModelContainer.mainContext
+            ScreenshotSampleData.populate(context: context)
+        }
+        #endif
+    }
 
     var body: some Scene {
         WindowGroup {

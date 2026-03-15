@@ -1,0 +1,35 @@
+{
+  "appName": "VaxNear",
+  "theme": {
+    "backgroundColor": "#007AFF",
+    "textColor": "#FFFFFF",
+    "secondaryColor": "#E8F0FE"
+  },
+  "screenshots": [
+    {
+      "filename": "01-records.png",
+      "header": "Track Every Vaccine",
+      "subtitle": "Complete immunization records for your whole family"
+    },
+    {
+      "filename": "02-family.png",
+      "header": "Family Health Hub",
+      "subtitle": "Manage profiles for every family member"
+    },
+    {
+      "filename": "03-travel.png",
+      "header": "Travel-Ready Vaccines",
+      "subtitle": "Know exactly what you need before you go"
+    },
+    {
+      "filename": "04-find.png",
+      "header": "Find Sites Nearby",
+      "subtitle": "Walk-in clinics and pharmacies at your fingertips"
+    },
+    {
+      "filename": "05-settings.png",
+      "header": "Smart Reminders",
+      "subtitle": "Never miss a booster or seasonal shot"
+    }
+  ]
+}
