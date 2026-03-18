@@ -2,59 +2,61 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleIdentifier</key>
-    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-    <key>CFBundleName</key>
-    <string>$(PRODUCT_NAME)</string>
-    <key>CFBundleDisplayName</key>
-    <string>VaxNear</string>
-    <key>CFBundleVersion</key>
-    <string>$(CURRENT_PROJECT_VERSION)</string>
-    <key>CFBundleShortVersionString</key>
-    <string>$(MARKETING_VERSION)</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleExecutable</key>
-    <string>$(EXECUTABLE_NAME)</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>VaxNear uses your location to find nearby vaccination sites.</string>
-    <key>NSHealthShareUsageDescription</key>
-    <string>VaxNear reads your immunization records from HealthKit to keep your vaccination history up to date.</string>
-    <key>NSHealthUpdateUsageDescription</key>
-    <string>VaxNear saves vaccination records to HealthKit so they appear in the Health app.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>VaxNear uses your camera to scan SMART Health Card QR codes found on vaccination cards and digital vaccine certificates. This lets you quickly import vaccine name, date, lot number, and provider details into your records without manual entry.</string>
-    <key>NSFaceIDUsageDescription</key>
-    <string>VaxNear uses Face ID to protect your sensitive health records.</string>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>remote-notification</string>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>vaxnear</string>
-            </array>
-            <key>CFBundleURLName</key>
-            <string>com.chadnewbry.vaxnear</string>
-        </dict>
-    </array>
-    <key>UILaunchScreen</key>
-    <dict/>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationPortraitUpsideDown</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
+	<key>CFBundleDisplayName</key>
+	<string>VaxNear</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.chadnewbry.vaxnear</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>vaxnear</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>VaxNear uses your camera to scan SMART Health Card QR codes found on vaccination cards and digital vaccine certificates. This lets you quickly import vaccine name, date, lot number, and provider details into your records without manual entry.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>VaxNear uses Face ID to protect your sensitive health records.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>VaxNear reads your immunization records from HealthKit to keep your vaccination history up to date.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>VaxNear saves vaccination records to HealthKit so they appear in the Health app.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>VaxNear uses your location to find nearby vaccination sites.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>
